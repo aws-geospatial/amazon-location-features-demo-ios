@@ -244,6 +244,7 @@ final class DirectionVC: UIViewController, AlertPresentable {
         
         guard let (departureLocation, destinationLocation) = getRouteLocations(currentModel: currentModel) else { return }
         
+        guard isDistanceValid(departureLoc: departureLocation, destinationLoc: destinationLocation) else { return }
         viewModel.calculateRouteWith(destinationPosition: destinationLocation,
                                      departurePosition: departureLocation,
                                      travelMode: routeType,
@@ -254,6 +255,9 @@ final class DirectionVC: UIViewController, AlertPresentable {
             
             let isPreview = self.firstDestionation?.placeName != "My Location"
             self.directionView.setup(model: model, isPreview: isPreview)
+            DispatchQueue.main.async {
+                self.directionView.showOptionsStackView()
+            }
             
             self.setupSearchTitleDestinations()
             self.view.endEditing(true)
@@ -315,6 +319,8 @@ final class DirectionVC: UIViewController, AlertPresentable {
             
             let departureLoc = CLLocationCoordinate2D(latitude: departureLat, longitude: departureLong)
             let destionationLoc = CLLocationCoordinate2D(latitude: destionationLat, longitude: destinationLong)
+            
+            guard isDistanceValid(departureLoc: departureLoc, destinationLoc: destionationLoc) else { return }
             viewModel.calculateRouteWith(destinationPosition: destionationLoc, departurePosition: departureLoc, avoidFerries: viewModel.avoidFerries, avoidTolls: viewModel.avoidTolls) { data,model  in
                 
                 self.tableView.isHidden = true
@@ -322,6 +328,9 @@ final class DirectionVC: UIViewController, AlertPresentable {
                 
                 let isPreview = self.firstDestionation?.placeName != "My Location"
                 self.directionView.setup(model: model, isPreview: isPreview)
+                DispatchQueue.main.async {
+                    self.directionView.showOptionsStackView()
+                }
                 
                 self.sendDirectionsToExploreVC(data: data,
                                                departureLocation: departureLoc,
@@ -362,6 +371,28 @@ final class DirectionVC: UIViewController, AlertPresentable {
         
         return routeModel
     }
+    
+    private func isDistanceValid(departureLoc: CLLocationCoordinate2D, destinationLoc: CLLocationCoordinate2D) -> Bool {
+            let currentMapStyle = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle)
+            switch currentMapStyle?.type {
+            case .esri, .none:
+                let userLocation = CLLocation(location: departureLoc)
+                let placeLocation = CLLocation(location: destinationLoc)
+
+                let distance = userLocation.distance(from: placeLocation)
+                guard distance < NumberConstants.fourHundredKMInMeters else {
+                    DispatchQueue.main.async {
+                        self.directionView.showErrorStackView()
+                        self.tableView.isHidden = true
+                        self.directionView.isHidden = false
+                    }
+                    return false
+                }
+            case .here:
+                break
+            }
+            return true
+        }
 }
 
 extension DirectionVC: DirectionViewModelOutputDelegate {

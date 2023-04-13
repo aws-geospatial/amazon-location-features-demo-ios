@@ -19,6 +19,7 @@
 		8A190C0329DD74A600F8FD7C /* ImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A190C0229DD74A600F8FD7C /* ImageAnnotation.swift */; };
 		8A276E2429DFF9C900B74136 /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A276E2329DFF9C900B74136 /* TermsAndConditionsVC.swift */; };
 		8A276E2629DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A276E2529DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift */; };
+		8A2F859829E814D300F3D6F8 /* NumberConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F859729E814D300F3D6F8 /* NumberConstants.swift */; };
 		8A3360DA296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360D9296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift */; };
 		8A3471CC2975D30B00BAF374 /* Locale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3471CB2975D30B00BAF374 /* Locale+Extension.swift */; };
 		8A3CC5EC2968510600A542DC /* DebounceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CC5EB2968510600A542DC /* DebounceManager.swift */; };
@@ -352,6 +353,7 @@
 		8A190C0229DD74A600F8FD7C /* ImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotation.swift; sourceTree = "<group>"; };
 		8A276E2329DFF9C900B74136 /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
 		8A276E2529DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVCBuilder.swift; sourceTree = "<group>"; };
+		8A2F859729E814D300F3D6F8 /* NumberConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberConstants.swift; sourceTree = "<group>"; };
 		8A3360D9296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MGLCoordinateBounds+Extension.swift"; sourceTree = "<group>"; };
 		8A3471CB2975D30B00BAF374 /* Locale+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extension.swift"; sourceTree = "<group>"; };
 		8A3CC5EB2968510600A542DC /* DebounceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceManager.swift; sourceTree = "<group>"; };
@@ -1076,6 +1078,7 @@
 				AD300A2F294BDE3A00355423 /* LocationServicesCustomFonts.swift */,
 				9660600029A4F20100FB88D0 /* StringConstants.swift */,
 				8AB3F19D29C8AF22008FDF37 /* ViewsIdentifiers.swift */,
+				8A2F859729E814D300F3D6F8 /* NumberConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -2944,6 +2947,7 @@
 				ADC97383295EDA17005AE918 /* NavigationVC.swift in Sources */,
 				ADC1249A29788D0100B08C20 /* GeofenceDataModel.swift in Sources */,
 				8A6C390829A2664F0003666C /* NoInternetConnectionView.swift in Sources */,
+				8A2F859829E814D300F3D6F8 /* NumberConstants.swift in Sources */,
 				ADBDDF032984386400696EC6 /* ExploreMapStyleHeaderView.swift in Sources */,
 				8A0EB58A2983F9CF00FBB3E5 /* GeofenceAnnotation.swift in Sources */,
 				8A439F0829C0BA1B00B59D0B /* UIApplication+Extension.swift in Sources */,
