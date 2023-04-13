@@ -19,6 +19,8 @@
 		8A190C0329DD74A600F8FD7C /* ImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A190C0229DD74A600F8FD7C /* ImageAnnotation.swift */; };
 		8A276E2429DFF9C900B74136 /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A276E2329DFF9C900B74136 /* TermsAndConditionsVC.swift */; };
 		8A276E2629DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A276E2529DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift */; };
+		8A2F859329E808D100F3D6F8 /* UITestScreenshotComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F859129E8084B00F3D6F8 /* UITestScreenshotComparator.swift */; };
+		8A2F859629E8092400F3D6F8 /* UITestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F859429E808EA00F3D6F8 /* UITestConstants.swift */; };
 		8A3360DA296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360D9296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift */; };
 		8A3471CC2975D30B00BAF374 /* Locale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3471CB2975D30B00BAF374 /* Locale+Extension.swift */; };
 		8A3CC5EC2968510600A542DC /* DebounceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CC5EB2968510600A542DC /* DebounceManager.swift */; };
@@ -352,6 +354,8 @@
 		8A190C0229DD74A600F8FD7C /* ImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotation.swift; sourceTree = "<group>"; };
 		8A276E2329DFF9C900B74136 /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
 		8A276E2529DFF9FD00B74136 /* TermsAndConditionsVCBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVCBuilder.swift; sourceTree = "<group>"; };
+		8A2F859129E8084B00F3D6F8 /* UITestScreenshotComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestScreenshotComparator.swift; sourceTree = "<group>"; };
+		8A2F859429E808EA00F3D6F8 /* UITestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestConstants.swift; sourceTree = "<group>"; };
 		8A3360D9296C3BE400320B87 /* MGLCoordinateBounds+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MGLCoordinateBounds+Extension.swift"; sourceTree = "<group>"; };
 		8A3471CB2975D30B00BAF374 /* Locale+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extension.swift"; sourceTree = "<group>"; };
 		8A3CC5EB2968510600A542DC /* DebounceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceManager.swift; sourceTree = "<group>"; };
@@ -742,6 +746,14 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		8A2F859029E8083700F3D6F8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8A2F859129E8084B00F3D6F8 /* UITestScreenshotComparator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8A439EF229BB93FD00B59D0B /* Sub-Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				8A94BA8F29E0281D0070D3E0 /* Info.plist */,
+				8A2F859029E8083700F3D6F8 /* Helpers */,
 				8AD0A6E029DDFC0800B79078 /* Extensions */,
 				8AD0E39229CCC74400C338F5 /* Models */,
 				8A47805529C9BD8E00B098CA /* Screens */,
@@ -875,6 +888,7 @@
 				8AD0E38E29CCC1ED00C338F5 /* UITestWaitTime.swift */,
 				8AD0E39029CCC72500C338F5 /* UITestSwipeDirection.swift */,
 				8AD67F9F29D1E39C004A5F7D /* UITestRouteType.swift */,
+				8A2F859429E808EA00F3D6F8 /* UITestConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2756,6 +2770,7 @@
 				8A7B920129CDCE5D006F8814 /* SearchUITests.swift in Sources */,
 				F10994FA29D1C834001D3464 /* UITestSettingsScreen.swift in Sources */,
 				8AD0E38F29CCC1ED00C338F5 /* UITestWaitTime.swift in Sources */,
+				8A2F859629E8092400F3D6F8 /* UITestConstants.swift in Sources */,
 				8A063EA229C9C27C001FF40C /* StringConstants.swift in Sources */,
 				8A063EA129C9C256001FF40C /* UIApplication+Extension.swift in Sources */,
 				8AD0E39129CCC72500C338F5 /* UITestSwipeDirection.swift in Sources */,
@@ -2763,6 +2778,7 @@
 				F10994F829D1AB2B001D3464 /* AWSConnectUITests.swift in Sources */,
 				8A47805729C9BDA900B098CA /* UITestExploreScreen.swift in Sources */,
 				8AB3F19329C8A1C3008FDF37 /* LocationServicesUITests.swift in Sources */,
+				8A2F859329E808D100F3D6F8 /* UITestScreenshotComparator.swift in Sources */,
 				8AB3F19C29C8ABF8008FDF37 /* MapUITests.swift in Sources */,
 				F10994F629D1A908001D3464 /* UITestAWSScreen.swift in Sources */,
 				8A4EE62E29D4B0EE00B699A9 /* NavigationUITests.swift in Sources */,
