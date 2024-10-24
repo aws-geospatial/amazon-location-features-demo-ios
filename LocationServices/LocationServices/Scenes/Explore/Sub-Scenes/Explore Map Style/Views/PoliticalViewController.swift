@@ -31,6 +31,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
     
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .detailDisclosure)
+        button.accessibilityIdentifier = ViewsIdentifiers.General.politicalViewCloseButton
         button.setImage(.closeIcon, for: .normal)
         button.tintColor = .closeButtonTintColor
         button.backgroundColor = .closeButtonBackgroundColor
@@ -75,6 +76,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .politicalListViewBackgroundColor
         
         headerView.addSubview(titleLabel)
@@ -87,9 +89,10 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
         view.addSubview(clearButton)
         
         tableView = UITableView(frame: view.bounds)
+        tableView.accessibilityIdentifier = ViewsIdentifiers.General.politicalViewTable
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(PoliticalViewCell.self, forCellReuseIdentifier: "PoliticalViewCell")
+        tableView.register(PoliticalViewCell.self, forCellReuseIdentifier: ViewsIdentifiers.General.politicalViewCell)
         view.addSubview(tableView)
         
         headerView.snp.makeConstraints {
@@ -169,7 +172,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
     }()
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PoliticalViewCell", for: indexPath) as? PoliticalViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewsIdentifiers.General.politicalViewCell, for: indexPath) as? PoliticalViewCell else {
             return UITableViewCell()
         }
         let politicalView = filteredPoliticalViews[indexPath.row]

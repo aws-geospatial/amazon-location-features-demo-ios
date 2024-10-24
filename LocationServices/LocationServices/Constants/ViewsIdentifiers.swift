@@ -30,6 +30,11 @@ struct ViewsIdentifiers {
         static let bottomGrabberView = "BottomGrabberView"
         static let sideBarTableView = "SideBarTableView"
         static let mapStyleRow = "MapStyleRow"
+        static let politicalViewButton = "politicalViewButton"
+        static let politicalViewTable = "politicalViewTable"
+        static let politicalViewCell = "politicalViewCell"
+        static let politicalViewSubtitle = "politicalViewSubtitle"
+        static let politicalViewCloseButton = "politicalViewCloseButton"
     }
     
     struct Explore {

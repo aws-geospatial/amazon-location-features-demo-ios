@@ -31,6 +31,7 @@ final class PoliticalView: UIButton {
         label.textColor = .gray
         label.textAlignment = .left
         label.text = ""
+        label.accessibilityIdentifier = ViewsIdentifiers.General.politicalViewSubtitle
         return label
     }()
     
@@ -63,6 +64,7 @@ final class PoliticalView: UIButton {
     }
     
     private func setupViews() {
+        self.accessibilityIdentifier = ViewsIdentifiers.General.politicalViewButton
         textStackView.removeArrangedSubViews()
         textStackView.addArrangedSubview(itemTitle)
         textStackView.addArrangedSubview(itemSubtitle)

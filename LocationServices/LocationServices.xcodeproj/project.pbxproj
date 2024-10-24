@@ -386,6 +386,7 @@
 		F18DEEF32C76189300335F3E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F18DEEF22C76189300335F3E /* KeychainSwift */; };
 		F18DEEFC2C7774B500335F3E /* MqttIoTContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEEFB2C7774B500335F3E /* MqttIoTContext.swift */; };
 		F19616BE2AC45E530070172F /* GeofenceDashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19616BD2AC45E530070172F /* GeofenceDashboardViewModelTests.swift */; };
+		F1AD36F82CCA7CA000E1BB7B /* UITestPoliticalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD36F72CCA7C9000E1BB7B /* UITestPoliticalViewScreen.swift */; };
 		F1B2388329EFD402001E2066 /* DirectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2388229EFD402001E2066 /* DirectionViewModelTests.swift */; };
 		F1B2388529F011C5001E2066 /* POICardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2388429F011C5001E2066 /* POICardViewModelTests.swift */; };
 		F1B2388729F01B88001E2066 /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2388629F01B88001E2066 /* AboutViewModelTests.swift */; };
@@ -814,6 +815,7 @@
 		F18DEEEF2C76178A00335F3E /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		F18DEEFB2C7774B500335F3E /* MqttIoTContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MqttIoTContext.swift; sourceTree = "<group>"; };
 		F19616BD2AC45E530070172F /* GeofenceDashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceDashboardViewModelTests.swift; sourceTree = "<group>"; };
+		F1AD36F72CCA7C9000E1BB7B /* UITestPoliticalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestPoliticalViewScreen.swift; sourceTree = "<group>"; };
 		F1B060962AD0209C0020CD8C /* LocationServicesUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationServicesUITests.xctestplan; sourceTree = "<group>"; };
 		F1B2388229EFD402001E2066 /* DirectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionViewModelTests.swift; sourceTree = "<group>"; };
 		F1B2388429F011C5001E2066 /* POICardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POICardViewModelTests.swift; sourceTree = "<group>"; };
@@ -1108,6 +1110,7 @@
 		8A47805529C9BD8E00B098CA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F1AD36F72CCA7C9000E1BB7B /* UITestPoliticalViewScreen.swift */,
 				8A47805829C9BDC800B098CA /* UITestScreen.swift */,
 				8A47805629C9BDA900B098CA /* UITestExploreScreen.swift */,
 				F10994F529D1A908001D3464 /* UITestAWSScreen.swift */,
@@ -3183,6 +3186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AD36F82CCA7CA000E1BB7B /* UITestPoliticalViewScreen.swift in Sources */,
 				8AD0A6E329DDFC9700B79078 /* XCTWaiter+Extension.swift in Sources */,
 				8A063E9F29C9C238001FF40C /* UserDefaultsHelper.swift in Sources */,
 				8A063EA029C9C245001FF40C /* ViewsIdentifiers.swift in Sources */,
