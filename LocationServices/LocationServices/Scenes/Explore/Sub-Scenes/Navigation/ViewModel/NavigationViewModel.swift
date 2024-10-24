@@ -10,7 +10,7 @@ import Foundation
 final class NavigationVCViewModel {
     var delegate: NavigationViewModelOutputDelegate?
     var service: LocationService
-    var steps: [NavigationSteps]
+    var steps: [RouteNavigationStep]
     var presentation: [NavigationPresentation] = []
     private var summaryData: (totalDistance: Double, totalDuration: Double)
     let dispatchGroup = DispatchGroup()
@@ -18,14 +18,14 @@ final class NavigationVCViewModel {
     private(set) var firstDestionation: MapModel?
     private(set) var secondDestionation: MapModel?
     
-    init(service: LocationService, steps: [NavigationSteps], summaryData: (totalDistance: Double, totalDuration: Double), firstDestionation: MapModel?, secondDestionation: MapModel?) {
+    init(service: LocationService, steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestionation: MapModel?, secondDestionation: MapModel?) {
         self.service = service
         self.steps = steps
         self.summaryData = summaryData
         self.firstDestionation = firstDestionation
         self.secondDestionation = secondDestionation
         Task {
-            await fetchStreetNames()
+            await populateNavigationSteps()
         }
     }
 
@@ -42,42 +42,27 @@ final class NavigationVCViewModel {
         }
     }
     
-    private func fetchStreetNames() async {
+    private func populateNavigationSteps() async {
         let manager = PresentationManager()
-
-        await withTaskGroup(of: Void.self) { group in
-            for (id, step) in steps.enumerated() {
-                group.addTask {
-                    let position = step.startPosition
-                    let response = await self.service.searchWithPosition(position: position, userLat: nil, userLong: nil)
-
-                    switch response {
-                    case .success(let results):
-                        guard let result = results.first else { return }
-                        let model = NavigationPresentation(id: id, duration: step.duration.convertSecondsToMinString(), distance: step.distance.convertFormattedKMString(), streetAddress: result.placeLabel ?? "")
-                        await manager.addPresentation(model)
-                    case .failure:
-                        break
-                    }
-                }
-            }
+        for (id, step) in steps.enumerated() {
+            let model = NavigationPresentation(id: id, duration: step.duration.convertSecondsToMinString(), distance: step.distance.formatToKmString(), instruction: step.instruction, stepType: step.type)
+            await manager.addPresentation(model)
         }
-
         let sortedPresentation = await manager.getSortedPresentation()
         self.presentation = sortedPresentation
         self.delegate?.updateResults()
     }
     
-    func update(steps: [NavigationSteps], summaryData: (totalDistance: Double, totalDuration: Double)) {
+    func update(steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double)) {
         self.steps = steps
         self.summaryData = summaryData
         Task {
-            await fetchStreetNames()
+            await populateNavigationSteps()
         }
     }
     
     func getSummaryData() -> (totalDistance: String, totalDuration: String) {
-        return (summaryData.totalDistance.convertFormattedKMString(),
+        return (summaryData.totalDistance.formatToKmString(),
                 summaryData.totalDuration.convertSecondsToMinString())
     }
     
@@ -87,9 +72,9 @@ final class NavigationVCViewModel {
             for i in 0...presentation.count - 1 {
                 let item = presentation[i]
                 if i == presentation.count - 1 {
-                    model.append(NavigationCellModel(model: item, stepType: .last))
+                    model.append(NavigationCellModel(model: item, stepState: .last))
                 } else {
-                    model.append(NavigationCellModel(model: item, stepType: .first))
+                    model.append(NavigationCellModel(model: item, stepState: .first))
                 }
             }
         }

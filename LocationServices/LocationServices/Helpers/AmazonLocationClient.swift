@@ -10,37 +10,8 @@ import AWSLocation
 import SmithyIdentity
 import SmithyIdentityAPI
 import AWSSDKIdentity
-
-public enum HTTPMethod: String {
-    case GET
-    case POST
-    case PUT
-    case DELETE
-}
-
-public struct HTTPHeaders {
-    private var headers: [String: String]
-
-    public init() {
-        headers = [:]
-    }
-
-    mutating func add(name: String, value: String) {
-        headers[name] = value
-    }
-
-    mutating func remove(name: String) {
-        headers.removeValue(forKey: name)
-    }
-
-    func value(forName name: String) -> String? {
-        return headers[name]
-    }
-
-    func allHeaders() -> [String: String] {
-        return headers
-    }
-}
+import AWSGeoPlaces
+import AWSGeoRoutes
 
 public class AmazonLocationClient {
     public let locationProvider: LocationCredentialsProvider
@@ -78,5 +49,21 @@ public extension AmazonLocationClient {
     
     static func defaultApi() -> AmazonLocationClient? {
         return ApiAuthHelper.default().amazonLocationClient
+    }
+    
+    static func defaultApiPlacesClient() -> GeoPlacesClient? {
+        return ApiAuthHelper.default().geoPlacesClient
+    }
+    
+    static func defaultApiRoutesClient() -> GeoRoutesClient? {
+        return ApiAuthHelper.default().geoRoutesClient
+    }
+    
+    static func defaultApiKey() -> String? {
+        return ApiAuthHelper.default().locationCredentialsProvider?.getAPIKey()
+    }
+    
+    static func defaultApiKeyRegion() -> String? {
+        return ApiAuthHelper.default().locationCredentialsProvider?.getRegion()
     }
 }

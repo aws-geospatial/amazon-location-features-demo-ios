@@ -429,24 +429,7 @@ final class DirectionVC: UIViewController {
     }
     
     private func isDistanceValid(departureLoc: CLLocationCoordinate2D, destinationLoc: CLLocationCoordinate2D) -> Bool {
-        let currentMapStyle = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle)
-        switch currentMapStyle?.type {
-        case .esri, .none:
-            let userLocation = CLLocation(location: departureLoc)
-            let placeLocation = CLLocation(location: destinationLoc)
-            
-            let distance = userLocation.distance(from: placeLocation)
-            guard distance < NumberConstants.fourHundredKMInMeters else {
-                DispatchQueue.main.async {
-                    self.directionView.showErrorStackView()
-                    self.tableView.isHidden = true
-                    self.directionView.isHidden = false
-                }
-                return false
-            }
-        case .here:
-            break
-        }
+        //May implement this later if there is limit on distance
         return true
     }
 }
@@ -510,7 +493,7 @@ extension DirectionVC: DirectionViewOutputDelegate {
         let navigationLegs = self.viewModel.getCurrentNavigationLegsWith(type)
         
         switch navigationLegs {
-        case .success(let steps):
+        case .success(let routeLegdetails):
             let routeModel = self.getRouteModel(for: type)
             let sumData = self.viewModel.getSumData(type)
             
@@ -520,7 +503,7 @@ extension DirectionVC: DirectionViewOutputDelegate {
                 }
             }
             
-            let userInfo = ["steps" : (steps: steps, sumData: sumData), "routeModel": routeModel as Any] as [String : Any]
+            let userInfo = ["routeLegdetails" : (routeLegdetails: routeLegdetails, sumData: sumData), "routeModel": routeModel as Any] as [String : Any]
             NotificationCenter.default.post(name: Notification.Name("NavigationSteps"), object: nil, userInfo: userInfo)
         case .failure(let error):
             let alertModel = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)

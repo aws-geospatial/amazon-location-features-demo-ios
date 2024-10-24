@@ -151,7 +151,7 @@ private extension NavigationVC {
     func sendMapViewData() {
         let datas = viewModel.getData()
         if let mapData = datas[safe: 0] {
-            let mapHeaderData = (distance: mapData.distance, street: mapData.streetAddress)
+            let mapHeaderData = (distance: mapData.distance, street: mapData.instruction)
             let summaryData = viewModel.getSummaryData()
             let data: [String: Any] = ["MapViewValues" : mapHeaderData, "SummaryData": summaryData]
             NotificationCenter.default.post(name: Notification.Name("UpdateMapViewValues"), object: nil, userInfo: data)
@@ -163,7 +163,7 @@ private extension NavigationVC {
     }
     
     @objc private func updateNavigationSteps(_ notification: Notification) {
-        guard let datas = notification.userInfo?["steps"] as? (steps: [NavigationSteps], sumData: (totalDistance: Double, totalDuration: Double)) else { return }
+        guard let datas = notification.userInfo?["steps"] as? (steps: [RouteNavigationStep], sumData: (totalDistance: Double, totalDuration: Double)) else { return }
         viewModel.update(steps: datas.steps, summaryData: datas.sumData)
     }
 }
