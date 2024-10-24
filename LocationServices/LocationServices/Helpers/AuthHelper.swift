@@ -7,11 +7,16 @@
 
 import Foundation
 import AwsCommonRuntimeKit
+import AWSGeoPlaces
+import SmithyHTTPAuthAPI
+import AWSGeoRoutes
 
 public class AuthHelper {
 
     private var locationCredentialsProvider: LocationCredentialsProvider?
     private var amazonLocationClient: AmazonLocationClient?
+    private var geoPlacesClient: GeoPlacesClient?
+    private var geoRoutesClient: GeoRoutesClient?
     
     public init() {
     }
@@ -35,12 +40,24 @@ public class AuthHelper {
         return credentialProvider
     }
 
-    public func authenticateWithApiKey(apiKey: String, region: String) -> LocationCredentialsProvider {
+    public func authenticateWithApiKey(apiKey: String, region: String) throws -> LocationCredentialsProvider {
         let credentialProvider = LocationCredentialsProvider(region: region, apiKey: apiKey)
         credentialProvider.setAPIKey(apiKey: apiKey)
         credentialProvider.setRegion(region: region)
         locationCredentialsProvider = credentialProvider
         amazonLocationClient = AmazonLocationClient(locationCredentialsProvider: credentialProvider)
+        
+        let resolver: AuthSchemeResolver = ApiKeyAuthSchemeResolver()
+        let signer = ApiKeySigner()
+        let authScheme: AuthScheme = ApiKeyAuthScheme(signer: signer)
+        let authSchemes: [AuthScheme] = [authScheme]
+
+        let placesConfig = try GeoPlacesClient.Config(region: region, authSchemes: authSchemes, authSchemeResolver: resolver)
+        geoPlacesClient = GeoPlacesClient(config: placesConfig)
+        
+        let routesConfig = try GeoRoutesClient.Config(region: region, authSchemes: authSchemes, authSchemeResolver: resolver)
+        geoRoutesClient = GeoRoutesClient(config: routesConfig)
+        
         return credentialProvider
     }
     
@@ -55,5 +72,15 @@ public class AuthHelper {
     public func getLocationClient() -> AmazonLocationClient?
     {
         return amazonLocationClient
+    }
+    
+    public func getGeoPlacesClient() -> GeoPlacesClient?
+    {
+        return geoPlacesClient
+    }
+    
+    public func getGeoRoutesClient() -> GeoRoutesClient?
+    {
+        return geoRoutesClient
     }
 }
