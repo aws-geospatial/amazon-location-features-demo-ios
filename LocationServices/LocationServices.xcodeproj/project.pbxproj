@@ -1288,14 +1288,7 @@
 		AD16A42029357F2B006AEA8E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F18DEEDD2C75929C00335F3E /* AuthHelper.swift */,
-				F1BA94452C6258F0002FEB51 /* ApiAuthHelper.swift */,
-				F1BA94432C624B63002FEB51 /* CognitoAuthHelper.swift */,
-				F18DEEDF2C7592BB00335F3E /* LocationCredentialsProvider.swift */,
-				F18DEEED2C75F2D300335F3E /* CognitoCredentialsProvider.swift */,
-				F18DEEE12C75932800335F3E /* AmazonLocationCognitoCredentialsProvider.swift */,
-				F18DEEEB2C75F0C800335F3E /* AmazonLocationApiCredentialsProvider.swift */,
-				F1BA943A2C526646002FEB51 /* AmazonLocationClient.swift */,
+				F1AD36F92CCBABC700E1BB7B /* AuthHelpers */,
 				AD16A42129357F38006AEA8E /* UserDefaultsHelper.swift */,
 				8A3CC5EB2968510600A542DC /* DebounceManager.swift */,
 				8AF7D2AA2976B3F700E1563E /* LocationManager.swift */,
@@ -1310,8 +1303,6 @@
 				F1F0C5882A13C19E009C7151 /* GeneralHelper.swift */,
 				F18DEEE32C75942E00335F3E /* CognitoCredentials.swift */,
 				F18DEEE52C75947000335F3E /* Logger.swift */,
-				F18DEEEF2C76178A00335F3E /* KeyChainHelper.swift */,
-				F16C68A22CB959980008515E /* ApiKeyAuthScheme.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2983,6 +2974,23 @@
 				F18DEEFB2C7774B500335F3E /* MqttIoTContext.swift */,
 			);
 			path = iot;
+			sourceTree = "<group>";
+		};
+		F1AD36F92CCBABC700E1BB7B /* AuthHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				F18DEEDD2C75929C00335F3E /* AuthHelper.swift */,
+				F1BA94452C6258F0002FEB51 /* ApiAuthHelper.swift */,
+				F1BA94432C624B63002FEB51 /* CognitoAuthHelper.swift */,
+				F18DEEDF2C7592BB00335F3E /* LocationCredentialsProvider.swift */,
+				F18DEEED2C75F2D300335F3E /* CognitoCredentialsProvider.swift */,
+				F18DEEE12C75932800335F3E /* AmazonLocationCognitoCredentialsProvider.swift */,
+				F18DEEEB2C75F0C800335F3E /* AmazonLocationApiCredentialsProvider.swift */,
+				F1BA943A2C526646002FEB51 /* AmazonLocationClient.swift */,
+				F16C68A22CB959980008515E /* ApiKeyAuthScheme.swift */,
+				F18DEEEF2C76178A00335F3E /* KeyChainHelper.swift */,
+			);
+			path = AuthHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
