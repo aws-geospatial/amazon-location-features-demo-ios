@@ -60,7 +60,7 @@ final class SettingsVC: UIViewController {
         super.viewWillAppear(animated)
         viewModel.loadData()
         updateLogoutButtonVisibility()
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setupNavigationItems() {
