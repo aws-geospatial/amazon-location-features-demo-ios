@@ -51,7 +51,6 @@ let PoliticalViewTypes: [PoliticalViewType] = [
     PoliticalViewType(countryCode: "IND", flagCode: "IN", fullName: "India", politicalDescription: "India's view on Gilgit-Baltistan"),
     PoliticalViewType(countryCode: "KEN", flagCode: "KE", fullName: "Kenya", politicalDescription: "Kenya's view on the Ilemi Triangle"),
     PoliticalViewType(countryCode: "MAR", flagCode: "MA", fullName: "Morocco", politicalDescription: "Morocco's view on Western Sahara"),
-    PoliticalViewType(countryCode: "PAK", flagCode: "PK", fullName: "Pakistan", politicalDescription: "Pakistan's view on Jammu and Kashmir and the Junagadh Area"),
     PoliticalViewType(countryCode: "RUS", flagCode: "RU", fullName: "Russia", politicalDescription: "Russia's view on Crimea"),
     PoliticalViewType(countryCode: "SDN", flagCode: "SD", fullName: "Sudan", politicalDescription: "Sudan's view on the Halaib Triangle"),
     PoliticalViewType(countryCode: "SRB", flagCode: "RS", fullName: "Serbia", politicalDescription: "Serbia's view on Kosovo, Vukovar, and Sarengrad Islands"),
