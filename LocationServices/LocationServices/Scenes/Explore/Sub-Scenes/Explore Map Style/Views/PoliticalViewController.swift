@@ -72,6 +72,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
         selectedIndexPath = nil
         UserDefaultsHelper.removeObject(for: .politicalView)
         tableView.reloadData()
+        NotificationCenter.default.post(name: Notification.refreshMapView, object: nil, userInfo: nil)
     }
     
     override func viewDidLoad() {
