@@ -47,7 +47,6 @@ final class ExploreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.hideKeyboardWhenTappedAround()
         setupHandlers()
         setupNotifications()
         
@@ -61,7 +60,6 @@ final class ExploreVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         exploreView.shouldBottomStackViewPositionUpdate()
-        blurStatusBar()
         setupKeyboardNotifications()
     }
     

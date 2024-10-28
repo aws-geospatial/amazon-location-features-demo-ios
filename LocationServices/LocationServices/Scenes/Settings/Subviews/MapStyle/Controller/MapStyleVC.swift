@@ -148,7 +148,7 @@ final class MapStyleVC: UIViewController {
             $0.top.equalTo(collectionView.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
             if UIDevice.current.userInterfaceIdiom == .pad {
-                $0.width.equalTo(400)
+                $0.width.equalToSuperview().offset(-20)
             }
             else {
                 $0.width.equalToSuperview().offset(-50)
