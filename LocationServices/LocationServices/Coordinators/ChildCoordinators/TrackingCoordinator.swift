@@ -75,7 +75,7 @@ extension TrackingCoordinator: TrackingNavigationDelegate {
         }
         currentBottomSheet?.dismissBottomSheet()
         controller.presentBottomSheet(parentController: trackingController!)
-        controller.enableBottomSheetGrab()
+        controller.setBottomSheetHeight(to: controller.getLargeDetentHeight())
         currentBottomSheet = controller
     }
     
