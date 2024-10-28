@@ -15,15 +15,15 @@ final class NavigationVCViewModel {
     private var summaryData: (totalDistance: Double, totalDuration: Double)
     let dispatchGroup = DispatchGroup()
     
-    private(set) var firstDestionation: MapModel?
-    private(set) var secondDestionation: MapModel?
+    private(set) var firstDestination: MapModel?
+    private(set) var secondDestination: MapModel?
     
-    init(service: LocationService, steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestionation: MapModel?, secondDestionation: MapModel?) {
+    init(service: LocationService, steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) {
         self.service = service
         self.steps = steps
         self.summaryData = summaryData
-        self.firstDestionation = firstDestionation
-        self.secondDestionation = secondDestionation
+        self.firstDestination = firstDestination
+        self.secondDestination = secondDestination
         Task {
             await populateNavigationSteps()
         }

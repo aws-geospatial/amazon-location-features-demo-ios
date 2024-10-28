@@ -140,8 +140,8 @@ extension ExploreVC: ExploreViewOutputDelegate {
     
     func showDirectionView(userLocation: CLLocationCoordinate2D?) {
         delegate?.showDirections(isRouteOptionEnabled: false,
-                                 firstDestionation: nil,
-                                 secondDestionation: nil,
+                                 firstDestination: nil,
+                                 secondDestination: nil,
                                  lat: userLocation?.latitude,
                                  long: userLocation?.longitude)
     }
@@ -411,8 +411,8 @@ extension ExploreVC {
             
             self.delegate?.showNavigationview(steps: datas.routeLegdetails.navigationSteps,
                                               summaryData: datas.sumData,
-                                              firstDestionation: firstDestination,
-                                              secondDestionation: secondDestination)
+                                              firstDestination: firstDestination,
+                                              secondDestination: secondDestination)
         }
     }
     

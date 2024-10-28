@@ -25,13 +25,13 @@ final class NavigationVCViewModelTests: XCTestCase {
     
     func testInitWithValidData() throws {
         let step = RouteNavigationStep(distance: 2, duration: 2, instruction: "continue", type: .continue)
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
-        XCTAssertEqual(navigationVCViewModel.firstDestionation?.placeName, "Times Square", "Expected Times Square place name")
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
+        XCTAssertEqual(navigationVCViewModel.firstDestination?.placeName, "Times Square", "Expected Times Square place name")
     }
 
     func testInitWithEmptySteps() throws {
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
-        XCTAssertEqual(navigationVCViewModel.firstDestionation?.placeName, "Times Square", "Expected Times Square place name")
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
+        XCTAssertEqual(navigationVCViewModel.firstDestination?.placeName, "Times Square", "Expected Times Square place name")
     }
     
     func testInitWithStepsWithoutStreetNames() throws {
@@ -39,13 +39,13 @@ final class NavigationVCViewModelTests: XCTestCase {
         
         let secondDestination = MapModel(placeName: "CUNY Graduate Center", placeAddress: nil, placeLat: 40.7487776237092, placeLong: -73.98404872540857)
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
-        XCTAssertEqual(navigationVCViewModel.firstDestionation?.placeName, "Times Square", "Expected Times Square place name")
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
+        XCTAssertEqual(navigationVCViewModel.firstDestination?.placeName, "Times Square", "Expected Times Square place name")
     }
     
     func testUpdateWithValidData() throws {
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
 
         let step = RouteNavigationStep(distance: 2, duration: 2, instruction: "continue", type: .continue)
         
@@ -56,7 +56,7 @@ final class NavigationVCViewModelTests: XCTestCase {
     
     func testGetSummaryData() throws {
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         
         let step = RouteNavigationStep(distance: 2, duration: 2, instruction: "continue", type: .continue)
         
@@ -67,7 +67,7 @@ final class NavigationVCViewModelTests: XCTestCase {
     
     func testGetDataWithZeroSteps() throws {
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         
         XCTAssertEqual(navigationVCViewModel.getData().count, 0, "Expected get data count")
     }
@@ -76,7 +76,7 @@ final class NavigationVCViewModelTests: XCTestCase {
         
         let step = RouteNavigationStep(distance: 0.01, duration: 2, instruction: "continue", type: .continue)
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         
         XCTAssertEqual(navigationVCViewModel.getData().count, 0, "Expected get data count")
     }
@@ -88,13 +88,13 @@ final class NavigationVCViewModelTests: XCTestCase {
         
         let step2 = RouteNavigationStep(distance: 0.02, duration: 5, instruction: "continue", type: .continue)
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step1, step2], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step1, step2], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         
         XCTAssertEqual(navigationVCViewModel.getData().count, 0, "Expected get data count")
     }
     
     func testGetItemCountWithZeroSteps() throws {
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         
         XCTAssertEqual(navigationVCViewModel.getItemCount(), 0, "Expected get item count")
     }
@@ -105,7 +105,7 @@ final class NavigationVCViewModelTests: XCTestCase {
         
         let step2 = RouteNavigationStep(distance: 0.02, duration: 5, instruction: "continue", type: .continue)
         
-        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step1, step2], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestionation: firstDestination, secondDestionation: secondDestination)
+        let navigationVCViewModel = NavigationVCViewModel(service: LocationService(), steps: [step1, step2], summaryData: (totalDistance: 0.7, totalDuration: 15), firstDestination: firstDestination, secondDestination: secondDestination)
         XCTAssertEqual(navigationVCViewModel.getItemCount(), 0, "Expected get item count")
     }
     
