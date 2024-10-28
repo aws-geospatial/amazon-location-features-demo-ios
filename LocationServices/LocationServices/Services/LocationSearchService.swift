@@ -56,7 +56,7 @@ extension AWSLocationSearchService {
             biasPosition = [AppConstants.amazonHqMapPosition.longitude, AppConstants.amazonHqMapPosition.latitude]
         }
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = SuggestInput(biasPosition: biasPosition, key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
+        let input = SuggestInput(additionalFeatures: [.sdkUnknown("Core")], biasPosition: biasPosition, key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
         if let client = AmazonLocationClient.defaultApiPlacesClient() {
             let result = try await client.suggest(input: input)
             return result
