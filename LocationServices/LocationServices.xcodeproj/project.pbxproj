@@ -47,7 +47,6 @@
 		8A47805929C9BDC800B098CA /* UITestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47805829C9BDC800B098CA /* UITestScreen.swift */; };
 		8A4D5FB329D6F64A00A79D3C /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D5FB229D6F64A00A79D3C /* SettingsUITests.swift */; };
 		8A4D5FB529D6FA5000A79D3C /* UITestSettingsMapStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D5FB429D6FA5000A79D3C /* UITestSettingsMapStyleScreen.swift */; };
-		8A4D5FB729D719AE00A79D3C /* UITestSettingsDataProviderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D5FB629D719AE00A79D3C /* UITestSettingsDataProviderScreen.swift */; };
 		8A4EE62E29D4B0EE00B699A9 /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4EE62D29D4B0EE00B699A9 /* NavigationUITests.swift */; };
 		8A4EE63029D4B45D00B699A9 /* UITestRouteOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4EE62F29D4B45D00B699A9 /* UITestRouteOptionsScreen.swift */; };
 		8A50572329A0329B0047A203 /* AuthActionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50572229A0329B0047A203 /* AuthActionsHelper.swift */; };
@@ -110,7 +109,7 @@
 		8AFBAFDA296F002A0022A7E3 /* RouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBAFD9296F002A0022A7E3 /* RouteModel.swift */; };
 		8AFBAFDC296F13F40022A7E3 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBAFDB296F13F40022A7E3 /* CLLocationCoordinate2D+Extension.swift */; };
 		8AFBAFDE296F14A30022A7E3 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBAFDD296F14A30022A7E3 /* CLLocation+Extension.swift */; };
-		8AFBAFE0296F19BC0022A7E3 /* RoputeTravelMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBAFDF296F19BC0022A7E3 /* RoputeTravelMode+Extension.swift */; };
+		8AFBAFE0296F19BC0022A7E3 /* RouteTravelMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBAFDF296F19BC0022A7E3 /* RouteTravelMode+Extension.swift */; };
 		8AFDA09429DDBB3600114BB7 /* VersionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDA09329DDBB3600114BB7 /* VersionVC.swift */; };
 		8AFDA09629DDBC3800114BB7 /* VersionVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDA09529DDBC3800114BB7 /* VersionVCBuilder.swift */; };
 		963EBF5229AF92F7001961F2 /* LocationServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EBF5129AF92F7001961F2 /* LocationServicesTests.swift */; };
@@ -476,7 +475,6 @@
 		8A47805829C9BDC800B098CA /* UITestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestScreen.swift; sourceTree = "<group>"; };
 		8A4D5FB229D6F64A00A79D3C /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		8A4D5FB429D6FA5000A79D3C /* UITestSettingsMapStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestSettingsMapStyleScreen.swift; sourceTree = "<group>"; };
-		8A4D5FB629D719AE00A79D3C /* UITestSettingsDataProviderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestSettingsDataProviderScreen.swift; sourceTree = "<group>"; };
 		8A4EE62D29D4B0EE00B699A9 /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		8A4EE62F29D4B45D00B699A9 /* UITestRouteOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestRouteOptionsScreen.swift; sourceTree = "<group>"; };
 		8A50572229A0329B0047A203 /* AuthActionsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthActionsHelper.swift; sourceTree = "<group>"; };
@@ -541,7 +539,7 @@
 		8AFBAFD9296F002A0022A7E3 /* RouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModel.swift; sourceTree = "<group>"; };
 		8AFBAFDB296F13F40022A7E3 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		8AFBAFDD296F14A30022A7E3 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
-		8AFBAFDF296F19BC0022A7E3 /* RoputeTravelMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoputeTravelMode+Extension.swift"; sourceTree = "<group>"; };
+		8AFBAFDF296F19BC0022A7E3 /* RouteTravelMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouteTravelMode+Extension.swift"; sourceTree = "<group>"; };
 		8AFDA09329DDBB3600114BB7 /* VersionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionVC.swift; sourceTree = "<group>"; };
 		8AFDA09529DDBC3800114BB7 /* VersionVCBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionVCBuilder.swift; sourceTree = "<group>"; };
 		963EBF4F29AF92F5001961F2 /* LocationServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1125,7 +1123,6 @@
 				F166819D29D3230B00FBD27C /* UITestTrackingScreen.swift */,
 				F166819F29D323B200FBD27C /* UITestGeofenceScreen.swift */,
 				8A4EE62F29D4B45D00B699A9 /* UITestRouteOptionsScreen.swift */,
-				8A4D5FB629D719AE00A79D3C /* UITestSettingsDataProviderScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -2894,7 +2891,7 @@
 				8AFBAFDB296F13F40022A7E3 /* CLLocationCoordinate2D+Extension.swift */,
 				8AFBAFDD296F14A30022A7E3 /* CLLocation+Extension.swift */,
 				ADC1249D2979BB8300B08C20 /* Notificaton+Extension.swift */,
-				8AFBAFDF296F19BC0022A7E3 /* RoputeTravelMode+Extension.swift */,
+				8AFBAFDF296F19BC0022A7E3 /* RouteTravelMode+Extension.swift */,
 				8A3471CB2975D30B00BAF374 /* Locale+Extension.swift */,
 				8A76327B297EAE270064D60F /* MLNMapViewDelegate+Extension.swift */,
 				ADB0B187299221A800282814 /* Date+Extension.swift */,
@@ -3224,7 +3221,6 @@
 				F16681A029D323B200FBD27C /* UITestGeofenceScreen.swift in Sources */,
 				8A4D5FB329D6F64A00A79D3C /* SettingsUITests.swift in Sources */,
 				8AD67F9C29D1D594004A5F7D /* UITestRoutingScreen.swift in Sources */,
-				8A4D5FB729D719AE00A79D3C /* UITestSettingsDataProviderScreen.swift in Sources */,
 				F166819C29D3218D00FBD27C /* UITestTabBarScreen.swift in Sources */,
 				8AD67FA029D1E39C004A5F7D /* UITestRouteType.swift in Sources */,
 				8AD67FA229D1E5B3004A5F7D /* UITestNavigationScreen.swift in Sources */,
@@ -3455,7 +3451,7 @@
 				AD33F4B92950F42A005719D3 /* DirectionViewModel.swift in Sources */,
 				AD625EAE293CDFA900C67B44 /* NetworkCore.swift in Sources */,
 				ADD1394A298069F50003F917 /* SettingVC+TableView.swift in Sources */,
-				8AFBAFE0296F19BC0022A7E3 /* RoputeTravelMode+Extension.swift in Sources */,
+				8AFBAFE0296F19BC0022A7E3 /* RouteTravelMode+Extension.swift in Sources */,
 				F18DEEE22C75932800335F3E /* AmazonLocationCognitoCredentialsProvider.swift in Sources */,
 				8A439F0429C0A7D900B59D0B /* WelcomeVC.swift in Sources */,
 				8A1110D6297AB20300BC86E1 /* LSFaux3DUserLocationAnnotationView.swift in Sources */,
@@ -3692,7 +3688,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aws.amazonlocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeen.location.LocationServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3959,7 +3955,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aws.amazonlocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeen.location.LocationServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -3994,7 +3990,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aws.amazonlocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makeen.location.LocationServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

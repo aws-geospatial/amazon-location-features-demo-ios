@@ -83,15 +83,15 @@ final class NavigationVC: UIViewController {
     @objc private func closeScreen() {
         var lat: Double? = nil
         var long: Double? = nil
-        if viewModel.firstDestionation?.placeName == StringConstant.myLocation {
-            lat = viewModel.firstDestionation?.placeLat
-            long = viewModel.firstDestionation?.placeLong
-        } else if viewModel.secondDestionation?.placeName == StringConstant.myLocation {
-            lat = viewModel.secondDestionation?.placeLat
-            long = viewModel.secondDestionation?.placeLong
+        if viewModel.firstDestination?.placeName == StringConstant.myLocation {
+            lat = viewModel.firstDestination?.placeLat
+            long = viewModel.firstDestination?.placeLong
+        } else if viewModel.secondDestination?.placeName == StringConstant.myLocation {
+            lat = viewModel.secondDestination?.placeLat
+            long = viewModel.secondDestination?.placeLong
         }
         
-        delegate?.showDirections(isRouteOptionEnabled: true, firstDestionation: viewModel.firstDestionation, secondDestionation: viewModel.secondDestionation, lat: lat, long: long)
+        delegate?.showDirections(isRouteOptionEnabled: true, firstDestination: viewModel.firstDestination, secondDestination: viewModel.secondDestination, lat: lat, long: long)
         delegate?.closeNavigationScene()
     }
     
