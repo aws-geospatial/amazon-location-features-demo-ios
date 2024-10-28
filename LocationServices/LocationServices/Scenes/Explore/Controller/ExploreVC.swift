@@ -47,7 +47,6 @@ final class ExploreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.hideKeyboardWhenTappedAround()
         setupHandlers()
         setupNotifications()
         
