@@ -437,9 +437,6 @@ final class ExploreView: UIView, NavigationMapProtocol {
     func setupMapView() {
         DispatchQueue.main.async { [self] in
             mapView.styleURL = DefaultMapStyles.getMapStyleUrl()
-            // it is just to force to redraw the mapView
-            mapView.zoomLevel = mapView.zoomLevel + 0.01
-            
             locateMeAction(force: true)
             mapView.showsUserLocation = true
             mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendering
@@ -488,21 +485,6 @@ final class ExploreView: UIView, NavigationMapProtocol {
         let mapLayerBottomOffset = Constants.mapLayerBottomOffset + additionalBottomOffset
         setupBottomStack(bottomStackOffset: mapLayerBottomOffset)
     }
-    
-//    func setupAmazonLogo(leadingOffset: CGFloat?, bottomOffset: CGFloat?) {
-//        let leadingOffset = leadingOffset ?? Constant.defaultHorizontalOffset
-//        let bottomOffset = bottomOffset ?? Constant.amazonLogoBottomOffset
-//        amazonMapLogo.snp.remakeConstraints {
-//            $0.leading.equalToSuperview().offset(leadingOffset)
-//            if isiPad {
-//                $0.bottom.equalTo(safeAreaLayoutGuide).offset(bottomOffset)
-//            } else {
-//                $0.bottom.equalTo(searchBarView.snp.top).offset(bottomOffset)
-//            }
-//            $0.height.equalTo(Constant.amazonLogoHeight)
-//            $0.width.equalTo(Constant.amazonLogoWidth)
-//        }
-//    }
     
     func setupAmazonLogo(bottomOffset: CGFloat?) {
         
