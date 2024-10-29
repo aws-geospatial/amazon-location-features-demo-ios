@@ -24,8 +24,8 @@ final class DirectionVC: UIViewController {
     var isInSplitViewController: Bool = false
     var dismissHandler: VoidHandler?
     var isRoutingOptionsEnabled: Bool = false
-    var firstDestionation: DirectionTextFieldModel?
-    var secondDestionation: DirectionTextFieldModel?
+    var firstDestination: DirectionTextFieldModel?
+    var secondDestination: DirectionTextFieldModel?
     var isInitalState: Bool = true
     var userLocation: (lat: Double?, long: Double?)? {
         didSet {
@@ -80,7 +80,7 @@ final class DirectionVC: UIViewController {
         applyStyles()
         viewModel.loadLocalOptions()
         
-        if firstDestionation?.placeName == "My Location" {
+        if firstDestination?.placeName == "My Location" {
             directionSearchView.setMyLocationText()
         }
         locationManagerSetup()
@@ -93,7 +93,7 @@ final class DirectionVC: UIViewController {
         if isRoutingOptionsEnabled {
             sheetPresentationController?.selectedDetentIdentifier = Constants.mediumId
         } else {
-            let isDestination = firstDestionation?.placeName != nil
+            let isDestination = firstDestination?.placeName != nil
             directionSearchView.becomeFirstResponder(isDestination: isDestination)
         }
     }
@@ -143,16 +143,16 @@ final class DirectionVC: UIViewController {
             // Delete my location value and restore My location text
             if model.searchText == "" {
                 if model.isDestination {
-                    self?.secondDestionation = DirectionTextFieldModel(placeName: "",
+                    self?.secondDestination = DirectionTextFieldModel(placeName: "",
                                                                       placeAddress: nil,
                                                                       lat: nil, long: nil)
                 } else {
-                    self?.firstDestionation = DirectionTextFieldModel(placeName: "",
+                    self?.firstDestination = DirectionTextFieldModel(placeName: "",
                                                                       placeAddress: nil,
                                                                       lat: nil, long: nil)
                 }
                 
-                if self?.firstDestionation?.placeName != "My Location"  && self?.secondDestionation?.placeName != "My Location" {
+                if self?.firstDestination?.placeName != "My Location"  && self?.secondDestination?.placeName != "My Location" {
                     self?.viewModel.addMyLocationItem()
                 }
             }
@@ -216,10 +216,10 @@ final class DirectionVC: UIViewController {
         
         let currentLocation = DirectionTextFieldModel(placeName: "My Location", placeAddress: nil, lat: self.userLocation?.lat, long: self.userLocation?.long)
         
-        if firstDestionation?.placeName == "My Location" {
-            firstDestionation = currentLocation
-        } else if secondDestionation?.placeName == "My Location" {
-            secondDestionation = currentLocation
+        if firstDestination?.placeName == "My Location" {
+            firstDestination = currentLocation
+        } else if secondDestination?.placeName == "My Location" {
+            secondDestination = currentLocation
         }
         Task {
             try await calculateRoute()
@@ -227,8 +227,8 @@ final class DirectionVC: UIViewController {
     }
     
     private func setupViews() {
-        directionSearchView.changeSearchRouteName(with: firstDestionation?.placeName, isDestination: false)
-        directionSearchView.changeSearchRouteName(with: secondDestionation?.placeName, isDestination: true)
+        directionSearchView.changeSearchRouteName(with: firstDestination?.placeName, isDestination: false)
+        directionSearchView.changeSearchRouteName(with: secondDestination?.placeName, isDestination: true)
         //let scrollView = UIScrollView()
         
         self.view.addSubview(directionSearchView)
@@ -275,13 +275,13 @@ final class DirectionVC: UIViewController {
         
         let currentModel = SearchCellViewModel(searchType: .location,
                                                placeId: nil,
-                                               locationName: secondDestionation?.placeName,
+                                               locationName: secondDestination?.placeName,
                                                locationDistance: nil,
                                                locationCountry: nil,
                                                locationCity: nil,
                                                label: nil,
-                                               long: secondDestionation?.long,
-                                               lat: secondDestionation?.lat)
+                                               long: secondDestination?.long,
+                                               lat: secondDestination?.lat)
         try await calculateGenericRoute(currentModel: currentModel,
                               routeType: routeType,
                               avoidFerries: avoidFerries,
@@ -289,8 +289,8 @@ final class DirectionVC: UIViewController {
     }
     
     func setupSearchTitleDestinations() {
-        self.directionSearchView.changeSearchRouteName(with: firstDestionation?.placeName ?? "", isDestination: false)
-        self.directionSearchView.changeSearchRouteName(with: secondDestionation?.placeName ?? "", isDestination: true)
+        self.directionSearchView.changeSearchRouteName(with: firstDestination?.placeName ?? "", isDestination: false)
+        self.directionSearchView.changeSearchRouteName(with: secondDestination?.placeName ?? "", isDestination: true)
     }
     
     func calculateGenericRoute(currentModel: SearchCellViewModel, routeType: RouteTypes = .car, avoidFerries: Bool = false, avoidTolls: Bool = false) async throws {
@@ -307,7 +307,7 @@ final class DirectionVC: UIViewController {
             self.tableView.isHidden = true
             self.directionView.isHidden = false
             
-            let isPreview = self.firstDestionation?.placeName != "My Location"
+            let isPreview = self.firstDestination?.placeName != "My Location"
             self.directionView.setup(model: directionVM, isPreview: isPreview)
             DispatchQueue.main.async {
                 self.directionView.showOptionsStackView()
@@ -324,43 +324,43 @@ final class DirectionVC: UIViewController {
     }
     
     private func updateMyLocationDestination() {
-        if firstDestionation?.placeName == "My Location" {
-            firstDestionation?.lat = userLocation?.lat
-            firstDestionation?.long = userLocation?.long
-        } else if secondDestionation?.placeName == "My Location" {
-            secondDestionation?.lat = userLocation?.lat
-            secondDestionation?.long = userLocation?.long
+        if firstDestination?.placeName == "My Location" {
+            firstDestination?.lat = userLocation?.lat
+            firstDestination?.long = userLocation?.long
+        } else if secondDestination?.placeName == "My Location" {
+            secondDestination?.lat = userLocation?.lat
+            secondDestination?.long = userLocation?.long
         }
     }
     
     private func getRouteLocations(currentModel: SearchCellViewModel) -> (departure: CLLocationCoordinate2D, destination: CLLocationCoordinate2D)? {
         updateMyLocationDestination()
-        if let departureLat = firstDestionation?.lat,
-           let departureLong = firstDestionation?.long,
-           let destionationLat = secondDestionation?.lat,
-           let destinationLong = secondDestionation?.long {
+        if let departureLat = firstDestination?.lat,
+           let departureLong = firstDestination?.long,
+           let destinationLat = secondDestination?.lat,
+           let destinationLong = secondDestination?.long {
             
             let departureLoc = CLLocationCoordinate2D(latitude: departureLat, longitude: departureLong)
-            let destionationLoc = CLLocationCoordinate2D(latitude: destionationLat, longitude: destinationLong)
+            let destinationLoc = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
             
-            return (departureLoc, destionationLoc)
+            return (departureLoc, destinationLoc)
         } else {
             guard let userLat = userLocation?.long,
                   let userlong = userLocation?.lat,
-                  let destionationLat = currentModel.lat,
+                  let destinationLat = currentModel.lat,
                   let destinationLong = currentModel.long else {
                 return nil
             }
             let userLoc = CLLocationCoordinate2D(latitude: userLat, longitude: userlong)
-            let secondDestination = CLLocationCoordinate2D(latitude: destionationLat, longitude: destinationLong)
+            let secondDestinationCoordinates = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
             
-            let isStartFromCurrentLocation = firstDestionation?.placeName == "My Location"
-            let isEndWithCurrentLocation = secondDestionation?.placeName == "My Location"
+            let isStartFromCurrentLocation = firstDestination?.placeName == "My Location"
+            let isEndWithCurrentLocation = secondDestination?.placeName == "My Location"
             
             if isStartFromCurrentLocation {
-                return (userLoc, secondDestination)
+                return (userLoc, secondDestinationCoordinates)
             } else if isEndWithCurrentLocation {
-                return (secondDestination, userLoc)
+                return (secondDestinationCoordinates, userLoc)
             } else {
                 return nil
             }
@@ -370,13 +370,13 @@ final class DirectionVC: UIViewController {
     func calculateRoute() async throws  {
         updateMyLocationDestination()
         
-        if let departureLat = firstDestionation?.lat, let departureLong = firstDestionation?.long, let destionationLat = secondDestionation?.lat, let destinationLong = secondDestionation?.long {
+        if let departureLat = firstDestination?.lat, let departureLong = firstDestination?.long, let destinationLat = secondDestination?.lat, let destinationLong = secondDestination?.long {
             
             let departureLoc = CLLocationCoordinate2D(latitude: departureLat, longitude: departureLong)
-            let destionationLoc = CLLocationCoordinate2D(latitude: destionationLat, longitude: destinationLong)
+            let destinationLoc = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
             
-            guard isDistanceValid(departureLoc: departureLoc, destinationLoc: destionationLoc) else { return }
-            if let (data, directionVM) = try await viewModel.calculateRouteWith(destinationPosition: destionationLoc, departurePosition: departureLoc, avoidFerries: viewModel.avoidFerries, avoidTolls: viewModel.avoidTolls) {
+            guard isDistanceValid(departureLoc: departureLoc, destinationLoc: destinationLoc) else { return }
+            if let (data, directionVM) = try await viewModel.calculateRouteWith(destinationPosition: destinationLoc, departurePosition: departureLoc, avoidFerries: viewModel.avoidFerries, avoidTolls: viewModel.avoidTolls) {
                 
                 self.tableView.isHidden = true
                 self.directionView.isHidden = false
@@ -385,12 +385,12 @@ final class DirectionVC: UIViewController {
                     self.directionView.showOptionsStackView()
                 }
                 
-                let isPreview = self.firstDestionation?.placeName != "My Location"
+                let isPreview = self.firstDestination?.placeName != "My Location"
                 self.directionView.setup(model: directionVM, isPreview: isPreview)
                 
                 self.sendDirectionsToExploreVC(data: data,
                                                departureLocation: departureLoc,
-                                               destinationLocation: destionationLoc, routeType: .car)
+                                               destinationLocation: destinationLoc, routeType: .car)
             }
         }
     }
@@ -398,15 +398,15 @@ final class DirectionVC: UIViewController {
     private func getRouteModel(for type: RouteTypes) -> RouteModel? {
         updateMyLocationDestination()
         
-        let departureLat = firstDestionation?.lat
-        let departureLong = firstDestionation?.long
-        let departurePlaceName = firstDestionation?.placeName
-        let departurePlaceAddress = firstDestionation?.placeAddress
+        let departureLat = firstDestination?.lat
+        let departureLong = firstDestination?.long
+        let departurePlaceName = firstDestination?.placeName
+        let departurePlaceAddress = firstDestination?.placeAddress
         
-        let destinationLat = secondDestionation?.lat
-        let destinationLong = secondDestionation?.long
-        let destinationPlaceName = secondDestionation?.placeName
-        let destinationPlaceAddress = secondDestionation?.placeAddress
+        let destinationLat = secondDestination?.lat
+        let destinationLong = secondDestination?.long
+        let destinationPlaceName = secondDestination?.placeName
+        let destinationPlaceAddress = secondDestination?.placeAddress
         
         guard let departureLat,
               let departureLong,
@@ -416,37 +416,20 @@ final class DirectionVC: UIViewController {
         }
         
         let departureLoc = CLLocationCoordinate2D(latitude: departureLat, longitude: departureLong)
-        let destionationLoc = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
+        let destinationLoc = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
         
         let avoidFerries = viewModel.avoidFerries
         let avoidToll = viewModel.avoidTolls
         
         let isPreview = departurePlaceName != "My Location"
         
-        let routeModel = RouteModel(departurePosition: departureLoc, destinationPosition: destionationLoc, travelMode: type, avoidFerries: avoidFerries, avoidTolls: avoidToll, isPreview: isPreview, departurePlaceName: departurePlaceName, departurePlaceAddress: departurePlaceAddress, destinationPlaceName: destinationPlaceName, destinationPlaceAddress: destinationPlaceAddress)
+        let routeModel = RouteModel(departurePosition: departureLoc, destinationPosition: destinationLoc, travelMode: type, avoidFerries: avoidFerries, avoidTolls: avoidToll, isPreview: isPreview, departurePlaceName: departurePlaceName, departurePlaceAddress: departurePlaceAddress, destinationPlaceName: destinationPlaceName, destinationPlaceAddress: destinationPlaceAddress)
         
         return routeModel
     }
     
     private func isDistanceValid(departureLoc: CLLocationCoordinate2D, destinationLoc: CLLocationCoordinate2D) -> Bool {
-        let currentMapStyle = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle)
-        switch currentMapStyle?.type {
-        case .esri, .none:
-            let userLocation = CLLocation(location: departureLoc)
-            let placeLocation = CLLocation(location: destinationLoc)
-            
-            let distance = userLocation.distance(from: placeLocation)
-            guard distance < NumberConstants.fourHundredKMInMeters else {
-                DispatchQueue.main.async {
-                    self.directionView.showErrorStackView()
-                    self.tableView.isHidden = true
-                    self.directionView.isHidden = false
-                }
-                return false
-            }
-        case .here:
-            break
-        }
+        //May implement this later if there is limit on distance
         return true
     }
 }
@@ -472,9 +455,9 @@ extension DirectionVC: DirectionViewModelOutputDelegate {
             let searchTextModel = DirectionTextFieldModel(placeName: currentModel.locationName ?? "", placeAddress: model.placeAddress, lat: currentModel.lat, long: currentModel.long)
             
             if self.isDestination  {
-                secondDestionation = searchTextModel
+                secondDestination = searchTextModel
             } else {
-                firstDestionation = searchTextModel
+                firstDestination = searchTextModel
             }
             try await calculateGenericRoute(currentModel: currentModel, avoidFerries: viewModel.avoidFerries, avoidTolls: viewModel.avoidTolls)
             DispatchQueue.main.async {
@@ -501,7 +484,7 @@ extension DirectionVC: DirectionViewModelOutputDelegate {
     }
     
     func isMyLocationAlreadySelected() -> Bool {
-        return [firstDestionation, secondDestionation].contains(where: { $0?.placeName == "My Location" })
+        return [firstDestination, secondDestination].contains(where: { $0?.placeName == "My Location" })
     }
 }
 
@@ -510,7 +493,7 @@ extension DirectionVC: DirectionViewOutputDelegate {
         let navigationLegs = self.viewModel.getCurrentNavigationLegsWith(type)
         
         switch navigationLegs {
-        case .success(let steps):
+        case .success(let routeLegdetails):
             let routeModel = self.getRouteModel(for: type)
             let sumData = self.viewModel.getSumData(type)
             
@@ -520,7 +503,7 @@ extension DirectionVC: DirectionViewOutputDelegate {
                 }
             }
             
-            let userInfo = ["steps" : (steps: steps, sumData: sumData), "routeModel": routeModel as Any] as [String : Any]
+            let userInfo = ["routeLegdetails" : (routeLegdetails: routeLegdetails, sumData: sumData), "routeModel": routeModel as Any] as [String : Any]
             NotificationCenter.default.post(name: Notification.Name("NavigationSteps"), object: nil, userInfo: userInfo)
         case .failure(let error):
             let alertModel = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)
@@ -540,7 +523,7 @@ extension DirectionVC: DirectionSearchViewOutputDelegate {
     }
     
     func swapLocations() async throws {
-        (firstDestionation, secondDestionation) = (secondDestionation, firstDestionation)
+        (firstDestination, secondDestination) = (secondDestination, firstDestination)
         try await calculateRoute()
     }
 }

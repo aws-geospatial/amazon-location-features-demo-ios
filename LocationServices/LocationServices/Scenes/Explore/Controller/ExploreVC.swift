@@ -47,7 +47,6 @@ final class ExploreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.hideKeyboardWhenTappedAround()
         setupHandlers()
         setupNotifications()
         
@@ -61,7 +60,6 @@ final class ExploreVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         exploreView.shouldBottomStackViewPositionUpdate()
-        blurStatusBar()
         setupKeyboardNotifications()
     }
     
@@ -135,15 +133,15 @@ extension ExploreVC: ExploreViewOutputDelegate {
         delegate?.showMapStyles()
     }
     
-    func showNavigationView(steps: [NavigationSteps]) {
+    func showNavigationView(steps: [RouteNavigationStep]) {
         
     }
     
     
     func showDirectionView(userLocation: CLLocationCoordinate2D?) {
         delegate?.showDirections(isRouteOptionEnabled: false,
-                                 firstDestionation: nil,
-                                 secondDestionation: nil,
+                                 firstDestination: nil,
+                                 secondDestination: nil,
                                  lat: userLocation?.latitude,
                                  long: userLocation?.longitude)
     }
@@ -397,7 +395,7 @@ extension ExploreVC {
     }
     
     @objc private func showNavigationScene(_ notification: Notification) {
-        if let datas = notification.userInfo?["steps"] as? (steps: [NavigationSteps], sumData: (totalDistance: Double, totalDuration: Double)),
+        if let datas = notification.userInfo?["routeLegdetails"] as? (routeLegdetails: RouteLegDetails, sumData: (totalDistance: Double, totalDuration: Double)),
         let routeModel = notification.userInfo?["routeModel"] as? RouteModel {
             viewModel.activateRoute(route: routeModel)
             if !routeModel.isPreview {
@@ -411,10 +409,10 @@ extension ExploreVC {
             let firstDestination = MapModel(placeName: routeModel.departurePlaceName, placeAddress: routeModel.departurePlaceAddress, placeLat: routeModel.departurePosition.latitude, placeLong: routeModel.departurePosition.longitude)
             let secondDestination = MapModel(placeName: routeModel.destinationPlaceName, placeAddress: routeModel.destinationPlaceAddress, placeLat: routeModel.destinationPosition.latitude, placeLong: routeModel.destinationPosition.longitude)
             
-            self.delegate?.showNavigationview(steps: datas.steps,
+            self.delegate?.showNavigationview(steps: datas.routeLegdetails.navigationSteps,
                                               summaryData: datas.sumData,
-                                              firstDestionation: firstDestination,
-                                              secondDestionation: secondDestination)
+                                              firstDestination: firstDestination,
+                                              secondDestination: secondDestination)
         }
     }
     
@@ -504,7 +502,7 @@ extension ExploreVC: CLLocationManagerDelegate {
     }
     
     func routeReCalculated(route: DirectionPresentation, departureLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D, routeType: RouteTypes) {
-        let steps = route.navigationSteps
+        let steps = route.routeLegDetails?.navigationSteps
         let sumData = (route.distance, route.duration)
         
         let userInfo = ["steps": (steps: steps, sumData: sumData)]

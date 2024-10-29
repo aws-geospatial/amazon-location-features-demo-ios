@@ -60,7 +60,6 @@ final class ExploreView: UIView, NavigationMapProtocol {
     private var wasCenteredByUserLocation = false
     private var searchDatas: [MapModel] = []
     
-    private var signingDelegate: MLNOfflineStorageDelegate?
     private var containerView: UIView = UIView()
     
     let searchBarView: SearchBarView = SearchBarView(becomeFirstResponder: true)
@@ -320,7 +319,7 @@ final class ExploreView: UIView, NavigationMapProtocol {
             
             let isDashedLine: Bool
             switch routeType {
-            case .walking:
+            case .pedestrian:
                 isDashedLine = true
             case .car, .truck:
                 isDashedLine = false
@@ -436,30 +435,16 @@ final class ExploreView: UIView, NavigationMapProtocol {
     }
     
     func setupMapView() {
-        let identityPoolId: String
-        if let customModel = UserDefaultsHelper.getObject(value: CustomConnectionModel.self, key: .awsConnect) {
-            identityPoolId = customModel.identityPoolId
-        } else {
-            identityPoolId = Bundle.main.object(forInfoDictionaryKey: Constants.dictinaryKeyIdentityPoolId) as! String
-        }
-        
-        let regionName = identityPoolId.toRegionString()
-        let mapName = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle)
-
         DispatchQueue.main.async { [self] in
-            signingDelegate = AWSSignatureV4Delegate(region: regionName)
-            MLNOfflineStorage.shared.delegate = signingDelegate
-            mapView.styleURL = URL(string: "https://maps.geo.\(regionName).amazonaws.com/maps/v0/maps/\(mapName?.imageType.mapName ?? "EsriLight")/style-descriptor")
+            mapView.styleURL = DefaultMapStyles.getMapStyleUrl()
+            // it is just to force to redraw the mapView
+            mapView.zoomLevel = mapView.zoomLevel + 0.01
+            
+            locateMeAction(force: true)
+            mapView.showsUserLocation = true
+            mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendering
+            amazonMapLogo.tintColor = GeneralHelper.getAmazonMapLogo()
         }
-        
-        mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendering
-
-        
-        // it is just to force to redraw the mapView
-        mapView.zoomLevel = mapView.zoomLevel + 0.01
-        amazonMapLogo.tintColor = GeneralHelper.getAmazonMapLogo(mapImageType: mapName?.imageType)
-        mapView.showsUserLocation = true
-        locateMeAction(force: true)
     }
     
     func setupTapGesture() {
