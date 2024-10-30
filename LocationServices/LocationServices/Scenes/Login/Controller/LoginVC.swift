@@ -426,10 +426,8 @@ extension LoginVC: LoginViewModelOutputDelegate {
     }
     
     func loginCompleted() {
-        // TODO: investigate crash cause
-        //NotificationCenter.default.post(name: Notification.refreshMapView, object: nil, userInfo: nil)
-        
         DispatchQueue.main.async{
+            self.dismissHandler?()
             self.setup()
             self.updateAccordingToAppState()
         }
