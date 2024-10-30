@@ -75,6 +75,11 @@ extension SettingsViewModel: AWSLoginServiceOutputProtocol {
     }
     
     func loginResult(_ result: Result<Void, Error>) {
-        print("Logged in")
+        switch result {
+        case .success():
+            print("Logged in")
+        case .failure(let error):
+            print("Logged in failure")
+        }
     }
 }

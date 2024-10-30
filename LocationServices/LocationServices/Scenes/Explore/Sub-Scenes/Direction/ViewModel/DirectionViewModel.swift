@@ -195,11 +195,11 @@ final class DirectionViewModel: DirectionViewModelProtocol {
         }
     }
     
-    func getCurrentNavigationLegsWith(_ type: RouteTypes) -> Result<RouteLegDetails, Error> {
+    func getCurrentNavigationLegsWith(_ type: RouteTypes) -> Result<[RouteLegDetails]?, Error> {
         let currentModel = getModel(for: type)
         switch currentModel {
         case .success(let presentation):
-            return .success(presentation.routeLegDetails!)
+            return .success(presentation.routeLegDetails)
         case .failure(let error):
             return .failure(error)
         case .none:
@@ -221,7 +221,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
                             departurePosition: CLLocationCoordinate2D,
                             travelMode: RouteTypes = .car,
                             avoidFerries: Bool = false,
-                            avoidTolls: Bool = false) async throws -> (Data, DirectionVM)? {
+                            avoidTolls: Bool = false) async throws -> ([Data], DirectionVM)? {
         defaultTravelMode = [:]
         selectedTravelMode = travelMode
         self.avoidFerries = avoidFerries
@@ -259,8 +259,14 @@ final class DirectionViewModel: DirectionViewModelProtocol {
             case .success(let travelMode):
                 let encoder = JSONEncoder()
                 do {
-                    let jsonData = try encoder.encode(travelMode.lineString)
-                    return (jsonData, directionVM)
+                    var jsonDatas: [Data] = []
+                    if let legDetails = travelMode.routeLegDetails {
+                        for leg in legDetails {
+                            let jsonData = try encoder.encode(leg.lineString)
+                            jsonDatas.append(jsonData)
+                        }
+                    }
+                    return (jsonDatas, directionVM)
                 } catch {
                     print(String.errorJSONDecoder)
                 }

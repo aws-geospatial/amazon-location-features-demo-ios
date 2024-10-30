@@ -143,8 +143,8 @@ extension SplitViewExploreMapCoordinator: ExploreNavigationDelegate {
         splitDelegate?.showSupplementary()
     }
     
-    func showNavigationview(steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) {
-        let controller = NavigationBuilder.create(steps: steps, summaryData: summaryData, firstDestination: firstDestination, secondDestination: secondDestination)
+    func showNavigationview(routeLegDetails: [RouteLegDetails], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) {
+        let controller = NavigationBuilder.create(routeLegDetails: routeLegDetails, summaryData: summaryData, firstDestination: firstDestination, secondDestination: secondDestination)
         controller.delegate = self
         
         isSearchHidden = true

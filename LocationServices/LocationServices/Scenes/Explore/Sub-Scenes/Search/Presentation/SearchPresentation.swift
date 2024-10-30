@@ -157,40 +157,6 @@ struct SearchPresentation {
         self.placeLabel = model.title
     }
     
-//    init(model: GeoPlacesClientTypes.SuggestResultItem, userLat: Double?, userLong: Double?, userLocation: CLLocation? = nil ) {
-//        self.placeId = model.placeId
-//        if let fullAddress = model.title?.formatAddressField() {
-//            self.name = fullAddress[safe: 0] ?? ""
-//            self.fullLocationAddress = fullAddress[safe: 1] ?? ""
-//        } else {
-//            self.name = nil
-//            self.fullLocationAddress = nil
-//        }
-//        self.countryName = model.address?.country?.name
-//        self.placeLong = nil
-//        self.placeLat = nil
-//        self.distance = Double(model.distance)
-//        self.cityName = model.address?.district
-//        self.placeLabel = model.title
-//    }
-    
-//    init(model: GeoPlacesClientTypes.SuggestResultItem, placeLat: Double?, placeLong: Double?, userLocation: CLLocation? = nil ) {
-//        self.placeId = nil
-//        if let fullAddress = model.title?.formatAddressField() {
-//            self.name = fullAddress[safe: 0] ?? ""
-//            self.fullLocationAddress = fullAddress[safe: 1] ?? ""
-//        } else {
-//            self.name = nil
-//            self.fullLocationAddress = nil
-//        }
-//        self.countryName = model.address?.country?.name
-//        self.placeLong = placeLat
-//        self.placeLat = placeLong
-//        self.distance = Double(model.distance)
-//        self.cityName = model.address?.district
-//        self.placeLabel = model.title
-//    }
-    
     init(model: GeoPlacesClientTypes.SearchTextResultItem, userLocation: CLLocation?) {
     
         self.placeId = model.placeId
@@ -210,7 +176,6 @@ struct SearchPresentation {
         self.cityName = model.address?.district
         self.placeLabel = model.title
    }
-   
 
     init(model: GeoPlacesClientTypes.SearchNearbyResultItem, userLocation: CLLocation?) {
     
