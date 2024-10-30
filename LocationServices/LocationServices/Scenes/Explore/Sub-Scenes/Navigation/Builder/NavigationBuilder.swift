@@ -8,10 +8,10 @@
 import UIKit
 
 final class NavigationBuilder {
-    static func create(steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) -> NavigationVC {
+    static func create(routeLegDetails: [RouteLegDetails], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) -> NavigationVC {
         let vc = NavigationVC()
         let serivce = LocationService()
-        let vm = NavigationVCViewModel(service: serivce, steps: steps, summaryData: summaryData, firstDestination: firstDestination, secondDestination: secondDestination)
+        let vm = NavigationVCViewModel(service: serivce, routeLegDetails: routeLegDetails, summaryData: summaryData, firstDestination: firstDestination, secondDestination: secondDestination)
         vc.viewModel = vm
         return vc
     }
