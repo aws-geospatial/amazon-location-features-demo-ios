@@ -119,7 +119,7 @@ extension DirectionVC: UITableViewDataSource {
         }
     }
     
-    func sendDirectionsToExploreVC(data: Data,
+    func sendDirectionsToExploreVC(data: [Data],
                                    departureLocation: CLLocationCoordinate2D,
                                    destinationLocation: CLLocationCoordinate2D,
                                    routeType: RouteTypes) {
@@ -128,6 +128,5 @@ extension DirectionVC: UITableViewDataSource {
                                     "DestinationLocation": destinationLocation,
                                     "routeType": routeType]
         NotificationCenter.default.post(name: Notification.Name("DirectionLineString"), object: nil, userInfo: datas)
-        //NotificationCenter.default.post(name: Notification.Name("updateMapViewButtons"), object: nil, userInfo: nil)
     }
 }

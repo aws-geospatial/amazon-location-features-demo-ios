@@ -76,9 +76,6 @@ final class DefaultCommonMapView: UIView, NavigationMapProtocol {
     func setupMapView() {
         DispatchQueue.main.async { [self] in
             mapView.styleURL = DefaultMapStyles.getMapStyleUrl()
-            // it is just to force to redraw the mapView
-            mapView.zoomLevel = mapView.zoomLevel + 0.01
-            
             locateMeAction()
             mapView.showsUserLocation = true
         }

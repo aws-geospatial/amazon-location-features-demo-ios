@@ -10,7 +10,7 @@ import Foundation
 final class NavigationVCViewModel {
     var delegate: NavigationViewModelOutputDelegate?
     var service: LocationService
-    var steps: [RouteNavigationStep]
+    var routeLegDetails: [RouteLegDetails]
     var presentation: [NavigationPresentation] = []
     private var summaryData: (totalDistance: Double, totalDuration: Double)
     let dispatchGroup = DispatchGroup()
@@ -18,9 +18,9 @@ final class NavigationVCViewModel {
     private(set) var firstDestination: MapModel?
     private(set) var secondDestination: MapModel?
     
-    init(service: LocationService, steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) {
+    init(service: LocationService, routeLegDetails: [RouteLegDetails], summaryData: (totalDistance: Double, totalDuration: Double), firstDestination: MapModel?, secondDestination: MapModel?) {
         self.service = service
-        self.steps = steps
+        self.routeLegDetails = routeLegDetails
         self.summaryData = summaryData
         self.firstDestination = firstDestination
         self.secondDestination = secondDestination
@@ -44,17 +44,19 @@ final class NavigationVCViewModel {
     
     private func populateNavigationSteps() async {
         let manager = PresentationManager()
-        for (id, step) in steps.enumerated() {
-            let model = NavigationPresentation(id: id, duration: step.duration.convertSecondsToMinString(), distance: step.distance.formatToKmString(), instruction: step.instruction, stepType: step.type)
-            await manager.addPresentation(model)
+        for legDetails in routeLegDetails {
+            for (id, step) in legDetails.navigationSteps.enumerated() {
+                let model = NavigationPresentation(id: id, duration: step.duration.convertSecondsToMinString(), distance: step.distance.formatToKmString(), instruction: step.instruction, stepType: step.type)
+                await manager.addPresentation(model)
+            }
         }
         let sortedPresentation = await manager.getSortedPresentation()
         self.presentation = sortedPresentation
         self.delegate?.updateResults()
     }
     
-    func update(steps: [RouteNavigationStep], summaryData: (totalDistance: Double, totalDuration: Double)) {
-        self.steps = steps
+    func update(routeLegDetails: [RouteLegDetails], summaryData: (totalDistance: Double, totalDuration: Double)) {
+        self.routeLegDetails = routeLegDetails
         self.summaryData = summaryData
         Task {
             await populateNavigationSteps()
