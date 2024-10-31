@@ -67,7 +67,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
         
         if text.isCoordinate() {
             let requestValue = text.convertTextToCoordinate()
-            let response = await service.searchNearby(position: requestValue, userLat: userLat, userLong: userLong)
+            let response = await service.reverseGeocode(position: requestValue, userLat: userLat, userLong: userLong)
                 switch response {
                 case .success(let results):
                     self.presentation = results
@@ -109,7 +109,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
         
         if text.isCoordinate() {
             let requestValue = text.convertTextToCoordinate()
-            let response = await service.searchNearby(position: requestValue, userLat: userLat, userLong: userLong)
+            let response = await service.reverseGeocode(position: requestValue, userLat: userLat, userLong: userLong)
                 switch response {
                 case .success(let results):
                     self.presentation = results

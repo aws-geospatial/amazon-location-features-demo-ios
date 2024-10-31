@@ -18,7 +18,7 @@ protocol AWSLocationSearchService {
                                           userLat: Double?,
                                           userLong: Double?) async throws -> SuggestOutput?
     func getPlaceRequest(with placeId: String) async throws -> GetPlaceOutput?
-    func searchNearbyRequest(position: [Double]) async throws -> SearchNearbyOutput?
+    func reverseGeocodeRequest(position: [Double]) async throws -> ReverseGeocodeOutput?
 }
 
 extension AWSLocationSearchService {
@@ -76,11 +76,11 @@ extension AWSLocationSearchService {
         }
     }
     
-    func searchNearbyRequest(position: [Double]) async throws -> SearchNearbyOutput? {
+    func reverseGeocodeRequest(position: [Double]) async throws -> ReverseGeocodeOutput? {
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = SearchNearbyInput(key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryPosition: position, queryRadius: 50)
+        let input = ReverseGeocodeInput(key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryPosition: position, queryRadius: 50)
         if let client = AmazonLocationClient.defaultApiPlacesClient() {
-            let result = try await client.searchNearby(input: input)
+            let result = try await client.reverseGeocode(input: input)
             return result
         } else {
             return nil

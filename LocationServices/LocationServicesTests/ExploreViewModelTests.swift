@@ -119,7 +119,7 @@ final class ExploreViewModelTests: XCTestCase {
         await exploreViewModel.loadPlace(for: destinationLocation, userLocation: departureLocation)
         
         XCTWaiter().wait(until: {
-            return !self.delegate.hasAnnotationShown
+            return self.delegate.hasAnnotationShown
         }, timeout: Constants.waitRequestDuration, message: "Expected hasAnnotationShown true")
     }
     
