@@ -174,7 +174,7 @@ enum NavigationStepType {
         }
     }
     
-    init(from type: GeoRoutesClientTypes.RoutesVehicleTravelStepType) {
+    init(from type: GeoRoutesClientTypes.RouteVehicleTravelStepType) {
         switch type {
         case .arrive:
             self = .arrive

@@ -18,7 +18,7 @@ final class DefaultUserSettings {
 final class DefaultMapStyles {
     
     static func getMapStyleUrl() -> URL? {
-        if let apiKey = AmazonLocationClient.defaultApiKey(), let regionName = AmazonLocationClient.defaultApiKeyRegion() {
+        if let apiKey = AmazonLocationClient.getApiKey(), let regionName = AmazonLocationClient.getApiKeyRegion() {
             var colorType = UserDefaultsHelper.getObject(value: MapStyleColorType.self, key: .mapStyleColorType) ?? MapStyleColorType.light
             let style = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle) ?? mapStyles.first!
             if style.imageType == .hybrid || style.imageType == .satellite {

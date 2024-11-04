@@ -35,9 +35,9 @@ extension AWSLocationSearchService {
             biasPosition = [AppConstants.amazonHqMapPosition.longitude, AppConstants.amazonHqMapPosition.latitude]
         }
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = SearchTextInput(biasPosition: biasPosition, key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
+        let input = SearchTextInput(biasPosition: biasPosition, language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
 
-        if let client = AmazonLocationClient.defaultApiPlacesClient() {
+        if let client = AmazonLocationClient.getPlacesClient() {
             let result = try await client.searchText(input: input)
             return result
         } else {
@@ -56,8 +56,8 @@ extension AWSLocationSearchService {
             biasPosition = [AppConstants.amazonHqMapPosition.longitude, AppConstants.amazonHqMapPosition.latitude]
         }
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = SuggestInput(additionalFeatures: [.sdkUnknown("Core")], biasPosition: biasPosition, key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
-        if let client = AmazonLocationClient.defaultApiPlacesClient() {
+        let input = SuggestInput(additionalFeatures: [.sdkUnknown("Core")], biasPosition: biasPosition, language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryText: text)
+        if let client = AmazonLocationClient.getPlacesClient() {
             let result = try await client.suggest(input: input)
             return result
         } else {
@@ -67,8 +67,8 @@ extension AWSLocationSearchService {
     
     func getPlaceRequest(with placeId: String) async throws -> GetPlaceOutput? {
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = GetPlaceInput(key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), placeId: placeId, politicalView: politicalView?.countryCode)
-        if let client = AmazonLocationClient.defaultApiPlacesClient() {
+        let input = GetPlaceInput(language: Locale.currentLanguageIdentifier(), placeId: placeId, politicalView: politicalView?.countryCode)
+        if let client = AmazonLocationClient.getPlacesClient() {
             let result = try await client.getPlace(input: input)
             return result
         } else {
@@ -78,8 +78,8 @@ extension AWSLocationSearchService {
     
     func reverseGeocodeRequest(position: [Double]) async throws -> ReverseGeocodeOutput? {
         let politicalView = UserDefaultsHelper.getObject(value: PoliticalViewType.self, key: .politicalView)
-        let input = ReverseGeocodeInput(key: AmazonLocationClient.defaultApiKey(), language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryPosition: position, queryRadius: 50)
-        if let client = AmazonLocationClient.defaultApiPlacesClient() {
+        let input = ReverseGeocodeInput(language: Locale.currentLanguageIdentifier(), politicalView: politicalView?.countryCode, queryPosition: position, queryRadius: 50)
+        if let client = AmazonLocationClient.getPlacesClient() {
             let result = try await client.reverseGeocode(input: input)
             return result
         } else {
