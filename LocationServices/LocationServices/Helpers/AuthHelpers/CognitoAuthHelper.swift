@@ -1,3 +1,10 @@
+//
+//  CognitoAuthHelper.swift
+//  LocationServices
+//
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 import Foundation
 import AWSSDKIdentity
 import AmazonLocationiOSAuthSDK
@@ -27,32 +34,6 @@ public class CognitoAuthHelper {
         }
     }
     
-//    public func initialiseLocationClient() async throws {
-//        if let credentials = locationProvider.getCognitoProvider()?.getCognitoCredentials() {
-//            self.credentials = credentials
-//            try await setLocationClient(accessKey: credentials.accessKeyId, secret: credentials.secretKey, expiration: credentials.expiration, sessionToken: credentials.sessionToken)
-//        }
-//    }
-//    
-//    public func setLocationClient(accessKey: String, secret: String, expiration: Date?, sessionToken: String?) async throws {
-//        let identity = AWSCredentialIdentity(accessKey: accessKey, secret: secret, expiration: expiration, sessionToken: sessionToken)
-//        let resolver =  try StaticAWSCredentialIdentityResolver(identity)
-//        let cachedResolver: CachedAWSCredentialIdentityResolver? = try CachedAWSCredentialIdentityResolver(source: resolver, refreshTime: 3540)
-//        let clientConfig = try await LocationClient.LocationClientConfiguration(awsCredentialIdentityResolver: cachedResolver, region: locationProvider.getRegion(), signingRegion: locationProvider.getRegion())
-//        
-//        self.locationClient = LocationClient(config: clientConfig)
-//    }
-    
-
-//    
-//    static func initialise(credentialsProvider: CredentialsProvider, region: String) async throws {
-//        _sharedInstance = CognitoAuthHelper()
-//        _sharedInstance?.authHelper = AuthHelper()
-//        _sharedInstance?.locationCredentialsProvider = try await _sharedInstance?.authHelper?.authenticateWithCredentialsProvider(credentialsProvider: credentialsProvider, region: region)
-//        _sharedInstance?.amazonLocationClient = _sharedInstance?.authHelper?.getLocationClient()
-//        try await _sharedInstance?.amazonLocationClient?.initialiseLocationClient()
-//    }
-//    
     static func `default`() -> CognitoAuthHelper {
         return _sharedInstance!
     }
