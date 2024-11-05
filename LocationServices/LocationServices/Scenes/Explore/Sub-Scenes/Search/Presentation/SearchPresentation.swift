@@ -65,10 +65,10 @@ struct SearchPresentation {
     
     init(model: GeoPlacesClientTypes.SearchTextResultItem, placeLat: Double? = nil, placeLong: Double? = nil, userLocation: CLLocation? = nil) {
         self.placeId = model.placeId
-        self.countryName = nil
+        self.countryName = model.address?.country?.name
         self.placeLong = placeLong
         self.placeLat = placeLat
-        self.cityName = nil
+        self.cityName = model.address?.district
         
         if let fullAddress = model.address?.label?.formatAddressField(),
            !fullAddress.isEmpty {
@@ -90,10 +90,10 @@ struct SearchPresentation {
     
     init(model: GeoPlacesClientTypes.SearchNearbyResultItem, placeLat: Double? = nil, placeLong: Double? = nil, userLocation: CLLocation? = nil) {
         self.placeId = model.placeId
-        self.countryName = nil
+        self.countryName = model.address?.country?.name
         self.placeLong = placeLong
         self.placeLat = placeLat
-        self.cityName = nil
+        self.cityName = model.address?.district
         
         if let fullAddress = model.address?.label?.formatAddressField(),
            !fullAddress.isEmpty {
@@ -113,8 +113,32 @@ struct SearchPresentation {
         self.placeLabel = model.title
     }
     
+    init(model: GeoPlacesClientTypes.ReverseGeocodeResultItem, userLocation: CLLocation? = nil) {
+        self.placeId = model.placeId
+        self.countryName = model.address?.country?.name
+        self.placeLong = model.position?.first
+        self.placeLat = model.position?.last
+        self.cityName = model.address?.district
+
+        if let fullAddress = model.address?.label?.formatAddressField(),
+           !fullAddress.isEmpty {
+            self.name = fullAddress[safe: 0] ?? ""
+            self.fullLocationAddress = fullAddress[safe: 1] ?? ""
+        } else {
+            self.name = model.title
+            self.fullLocationAddress = model.address?.label
+        }
+        if let placeLat = self.placeLat, let placeLong = self.placeLong, let userLocation {
+            let placeLocation = CLLocation(latitude: placeLat, longitude: placeLong)
+            self.distance = placeLocation.distance(from: userLocation)
+        } else {
+            self.distance = nil
+        }
+        self.placeLabel = model.title
+    }
+    
     init(model: GetPlaceOutput) {
-        self.placeId = nil
+        self.placeId = model.placeId
         if let fullAddress = model.address?.label?.formatAddressField() {
             self.name = fullAddress[safe: 0] ?? ""
             self.fullLocationAddress = fullAddress[safe: 1] ?? ""
@@ -135,7 +159,7 @@ struct SearchPresentation {
         self.placeLabel = model.title
     }
     
-    init(model: GeoPlacesClientTypes.SuggestResultItem) {
+    init(model: GeoPlacesClientTypes.SuggestResultItem, userLocation: CLLocation? = nil) {
         self.placeId = model.place?.placeId
         if let fullAddress = model.place?.address?.label?.formatAddressField() {
             self.name = fullAddress[safe: 0] ?? ""
@@ -158,7 +182,6 @@ struct SearchPresentation {
     }
     
     init(model: GeoPlacesClientTypes.SearchTextResultItem, userLocation: CLLocation?) {
-    
         self.placeId = model.placeId
         self.countryName = model.address?.country?.name
        
@@ -169,27 +192,6 @@ struct SearchPresentation {
            self.name = nil
            self.fullLocationAddress = nil
        }
-        self.placeLong = model.position?.first
-        self.placeLat = model.position?.last
-        self.distance = Double(model.distance)
-       
-        self.cityName = model.address?.district
-        self.placeLabel = model.title
-   }
-
-    init(model: GeoPlacesClientTypes.SearchNearbyResultItem, userLocation: CLLocation?) {
-    
-       self.placeId = model.placeId
-       self.countryName = model.address?.country?.name
-       
-       if let fullAddress = model.address?.label?.formatAddressField() {
-           self.name = fullAddress[safe: 0] ?? ""
-           self.fullLocationAddress = fullAddress[safe: 1] ?? ""
-       } else {
-           self.name = nil
-           self.fullLocationAddress = nil
-       }
-       
         self.placeLong = model.position?.first
         self.placeLat = model.position?.last
         self.distance = Double(model.distance)

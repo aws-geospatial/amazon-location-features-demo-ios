@@ -10,6 +10,7 @@ import Foundation
 import AWSLocation
 
 class LocationAPIServiceMock: LocationServiceable {
+
     var mockSearchTextResult: Result<[SearchPresentation], Error> = .success([])
     var mockSearchTextWithSuggestionResult: Result<[SearchPresentation], Error> = .success([])
     var mockSearchWithPositionResult: Result<[SearchPresentation], Error> = .success([])
@@ -29,7 +30,7 @@ class LocationAPIServiceMock: LocationServiceable {
         return mockSearchTextWithSuggestionResult
     }
     
-    func searchNearby(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[LocationServices.SearchPresentation], any Error> {
+    func reverseGeocode(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[LocationServices.SearchPresentation], any Error> {
         return mockSearchWithPositionResult
     }
     
