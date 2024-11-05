@@ -146,6 +146,7 @@ extension LoginViewModel: AWSLoginServiceOutputProtocol {
             delegate?.loginCompleted()
         case .failure(let error):
             print("Logged in failure \(error)")
+            delegate?.loginCancelled()
         }
     }
     

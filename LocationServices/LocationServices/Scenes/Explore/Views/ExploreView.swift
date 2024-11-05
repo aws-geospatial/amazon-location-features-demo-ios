@@ -433,13 +433,16 @@ final class ExploreView: UIView, NavigationMapProtocol {
         }
     }
     
+    var mapLoaded = false
     func setupMapView() {
         DispatchQueue.main.async { [self] in
-            mapView.styleURL = DefaultMapStyles.getMapStyleUrl()
-            locateMeAction(force: true)
-            mapView.showsUserLocation = true
-            mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendering
-            amazonMapLogo.tintColor = GeneralHelper.getAmazonMapLogo()
+            if !mapLoaded {
+                mapView.styleURL = DefaultMapStyles.getMapStyleUrl()
+                locateMeAction(force: true)
+                mapView.showsUserLocation = true
+                mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendering
+                amazonMapLogo.tintColor = GeneralHelper.getAmazonMapLogo()
+            }
         }
     }
     
@@ -962,6 +965,7 @@ extension ExploreView: MLNMapViewDelegate {
             debounceForMapRendering.debounce { [weak self] in
                 self?.updateMapHelperConstraints()
                 self?.mapView.accessibilityIdentifier = ViewsIdentifiers.General.mapRendered
+                self?.mapLoaded = true
             }
         } else {
             debounceForMapRendering.debounce {}

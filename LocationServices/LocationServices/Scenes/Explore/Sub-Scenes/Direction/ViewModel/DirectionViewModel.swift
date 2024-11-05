@@ -67,7 +67,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
         
         if text.isCoordinate() {
             let requestValue = text.convertTextToCoordinate()
-            let response = await service.searchNearby(position: requestValue, userLat: userLat, userLong: userLong)
+            let response = await service.reverseGeocode(position: requestValue, userLat: userLat, userLong: userLong)
                 switch response {
                 case .success(let results):
                     self.presentation = results
@@ -109,7 +109,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
         
         if text.isCoordinate() {
             let requestValue = text.convertTextToCoordinate()
-            let response = await service.searchNearby(position: requestValue, userLat: userLat, userLong: userLong)
+            let response = await service.reverseGeocode(position: requestValue, userLat: userLat, userLong: userLong)
                 switch response {
                 case .success(let results):
                     self.presentation = results
@@ -169,10 +169,8 @@ final class DirectionViewModel: DirectionViewModelProtocol {
             return true
         }
         
-        if let id = selectedItem.placeId  {
-            let result = try await service.getPlace(with: id)
-                guard let result else { return false }
-                let mapModel = MapModel(model: result)
+        if selectedItem.placeId != nil  {
+            let mapModel = MapModel(placeId: selectedItem.placeId, placeName: selectedItem.locationName, placeAddress: selectedItem.label, placeCity: selectedItem.locationCity, placeCountry: selectedItem.locationCountry, placeLat: selectedItem.lat, placeLong: selectedItem.long, distance: selectedItem.locationDistance)
                 // cache the latest result for future usage
                 self.cachedMapModel = mapModel
                 try await self.delegate?.selectedPlaceResult(mapModel: [mapModel])

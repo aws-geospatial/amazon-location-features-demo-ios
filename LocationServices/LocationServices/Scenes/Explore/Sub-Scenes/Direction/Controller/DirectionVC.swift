@@ -53,6 +53,12 @@ final class DirectionVC: UIViewController {
         }
     }
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     lazy var directionSearchView: DirectionSearchView = {
         let titleTopOffset: CGFloat = isInSplitViewController ? Constants.titleOffsetiPad : Constants.titleOffsetiPhone
         return DirectionSearchView(titleTopOffset: titleTopOffset, isCloseButtonHidden: isInSplitViewController)
@@ -116,6 +122,14 @@ final class DirectionVC: UIViewController {
         removeNotifications()
     }
     
+    func showLoadingIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoadingIndicator() {
+        activityIndicator.stopAnimating()
+    }
+
     private func applyStyles() {
         tableView.backgroundColor = directionScreenStyle.backgroundColor
         view.backgroundColor = directionScreenStyle.backgroundColor
@@ -229,17 +243,11 @@ final class DirectionVC: UIViewController {
     private func setupViews() {
         directionSearchView.changeSearchRouteName(with: firstDestination?.placeName, isDestination: false)
         directionSearchView.changeSearchRouteName(with: secondDestination?.placeName, isDestination: true)
-        //let scrollView = UIScrollView()
         
         self.view.addSubview(directionSearchView)
-        //self.view.addSubview(scrollView)
         self.view.addSubview(directionView)
+        self.view.addSubview(activityIndicator)
         self.view.addSubview(tableView)
-        
-//        scrollView.snp.makeConstraints {
-//            $0.top.equalToSuperview().offset(10)
-//            $0.trailing.leading.bottom.equalToSuperview()
-//        }
         
         directionSearchView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().offset(14)
@@ -256,8 +264,13 @@ final class DirectionVC: UIViewController {
             $0.width.equalToSuperview()
         }
         
-        tableView.snp.makeConstraints {
+        activityIndicator.snp.makeConstraints {
             $0.top.equalTo(directionSearchView.snp.bottom).offset(16)
+            $0.centerX.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(activityIndicator.snp.bottom).offset(16)
             $0.leading.trailing.bottom.equalToSuperview()
             $0.width.equalToSuperview()
         }
@@ -294,31 +307,32 @@ final class DirectionVC: UIViewController {
     }
     
     func calculateGenericRoute(currentModel: SearchCellViewModel, routeType: RouteTypes = .car, avoidFerries: Bool = false, avoidTolls: Bool = false) async throws {
-        
         guard let (departureLocation, destinationLocation) = getRouteLocations(currentModel: currentModel) else { return }
-        
+        showLoadingIndicator()
         guard isDistanceValid(departureLoc: departureLocation, destinationLoc: destinationLocation) else { return }
         if let (data, directionVM) = try await viewModel.calculateRouteWith(destinationPosition: destinationLocation,
                                      departurePosition: departureLocation,
                                      travelMode: routeType,
                                      avoidFerries: avoidFerries,
                                      avoidTolls: avoidTolls) {
-            
-            self.tableView.isHidden = true
-            self.directionView.isHidden = false
-            
-            let isPreview = self.firstDestination?.placeName != "My Location"
-            self.directionView.setup(model: directionVM, isPreview: isPreview)
             DispatchQueue.main.async {
+                self.tableView.isHidden = true
+                self.directionView.isHidden = false
+                
+                let isPreview = self.firstDestination?.placeName != "My Location"
+                self.directionView.setup(model: directionVM, isPreview: isPreview)
+                
                 self.directionView.showOptionsStackView()
+                
+                
+                self.setupSearchTitleDestinations()
+                self.view.endEditing(true)
+                self.sendDirectionsToExploreVC(data: data,
+                                               departureLocation: departureLocation,
+                                               destinationLocation: destinationLocation,
+                                               routeType: routeType)
+                self.hideLoadingIndicator()
             }
-            
-            self.setupSearchTitleDestinations()
-            self.view.endEditing(true)
-            self.sendDirectionsToExploreVC(data: data,
-                                           departureLocation: departureLocation,
-                                           destinationLocation: destinationLocation,
-                                           routeType: routeType)
         }
         
     }
@@ -443,11 +457,11 @@ extension DirectionVC: DirectionViewModelOutputDelegate {
         
         if let model = mapModel[safe: 0] {
             let currentModel = SearchCellViewModel(searchType: .location,
-                                                   placeId: nil,
+                                                   placeId: model.placeId,
                                                    locationName: model.placeName,
-                                                   locationDistance: nil,
-                                                   locationCountry: nil,
-                                                   locationCity: nil,
+                                                   locationDistance: model.distance,
+                                                   locationCountry: model.placeCountry,
+                                                   locationCity: model.placeCity,
                                                    label: model.placeName,
                                                    long: model.placeLong,
                                                    lat: model.placeLat)

@@ -12,7 +12,7 @@ import AWSLocation
 protocol LocationServiceable {
     func searchText(text: String, userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error>
     func searchWithSuggest(text: String, userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error>
-    func searchNearby(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error>
+    func reverseGeocode(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error>
     func getPlace(with placeId: String) async throws -> SearchPresentation?
     
 }
@@ -49,15 +49,13 @@ struct LocationService: AWSLocationSearchService, LocationServiceable {
     }
     
     //@discardableResult
-    func searchNearby(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error> {
+    func reverseGeocode(position: [Double], userLat: Double?, userLong: Double?) async -> Result<[SearchPresentation], Error> {
         do {
-            let result = try await searchNearbyRequest(position: position)
-            
+            let result = try await reverseGeocodeRequest(position: position)
             var userLocation: CLLocation? = nil
             if let userLat, let userLong {
                 userLocation = CLLocation(latitude: userLat, longitude: userLong)
             }
-            
             let model = result!.resultItems!.map({ SearchPresentation(model: $0, userLocation: userLocation) })
             return .success(model)
         }

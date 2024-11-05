@@ -7,63 +7,34 @@
 
 import Foundation
 import AWSLocation
-import SmithyIdentity
-import SmithyIdentityAPI
-import AWSSDKIdentity
 import AWSGeoPlaces
 import AWSGeoRoutes
 
 public class AmazonLocationClient {
-    public let locationProvider: LocationCredentialsProvider
-    public var locationClient: LocationClient?
-    private var credentials: CognitoCredentials?
-    public init(locationCredentialsProvider: LocationCredentialsProvider) {
-        self.locationProvider = locationCredentialsProvider
+    public init() {
     }
-    
-    public func initialiseLocationClient() async throws {
-        if let credentials = locationProvider.getCognitoProvider()?.getCognitoCredentials() {
-            self.credentials = credentials
-            try await setLocationClient(accessKey: credentials.accessKeyId, secret: credentials.secretKey, expiration: credentials.expiration, sessionToken: credentials.sessionToken)
-        }
-    }
-    
-    public func setLocationClient(accessKey: String, secret: String, expiration: Date?, sessionToken: String?) async throws {
-        let identity = AWSCredentialIdentity(accessKey: accessKey, secret: secret, expiration: expiration, sessionToken: sessionToken)
-        let resolver =  try StaticAWSCredentialIdentityResolver(identity)
-        let cachedResolver: CachedAWSCredentialIdentityResolver? = try CachedAWSCredentialIdentityResolver(source: resolver, refreshTime: 3540)
-        let clientConfig = try await LocationClient.LocationClientConfiguration(awsCredentialIdentityResolver: cachedResolver, region: locationProvider.getRegion(), signingRegion: locationProvider.getRegion())
-        
-        self.locationClient = LocationClient(config: clientConfig)
-        
-    }
-}
 
-public extension AmazonLocationClient {
-    static func defaultCognito() async throws -> AmazonLocationClient? {
-        if let credentialsExpiration = CognitoAuthHelper.default().amazonLocationClient?.credentials?.expiration, credentialsExpiration < Date() {
-            try await CognitoAuthHelper.default().amazonLocationClient?.initialiseLocationClient()
-        }
-        return CognitoAuthHelper.default().amazonLocationClient
+    static func getCognitoLocationClient() async throws -> LocationClient? {
+        return CognitoAuthHelper.default().locationClient
     }
     
-    static func defaultApi() -> AmazonLocationClient? {
-        return ApiAuthHelper.default().amazonLocationClient
+    static func getApiLocationClient() -> LocationClient? {
+        return ApiAuthHelper.default().locationClient
     }
     
-    static func defaultApiPlacesClient() -> GeoPlacesClient? {
+    static func getPlacesClient() -> GeoPlacesClient? {
         return ApiAuthHelper.default().geoPlacesClient
     }
     
-    static func defaultApiRoutesClient() -> GeoRoutesClient? {
+    static func getRoutesClient() -> GeoRoutesClient? {
         return ApiAuthHelper.default().geoRoutesClient
     }
     
-    static func defaultApiKey() -> String? {
-        return ApiAuthHelper.default().locationCredentialsProvider?.getAPIKey()
+    static func getApiKey() -> String? {
+        return ApiAuthHelper.default().apiKey
     }
     
-    static func defaultApiKeyRegion() -> String? {
-        return ApiAuthHelper.default().locationCredentialsProvider?.getRegion()
+    static func getApiKeyRegion() -> String? {
+        return ApiAuthHelper.default().region
     }
 }
