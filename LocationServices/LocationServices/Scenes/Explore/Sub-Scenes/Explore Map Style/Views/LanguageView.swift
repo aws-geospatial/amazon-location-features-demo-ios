@@ -20,8 +20,8 @@ final class LanguageView: UIButton {
         var label = UILabel()
         label.font = .amazonFont(type: .medium, size: 18)
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
-        label.text = "Map Language"
+        label.applyLocaleDirection()
+        label.text = StringConstant.mapLanguage
         return label
     }()
     
@@ -29,7 +29,7 @@ final class LanguageView: UIButton {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .gray
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.text = ""
         label.accessibilityIdentifier = ViewsIdentifiers.General.languageViewSubtitle
         return label
@@ -114,15 +114,15 @@ final class LanguageView: UIButton {
     }
 
     public func setLanguage() {
-        var language = Locale.currentLanguageIdentifier()
-        var selectedIndex = languageSwitcherData.firstIndex(where: { type in
+        var language = Locale.currentMapLanguageIdentifier()
+        let selectedIndex = mapLanguageSwitcherData.firstIndex(where: { type in
             if type.value == language {
                 return true
             }
             return false
         })
         if selectedIndex != nil {
-            language =  languageSwitcherData[selectedIndex!].label
+            language =  mapLanguageSwitcherData[selectedIndex!].label
         }
         itemSubtitle.text = language
         itemSubtitle.textColor = .mapStyleTintColor

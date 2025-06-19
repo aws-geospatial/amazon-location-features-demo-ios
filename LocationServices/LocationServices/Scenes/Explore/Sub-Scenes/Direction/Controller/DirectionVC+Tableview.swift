@@ -49,7 +49,7 @@ extension DirectionVC: UITableViewDataSource {
         } else {
             destination = firstDestination
         }
-        let isMyLocationSelected = destination?.placeName == "My Location"
+        let isMyLocationSelected = destination?.placeName == StringConstant.myLocation
         
         if viewModel.numberOfRowsInSection() == 0 && !isInitalState && !isMyLocationSelected {
             tableView.setEmptyView()
@@ -124,11 +124,13 @@ extension DirectionVC: UITableViewDataSource {
     func sendDirectionsToExploreVC(data: [Data],
                                    departureLocation: CLLocationCoordinate2D,
                                    destinationLocation: CLLocationCoordinate2D,
-                                   routeType: RouteTypes) {
+                                   routeType: RouteTypes,
+                                   isPreview: Bool) {
         let datas: [String: Any] = ["LineString" : data,
                                     "DepartureLocation": departureLocation,
                                     "DestinationLocation": destinationLocation,
-                                    "routeType": routeType]
+                                    "routeType": routeType,
+                                    "isPreview": isPreview]
         NotificationCenter.default.post(name: Notification.directionLineString, object: nil, userInfo: datas)
     }
 }

@@ -103,7 +103,7 @@ final class NavigationHeaderView: UIView {
     
     private let distanceLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .lsGrey
         label.numberOfLines = 2
@@ -121,7 +121,7 @@ final class NavigationHeaderView: UIView {
     
     private var timeLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .lsGrey
         label.numberOfLines = 2
@@ -148,7 +148,7 @@ final class NavigationHeaderView: UIView {
     private lazy var exitButton: UIButton = {
         let button = UIButton(type: .system)
         button.accessibilityIdentifier = ViewsIdentifiers.Navigation.navigationExitButton
-        button.setTitle("Exit", for: .normal)
+        button.setTitle(StringConstant.exit, for: .normal)
         
         button.tintColor = .white
         button.backgroundColor = .navigationRedButton

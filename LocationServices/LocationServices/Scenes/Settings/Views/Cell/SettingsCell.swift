@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 enum SettingsCellType {
-    case units, dataProvider, mapStyle, routeOption
+    case units, dataProvider, mapStyle, routeOption, language, region
     
     var title: String {
         switch self {
@@ -21,19 +21,27 @@ enum SettingsCellType {
             return StringConstant.mapStyle
         case .routeOption:
             return StringConstant.defaultRouteOptions
+        case .language:
+            return StringConstant.language
+        case .region:
+            return StringConstant.region
         }
     }
     
     var itemIcon: UIImage {
         switch self {
         case .units:
-            return .unitIcons
+            return .unitIcon
         case .dataProvider:
             return .dataProviderIcon
         case .mapStyle:
             return .mapStyleIcon
         case .routeOption:
             return .routeOption
+        case .language:
+            return .languageIcon
+        case .region:
+            return .regionIcon
         }
     }
     
@@ -85,7 +93,7 @@ final class SettingsCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 16)
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
     
@@ -94,7 +102,7 @@ final class SettingsCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .searchBarTintColor
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
 

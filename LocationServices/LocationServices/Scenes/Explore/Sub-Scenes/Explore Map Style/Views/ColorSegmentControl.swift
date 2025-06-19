@@ -24,7 +24,7 @@ final class ColorSegmentControl: UISegmentedControl {
     }
     
     func setup() {
-        let colorNames = [MapStyleColorType.light.colorName, MapStyleColorType.dark.colorName]
+        let colorNames = [MapStyleColorType.light.colorLabel, MapStyleColorType.dark.colorLabel]
         
         let lightImage = GeneralHelper.getImageAndText(image: UIImage(systemName: "sun.max")!, string: colorNames[0], isImageBeforeText: true)
         let darkImage = GeneralHelper.getImageAndText(image: UIImage(systemName: "moon")!, string: colorNames[1], isImageBeforeText: true)
@@ -38,9 +38,14 @@ final class ColorSegmentControl: UISegmentedControl {
         self.selectedSegmentIndex = (colorType != nil && colorType! == .dark) ? 1 : 0
         
         self.addTarget(self, action: #selector(mapColorChanged(_:)), for: .valueChanged)
-        
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(validateMapColor(_:)), name: Notification.validateMapColor, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
         validateMapColor()
+    }
+    
+    @objc func removeNotificationObservers(_ notification: Notification) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func validateMapColor(_ notification: Notification) {

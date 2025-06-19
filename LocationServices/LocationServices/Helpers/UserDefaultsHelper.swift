@@ -12,7 +12,8 @@ enum UserDefaultKeyType: String {
     case mapStyle
     case mapStyleColorType
     case politicalView
-    case language
+    case AppleLanguages
+    case mapLanguage
     case tollOptions
     case ferriesOptions
     case uturnsOptions
@@ -26,15 +27,13 @@ enum UserDefaultKeyType: String {
     case termsAndConditionsAgreedVersion
     case signedInIdentityId
     case identityId
-    
     case mapCenter
     // if app is in navigation mode
     case isNavigationMode
     case navigationRoute
-    
     case isTrackingActive
-    
     case fastestAWSRegion
+    case isAutoRegion
 }
 
 enum AppState: Int {
@@ -93,7 +92,7 @@ final class UserDefaultsHelper {
             return nil
             
         } catch {
-            print(.errorUserDefaultsSave +  " \(T.self), \(error)")
+            print(.errorUserDefaultsGet +  " \(T.self), \(error)")
             return nil
         }
     }

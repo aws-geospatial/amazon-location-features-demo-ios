@@ -9,8 +9,8 @@ class PoliticalViewCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 16)
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
-        label.text = "Political view"
+        label.applyLocaleDirection()
+        label.text = StringConstant.politicalView
         return label
     }()
     
@@ -18,8 +18,8 @@ class PoliticalViewCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .gray
-        label.textAlignment = .left
-        label.text = "Map representation for different countries"
+        label.applyLocaleDirection()
+        label.text = StringConstant.mapRepresentation
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
@@ -31,7 +31,7 @@ class PoliticalViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(String.errorInitWithCoder)
     }
     
     private func setupViews() {
