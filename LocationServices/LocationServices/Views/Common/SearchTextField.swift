@@ -42,13 +42,14 @@ final class SearchTextField: UIView {
         textField.textColor = .mapDarkBlackColor
         textField.font = .amazonFont(type: .medium, size: 14)
         textField.attributedPlaceholder = NSAttributedString(
-            string: "Search",
+            string: StringConstant.search,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.searchBarTintColor, NSAttributedString.Key.font: UIFont.amazonFont(type: .medium, size: 14)]
         )
         textField.isUserInteractionEnabled = true
         textField.clearButtonMode = .always
         textField.addTarget(self, action: #selector(textFieldTapped), for: .touchDown)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.applyLocaleDirection()
         return textField
     }()
     
