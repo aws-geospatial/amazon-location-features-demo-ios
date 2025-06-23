@@ -324,6 +324,11 @@
 		F166819E29D3230B00FBD27C /* UITestTrackingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166819D29D3230B00FBD27C /* UITestTrackingScreen.swift */; };
 		F17BE2AE29F7F564001A4ADF /* RoutingAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17BE2AD29F7F564001A4ADF /* RoutingAPIServiceMock.swift */; };
 		F17BE2B029F819C2001A4ADF /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17BE2AF29F819C2001A4ADF /* SearchViewModelTests.swift */; };
+		F17CC38E2E097F690036E64F /* LanguageSwitcherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CC38D2E097F580036E64F /* LanguageSwitcherData.swift */; };
+		F17CC3902E097FBA0036E64F /* PoliticalViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CC38F2E097FB30036E64F /* PoliticalViewType.swift */; };
+		F17CC3922E097FDD0036E64F /* PoliticalViewTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CC3912E097FD60036E64F /* PoliticalViewTypes.swift */; };
+		F17CC3942E0980590036E64F /* MapStyleColorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CC3932E09804D0036E64F /* MapStyleColorTypes.swift */; };
+		F17CC3962E0980970036E64F /* MapStyleColorType+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CC3952E0980860036E64F /* MapStyleColorType+Label.swift */; };
 		F18055E32D71EF1300045301 /* TrackingSimulationDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18055E22D71EEFF00045301 /* TrackingSimulationDashboardView.swift */; };
 		F18055E82D71F2D200045301 /* TrackingSimulationIntroBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18055E72D71F2B000045301 /* TrackingSimulationIntroBuilder.swift */; };
 		F18055EA2D71F30500045301 /* TrackingSimulationIntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18055E92D71F2F900045301 /* TrackingSimulationIntroController.swift */; };
@@ -747,6 +752,11 @@
 		F166819D29D3230B00FBD27C /* UITestTrackingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestTrackingScreen.swift; sourceTree = "<group>"; };
 		F17BE2AD29F7F564001A4ADF /* RoutingAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAPIServiceMock.swift; sourceTree = "<group>"; };
 		F17BE2AF29F819C2001A4ADF /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		F17CC38D2E097F580036E64F /* LanguageSwitcherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitcherData.swift; sourceTree = "<group>"; };
+		F17CC38F2E097FB30036E64F /* PoliticalViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticalViewType.swift; sourceTree = "<group>"; };
+		F17CC3912E097FD60036E64F /* PoliticalViewTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticalViewTypes.swift; sourceTree = "<group>"; };
+		F17CC3932E09804D0036E64F /* MapStyleColorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleColorTypes.swift; sourceTree = "<group>"; };
+		F17CC3952E0980860036E64F /* MapStyleColorType+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapStyleColorType+Label.swift"; sourceTree = "<group>"; };
 		F18055E22D71EEFF00045301 /* TrackingSimulationDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSimulationDashboardView.swift; sourceTree = "<group>"; };
 		F18055E72D71F2B000045301 /* TrackingSimulationIntroBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSimulationIntroBuilder.swift; sourceTree = "<group>"; };
 		F18055E92D71F2F900045301 /* TrackingSimulationIntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSimulationIntroController.swift; sourceTree = "<group>"; };
@@ -2335,6 +2345,10 @@
 		ADD139A92981D7200003F917 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F17CC3952E0980860036E64F /* MapStyleColorType+Label.swift */,
+				F17CC3932E09804D0036E64F /* MapStyleColorTypes.swift */,
+				F17CC3912E097FD60036E64F /* PoliticalViewTypes.swift */,
+				F17CC38F2E097FB30036E64F /* PoliticalViewType.swift */,
 				ADD139AA2981D72C0003F917 /* MapStyleModel.swift */,
 				8AD67F9629D1A9E4004A5F7D /* MapStyleTypes.swift */,
 				8AD67F9929D1B243004A5F7D /* MapStyleTypes+Image.swift */,
@@ -2491,6 +2505,7 @@
 		F1343EA62DD641DB002A347F /* Language */ = {
 			isa = PBXGroup;
 			children = (
+				F17CC38C2E097F440036E64F /* Models */,
 				F1343EB32DD65FE9002A347F /* Contracts */,
 				F1343EAA2DD64464002A347F /* Builder */,
 				F1343EA92DD6423D002A347F /* Controller */,
@@ -2538,6 +2553,14 @@
 				F1343EB42DD65FFA002A347F /* LanguageSceneContracts.swift */,
 			);
 			path = Contracts;
+			sourceTree = "<group>";
+		};
+		F17CC38C2E097F440036E64F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F17CC38D2E097F580036E64F /* LanguageSwitcherData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F18055E42D71F18F00045301 /* Tracking Simulation */ = {
@@ -3030,6 +3053,7 @@
 				AD2AF072292E9BC100149904 /* AppIconConstants.swift in Sources */,
 				ADF26F57292FEC0A000147A0 /* SearchBarView.swift in Sources */,
 				ADBD7FB62949B579005DB4E4 /* POICardView.swift in Sources */,
+				F17CC3962E0980970036E64F /* MapStyleColorType+Label.swift in Sources */,
 				8A85A75E29A5059D0022ABE0 /* MapStyleSectionHeaderView.swift in Sources */,
 				96E742AA2967381900D5C0BC /* Sequence+Extension.swift in Sources */,
 				F1D1BC402D1043F300D263B6 /* RouteTypeSegment.swift in Sources */,
@@ -3091,6 +3115,7 @@
 				ADD139A02981C4610003F917 /* MapStyleContracts.swift in Sources */,
 				8A6C390629A25E480003666C /* Reachability.swift in Sources */,
 				AD2AF0B0292EAA4100149904 /* TrackingVCBuilder.swift in Sources */,
+				F17CC38E2E097F690036E64F /* LanguageSwitcherData.swift in Sources */,
 				ADC124A22979EA5F00B08C20 /* GeofenceService.swift in Sources */,
 				F1F0C5872A0E5401009C7151 /* ErrorHandler.swift in Sources */,
 				8AFDA09629DDBC3800114BB7 /* VersionVCBuilder.swift in Sources */,
@@ -3109,6 +3134,7 @@
 				F18E2D432DB267DE00A34D67 /* TrackingRouteHeaderView.swift in Sources */,
 				8ACAAD7629F14B9D00523256 /* CLLocationManager+Extension.swift in Sources */,
 				AD2AF0EB292EAEDF00149904 /* AppColorsConstants.swift in Sources */,
+				F17CC3922E097FDD0036E64F /* PoliticalViewTypes.swift in Sources */,
 				AD2AF030292E892000149904 /* AppDelegate.swift in Sources */,
 				F11E04732CE791A3003F1641 /* LanguageViewCell.swift in Sources */,
 				AD2AF0CF292EAB9000149904 /* SettingsContracts.swift in Sources */,
@@ -3222,6 +3248,7 @@
 				ADC124A42979F18B00B08C20 /* GeofenceServiceable.swift in Sources */,
 				AD2AF079292EA55300149904 /* ExploreView.swift in Sources */,
 				AD2AF032292E892000149904 /* SceneDelegate.swift in Sources */,
+				F17CC3942E0980590036E64F /* MapStyleColorTypes.swift in Sources */,
 				F18E2D452DB2686500A34D67 /* RouteToggleView.swift in Sources */,
 				F1A306C42D30242A00B16126 /* ArrivalCardVCContracts.swift in Sources */,
 				AD625E96293BCEE800C67B44 /* SearchViewModel.swift in Sources */,
@@ -3229,6 +3256,7 @@
 				AD2AF0E9292EAC9800149904 /* SettingsCoordinator.swift in Sources */,
 				AD2AF081292EA5C900149904 /* ExplorePresentation.swift in Sources */,
 				AD625EA7293CDC5F00C67B44 /* HTTPClient.swift in Sources */,
+				F17CC3902E097FBA0036E64F /* PoliticalViewType.swift in Sources */,
 				ADD1396C298097020003F917 /* DataProviderBuilder.swift in Sources */,
 				ADD139A22981C5050003F917 /* MapStyleVC.swift in Sources */,
 				8A439EF929BB965100B59D0B /* AttributionVC.swift in Sources */,

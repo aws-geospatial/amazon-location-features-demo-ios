@@ -12,7 +12,6 @@ struct UITestSettingsScreen: UITestScreen {
     
     private enum Identifiers {
         static var routeOptionCell: String { ViewsIdentifiers.Settings.routeOptionCell }
-        static var dataProviderCell: String { ViewsIdentifiers.Settings.dataProviderCell }
         static var mapStyleCell: String { ViewsIdentifiers.Settings.mapStyleCell }
     }
     

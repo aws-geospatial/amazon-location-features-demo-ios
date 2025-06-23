@@ -76,7 +76,7 @@ final class SettingsUITests: LocationServicesUITests {
         exploreScreen = testMapStyle(screen: exploreScreen, style: .monochrome)
     }
     
-    func testMapStyle(screen: UITestExploreScreen, style: MapStyleImages) -> UITestExploreScreen {
+    func testMapStyle(screen: UITestExploreScreen, style: MapStyleTypes) -> UITestExploreScreen {
         let screenshotBefore = screen.takeMapScreenshot()
         
         var mapStyleScreen = screen.getTabBarScreen()
