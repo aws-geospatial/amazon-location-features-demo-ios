@@ -7,31 +7,11 @@
 
 import Foundation
 
-extension String {
-    // LSFaux3DUserLocationAnnotationView
-    
-    // errors:
-    static let errorInitWithCoder = "init(coder:) has not been implemented"
-    static let errorAnimatorNotSet = "Somehow the offset animator was not set"
-    static let errorCannotInitializeView = "Couldn't initiliza view"
-    
-    static let errorDelegeGeofence = "Delete Geofence error:"
-    static let errorUserDefaultsSave = "User Default save error:"
-    static let errorCannotReadDefaultConfiguration = "Can't read default configuration from awsconfiguration.json"
-    
-    static let errorCellCannotBeInititalized = "Cell can't be initilized"
-    static let errorJSONDecoder = "JSON Decoder Error"
-    static let cellCanNotBeDequed = "Cell can't be dequed"
-    
-    static let errorToBeImplemented = "to be implemented"
-}
-
 // Strings
 enum StringConstant {
     
     //urls
     static let baseDomain: String = "https://location.aws.com"
-    static let cfTemplateURL = "https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create?stackName=amazon-location-resources-setup&templateURL=https://amazon-location-demo-resources.s3.amazonaws.com/location-services.yaml"
     static var termsAndConditionsURL: String { baseDomain + "/demo/terms/" }
     static let esriDataProviderLearnMoreURL = "https://www.esri.com/en-us/legal/terms/data-attributions"
     static let hereDataProviderLearnMoreURL = "https://legal.here.com/en-gb/terms/general-content-supplier-terms-and-notices"
@@ -46,242 +26,219 @@ enum StringConstant {
     }
     static let developmentSchema = "https"
     
-    
-    // strings:
-    static let directions = "Directions"
-    static let geofence = "Geofence"
-    static let login = "Login"
-    static let amazonLocationDetail = """
-                                                  Add a geofence to get notified when your device
-                                                  enters or exits it
-                                                  """
-    static let addGeofence = "Add Geofence"
-    static let maybeLater = "Maybe later"
-    static let checkYourConnection = "Check your internet connection and try again"
-    static let amazonLocatinCannotReach = "Amazon Location can't reach the internet"
-    static let navigationNotAvailable = "Navigation is not available"
-    static let selectYourCurrentLocation = "Select your current location as starting point to enable navigation"
-    static let cantCreateARoute = "Can't create a route"
-    static let trackingDataStorage = "Tracking Data Storage"
-    static let trackingDisplayData = "We only display data for the last 3 paths that you track with Amazon Location."
-    static let deleteTrackingData = "Delete Tracking Data"
-    static let restartAppTitle = "Restart Amazon Location App "
-    static let restartAppExplanation = "Amazon Location app must be closed and reopened to apply the new configuration"
-    static let terminate = "Ok"
-    static let resetToDefaultConfigTitle = "Reset stack"
-    static let resetToDefaultConfigExplanation = "Stack is corrupted, switching back to default stack"
-    static let awsStackInvalidTitle = "Invalid AWS Stack"
-    static let awsStackInvalidExplanation = "Stack is not invalid anymore or deleted, app will disconnect from AWS and restart"
-    static let notAllFieldsAreConfigured = "Not all the fields are configured"
-    static let incorrectIdentityPoolIdMessage = "Failed to connect AWS account, invalid IdentityPoolId or region"
-    static let failedToCalculateRoute = "Failed to calculate route"
-    static let geofenceNoIdentifier = "Couldn't delete geofence, no identifier exists"
-    static let deleteGeofence = "Delete geofence"
-    static let deleteGeofenceAlertMessage = "Are you sure you want to delete geofence?"
-    static let logout = "Logout"
-    static let logoutAlertMessage = "Are you sure you want to logout?"
-    static let disconnectAWS = "Disconnect AWS"
-    static let disconnectAWSAlertMessage = "Are you sure you want to Disconnect AWS?"
-    static let noInternetConnection = "No internet connection"
-    static let enableTracking = "Enable Tracker"
-    static let trackers = "Trackers"
-    static let trackingChangeToHere = "You can use any data provider except Esri for your asset management or device tracking use cases. If you want to use Esri for your asset management or tracking user case, please read terms and conditions."
-    static let viewTermsAndConditions = "View Terms and Conditions"
-    static let continueToTracker = "Continue"
-    static let enableTrackingDescription = "Enabling the feature will allow you to track your device and get notified when the device enters or exits any of your geofences."
-    
-    static let startTracking = "Start Tracking"
-    static let stopTracking = "Stop Tracking"
-    static let startSimulation = "Try Trackers & Geofences simulation"
-    static let simulation = "Simulation"
-    static let trackersGeofences = "Trackers and Geofences"
-    static let trackersGeofencesHeader = "Tracking and Geofence simulation"
-    static let trackersGeofencesDetail = "Enter the Trackers simulation to view the path across Vancouver streets that crosses Geofences"
-    static let startTrackingSimulation = "Try Trackers & Geofences Simulation"
-    static let trackersDetail = "Visualize your location history on the map"
-    static let geofences = "Geofences"
-    static let geofencesDetail = "Define virtual boundaries around a specific area to detect entry and exit events"
-    static let notifications = "Notifications"
-    static let notificationsDetail = "Get geofence messages when you enter and leave locations"
-    static let routesNotifications = "Routes Notifications"
-    
-    static let emptyTrackingHistory = "No tracking history available"
-    
-    static let tracker = "Tracker"
-    static let entered = "Entered"
-    static let exited = "Exited"
-    static let exit = "Exit"
-    
-    static let change = "Change"
-    
-    static let go = "Go"
-    static let preview = "Preview"
-    static let info = "Info"
-    static let done = "Done"
-    
-    static let locationPermissionDenied = "Location permission denied"
-    static let locationPermissionDeniedDescription = "Distance can't be calculated if location permission is not granted. Please enable location permission for Amazon Location from Settings"
-    static let esriDistanceError = "In DataSource Esri, all waypoints must be within 400km"
-    static let locationPermissionEnableLocationAction = "Enable Location"
-    static let locationPermissionAlertTitle = "Allow \"LocationServices\" to use your location"
-    static let locationPermissionAlertText = "Amazon Location will use your location to create a route to the selected location"
-    
-    // location manager
-    static let locationManagerAlertTitle = "Allow \"LocationServices\" to use your location?"
-    static let locationManagerAlertText = "We need your location to detect your location in map"
-    static let cancel = "Cancel"
-    static let settigns = "Settings"
-    static let error = "Error"
-    static let warning = "Warning"
-    static let ok = "OK"
-    
-    // dispatch queue
-    static let dispatchReachabilityLabel = "Reachability"
-    
-    // coordinate label text
-    static let coordinateLabelText = "50.54943, 30.21989"
-    static let timeLabelText = "11:22 pm"
-    
-    // errors
-    static let domainErrorLocalizedDescription = "The operation couldn’t be completed. (kCLErrorDomain error 0.)"
-    static let testExpectationError = "expectation not matched after waiting"
-    static let sessionExpiredError = "Session is expired. Please sign out and sign in back to continue access all features. Otherwise you could face unexpected behaviour in the app"
-    static let greatDistanceErrorTitle = "Distance is greater than 400 km"
-    static let greatDistanceErrorMessage = "Can't calculate via Esri, kindly switch to HERE provider"
-    static let invalidUrlError = "URL is invalid. Can't open it"
-    
-    // Tracking Simulation
-    static let exitTracking = ""
-    static let exitTrackingAlertMessage = "Are you sure you want to exit simulation?"
-    
-    //login
-    enum LoginInfo {
-        enum DefaultConfig: ConstantsLoginInfoConfig {
-            static let mainTitle = "Connect AWS Account"
-            static let subHeader = "How to connect:"
-            static let firstItemTitle = "Click here to run a CloudFormation template to securely create required resources."
-            static let firstItemTitleClickablePart = "Click here"
-            static let firstItemText = "You can delete these resources through the stack deletion option or ‘Manage resources’ pages in the menu on the left."
-        }
-        
-        enum CustomConfig: ConstantsLoginInfoConfig {
-            static let mainTitle = "You are connected"
-            static let subHeader = "How to remove:"
-            static let firstItemTitle = "Click here to remove a CloudFormation template"
-            static let firstItemTitleClickablePart = "Click here"
-            static let firstItemText = "It will securely create all required resources."
-        }
-        
-        enum ClosingAppRequired {
-            static let title = "Closing app required"
-            static let defaultConfigSubtitle = "Amazon Location app needs to be closed in order to apply your account configuration. This means that you'll need to manually reopen the app after it closes."
-            static let customConfigSubtitle = "Amazon Location app needs to be closed in order to apply default configuration. This means that you'll need to manually reopen the app after it closes."
-        }
-        
-        static let continueToExplore = "Continue to Explore"
-    }
-    
-    enum AboutTab {
-        static let title = "More"
-        static let cellAttributionTitle = "Attribution"
-        static let cellLegalTitle = "Terms & Conditions"
-        static let cellVersionTitle = "Version"
-        static let cellHelpTitle = "Help"
-    }
-    
-    enum About {
-        static let descriptionTitle = "By downloading, installing, or using the Amazon Location Demo App, you agree to the App's Terms & Conditions for use."
-        static let appTermsOfUse = "Terms & Conditions"
-        static let appTermsOfUseURL = termsAndConditionsURL
-        static let copyright = "© \(Calendar.current.component(.year, from: Date())), Amazon Web Services, Inc. or its affiliates. All rights reserved."
-    }
-    
-    enum Tracking {
-        static let noTracking = "Device tracking inactive"
-        static let isTracking = "Device tracking is active"
-    }
-    
-    enum TabBar {
-        static let explore: String = "Navigate"
-        static let tracking: String = "Trackers"
-        static let settings: String = "Settings"
-        static let about: String = "More"
-    }
-    
-    enum Errors {
-        static let requestCanceledCode = -999
-    }
-    
-    enum NotificationsInfoField {
-        static let geofenceIsHidden = "geofenceIsHidden"
-        static let mapStyleIsHidden = "mapStyleIsHidden"
-        static let directionIsHidden = "directionIsHidden"
-    }
-    
-    static let units = "Units"
-    static let dataProvider = "Data Provider"
-    static let mapStyle = "Map style"
-    static let resetPassword = "Reset password"
-    static let connectYourAWSAccount = "Connect your AWS Account"
-    static let defaultRouteOptions = "Default route options"
-    static let partnerAttributionTitle = "Partner Attribution"
-    static let partnerAttributionESRIDescription = "Esri, HERE, Garmin, FAO, NOAA, USGS, © OpenStreetMap contributors, and the GIS User Community"
-    static let partnerAttributionHEREDescription = "© AWS, HERE"
-    static let softwareAttributionTitle = "Software Attribution"
-    static let softwareAttributionDescription = "Click learn more for software attribution"
-    static let learnMore = "Learn More"
-    static let attribution = "Attribution"
-    static let about = "More"
-    static let version = "Version"
-    static let welcomeTitle = "Welcome to\nAmazon Location Demo"
-    static let continueString = "Continue"
-    static let avoidTolls = "Avoid tolls"
-    static let avoidFerries = "Avoid ferries"
-    static let avoidUturns = "Avoid uturns"
-    static let avoidTunnels = "Avoid tunnels"
-    static let avoidDirtRoads = "Avoid dirt roads"
-    static let myLocation = "My Location"
-    static let appVersion = "App version: "
-    static let termsAndConditions = "Terms & Conditions"
-    static let disconnect = "Disconnect"
-    static let demo = "Demo"
-    static let routeOverview = "Route Overview"
-    
-    static let loginVcTitle = "AWS CloudFormation"
-    static let trackingHistory = "Tracking History"
-    static let viewRoute = "View Route"
-    static let hideRoute = "Hide Route"
-    
-    static let trackingNotificationTitle = "Amazon Location"
-}
+    static var greatDistanceErrorTitle: String { LanguageManager.shared.localizedString(forKey:"Distance is greater than 400 km") }
+       static var greatDistanceErrorMessage: String { LanguageManager.shared.localizedString(forKey:"Can't calculate via Esri, kindly switch to HERE provider") }
+       static var invalidUrlError: String { LanguageManager.shared.localizedString(forKey:"URL is invalid. Can't open it") }
+       
+       // strings:
+       static var directions: String { LanguageManager.shared.localizedString(forKey:"Directions") }
+       static var maybeLater: String { LanguageManager.shared.localizedString(forKey:"Maybe later") }
+       static var checkYourConnection: String { LanguageManager.shared.localizedString(forKey:"Check your internet connection and try again") }
+       static var amazonLocatinCannotReach: String { LanguageManager.shared.localizedString(forKey:"Amazon Location can't reach the internet") }
+       static var terminate: String { LanguageManager.shared.localizedString(forKey:"Ok") }
+       static var failedToCalculateRoute: String { LanguageManager.shared.localizedString(forKey:"Failed to calculate route") }
+       static var noInternetConnection: String { LanguageManager.shared.localizedString(forKey:"No internet connection") }
+       static var trackers: String { LanguageManager.shared.localizedString(forKey:"Trackers") }
+       static var trackingChangeToHere: String { LanguageManager.shared.localizedString(forKey:"You can use any data provider except Esri for your asset management or device tracking use cases. If you want to use Esri for your asset management or tracking user case, please read terms and conditions.") }
+       static var enableTrackingDescription: String { LanguageManager.shared.localizedString(forKey:"Enabling the feature will allow you to track your device and get notified when the device enters or exits any of your geofences.") }
+       
+       static var startTracking: String { LanguageManager.shared.localizedString(forKey:"Start Tracking") }
+       static var stopTracking: String { LanguageManager.shared.localizedString(forKey:"Stop Tracking") }
+       static var startSimulation: String { LanguageManager.shared.localizedString(forKey:"Try Trackers & Geofences simulation") }
+       static var simulation: String { LanguageManager.shared.localizedString(forKey:"Simulation") }
+       static var trackersGeofences: String { LanguageManager.shared.localizedString(forKey:"Trackers and Geofences") }
+       static var trackersGeofencesHeader: String { LanguageManager.shared.localizedString(forKey:"Tracking and Geofence simulation") }
+       static var trackersGeofencesDetail: String { LanguageManager.shared.localizedString(forKey:"Enter the Trackers simulation to view the path across Vancouver streets that crosses Geofences") }
+       static var startTrackingSimulation: String { LanguageManager.shared.localizedString(forKey:"Try Trackers & Geofences Simulation") }
+       static var trackersDetail: String { LanguageManager.shared.localizedString(forKey:"Visualize your location history on the map") }
+       static var geofences: String { LanguageManager.shared.localizedString(forKey:"Geofences") }
+       static var geofencesDetail: String { LanguageManager.shared.localizedString(forKey:"Define virtual boundaries around a specific area to detect entry and exit events") }
+       static var notifications: String { LanguageManager.shared.localizedString(forKey:"Notifications") }
+       static var notificationsDetail: String { LanguageManager.shared.localizedString(forKey:"Get geofence messages when you enter and leave locations") }
+       static var routesNotifications: String { LanguageManager.shared.localizedString(forKey:"Routes notifications") }
+       
+       static var emptyTrackingHistory: String { LanguageManager.shared.localizedString(forKey:"No tracking history available") }
+       
+       static var tracker: String { LanguageManager.shared.localizedString(forKey:"Tracker") }
+       static var entered: String { LanguageManager.shared.localizedString(forKey:"Entered") }
+       static var exited: String { LanguageManager.shared.localizedString(forKey:"Exited") }
+       static var exit: String { LanguageManager.shared.localizedString(forKey:"Exit") }
+       
+       static var change: String { LanguageManager.shared.localizedString(forKey:"Change") }
+       
+       static var go: String { LanguageManager.shared.localizedString(forKey:"Go") }
+       static var preview: String { LanguageManager.shared.localizedString(forKey:"Preview") }
+       static var info: String { LanguageManager.shared.localizedString(forKey:"Info") }
+       static var done: String { LanguageManager.shared.localizedString(forKey:"Done") }
+       
+       static var search: String { LanguageManager.shared.localizedString(forKey:"Search") }
+       static var searchDestination: String { LanguageManager.shared.localizedString(forKey:"Search Destination") }
+       static var searchStartingPoint: String { LanguageManager.shared.localizedString(forKey:"Search starting Point") }
+       static var noMatchingPlacesFound: String { LanguageManager.shared.localizedString(forKey: "No matching places found") }
+       static var searchSpelledCorrectly: String { LanguageManager.shared.localizedString(forKey: "Make sure your search is spelled correctly. Try adding a city, postcode, or country.") }
+       
+       static var locationPermissionDenied: String { LanguageManager.shared.localizedString(forKey:"Location permission denied") }
+       static var locationPermissionDeniedDescription: String { LanguageManager.shared.localizedString(forKey:"Distance can't be calculated if location permission is not granted. Please enable location permission for Amazon Location from Settings") }
+       static var esriDistanceError: String { LanguageManager.shared.localizedString(forKey:"In DataSource Esri, all waypoints must be within 400km") }
+       static var locationPermissionEnableLocationAction: String { LanguageManager.shared.localizedString(forKey:"Enable Location") }
+       static var locationPermissionAlertTitle: String { LanguageManager.shared.localizedString(forKey:"Allow \"LocationServices\" to use your location") }
+       static var locationPermissionAlertText: String { LanguageManager.shared.localizedString(forKey:"Amazon Location will use your location to create a route to the selected location") }
+       
+       // location manager
+       static var locationManagerAlertTitle: String { LanguageManager.shared.localizedString(forKey:"Allow \"LocationServices\" to use your location?") }
+       static var locationManagerAlertText: String { LanguageManager.shared.localizedString(forKey:"We need your location to detect your location in map") }
+       static var cancel: String { LanguageManager.shared.localizedString(forKey:"Cancel") }
+       static var settigns: String { LanguageManager.shared.localizedString(forKey:"Settings") }
+       static var error: String { LanguageManager.shared.localizedString(forKey:"Error") }
+       static var warning: String { LanguageManager.shared.localizedString(forKey:"Warning") }
+       static var ok: String { LanguageManager.shared.localizedString(forKey:"OK") }
+       
+       // dispatch queue
+       static var dispatchReachabilityLabel: String { LanguageManager.shared.localizedString(forKey:"Reachability") }
+       
+       // coordinate label text
+       static var coordinateLabelText: String { LanguageManager.shared.localizedString(forKey:"50.54943, 30.21989") }
+       static var timeLabelText: String { LanguageManager.shared.localizedString(forKey:"11:22 pm") }
+       
+       // Tracking Simulation
+       static var exitTracking: String { LanguageManager.shared.localizedString(forKey:"") }
+       static var exitTrackingAlertMessage: String { LanguageManager.shared.localizedString(forKey:"Are you sure you want to exit simulation?") }
+       
+       enum AboutTab {
+           static var title: String { LanguageManager.shared.localizedString(forKey:"More") }
+           static var cellAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"Attribution") }
+           static var cellLegalTitle: String { LanguageManager.shared.localizedString(forKey:"Terms & Conditions") }
+           static var cellVersionTitle: String { LanguageManager.shared.localizedString(forKey:"Version") }
+           static var cellHelpTitle: String { LanguageManager.shared.localizedString(forKey:"Help") }
+       }
+       
+       enum About {
+           static var descriptionTitle: String { LanguageManager.shared.localizedString(forKey:"DownloadTermsConditions") }
+           static var appTermsOfUse: String { LanguageManager.shared.localizedString(forKey:"Terms & Conditions") }
+           static var appTermsOfUseURL = termsAndConditionsURL
+           static var copyright: String { LanguageManager.shared.localizedString(forKey:"© \(Calendar.current.component(.year, from: Date())), Amazon Web Services, Inc. or its affiliates. All rights reserved.") }
+       }
+       
+       enum Tracking {
+           static var noTracking: String { LanguageManager.shared.localizedString(forKey:"Device tracking inactive") }
+           static var isTracking: String { LanguageManager.shared.localizedString(forKey:"Device tracking is active") }
+       }
+       
+       enum TabBar {
+           static var explore: String { LanguageManager.shared.localizedString(forKey:"Navigate") }
+           static var tracking: String { LanguageManager.shared.localizedString(forKey: "Trackers") }
+           static var settings: String { LanguageManager.shared.localizedString(forKey:"Settings") }
+           static var about: String { LanguageManager.shared.localizedString(forKey:"More") }
+       }
+       
+       enum NotificationsInfoField {
+           static var geofenceIsHidden: String { LanguageManager.shared.localizedString(forKey:"geofenceIsHidden") }
+           static var mapStyleIsHidden: String { LanguageManager.shared.localizedString(forKey:"mapStyleIsHidden") }
+           static var directionIsHidden: String { LanguageManager.shared.localizedString(forKey:"directionIsHidden") }
+       }
+       
+       static var units: String { LanguageManager.shared.localizedString(forKey:"Units") }
+       static var dataProvider: String { LanguageManager.shared.localizedString(forKey:"Data Provider") }
+       static var mapStyle: String { LanguageManager.shared.localizedString(forKey:"Map style") }
+       static var defaultRouteOptions: String { LanguageManager.shared.localizedString(forKey:"Default route options") }
+       static var partnerAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"Partner Attribution") }
+       static var partnerAttributionHEREDescription: String { LanguageManager.shared.localizedString(forKey:"© AWS, HERE") }
+       static var softwareAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"Software Attribution") }
+       static var softwareAttributionDescription: String { LanguageManager.shared.localizedString(forKey:"Click learn more for software attribution") }
+       static var learnMore: String { LanguageManager.shared.localizedString(forKey:"Learn More") }
+       static var attribution: String { LanguageManager.shared.localizedString(forKey:"Attribution") }
+       static var about: String { LanguageManager.shared.localizedString(forKey:"More") }
+       static var version: String { LanguageManager.shared.localizedString(forKey:"Version") }
+       static var welcomeTitle: String { LanguageManager.shared.localizedString(forKey:"Welcome to Amazon Location Demo") }
+       static var continueString: String { LanguageManager.shared.localizedString(forKey:"Continue") }
+       static var avoidTolls: String { LanguageManager.shared.localizedString(forKey:"Avoid tolls") }
+       static var avoidFerries: String { LanguageManager.shared.localizedString(forKey:"Avoid ferries") }
+       static var avoidUturns: String { LanguageManager.shared.localizedString(forKey:"Avoid U-turns") }
+       static var avoidTunnels: String { LanguageManager.shared.localizedString(forKey:"Avoid tunnels") }
+       static var avoidDirtRoads: String { LanguageManager.shared.localizedString(forKey:"Avoid dirt roads") }
+       static var myLocation: String { LanguageManager.shared.localizedString(forKey:"My Location") }
+       static var appVersion: String { LanguageManager.shared.localizedString(forKey:"App version:") }
+       static var termsAndConditions: String { LanguageManager.shared.localizedString(forKey:"Terms & Conditions") }
+       static var demo: String { LanguageManager.shared.localizedString(forKey:"Demo") }
+       static var routeOverview: String { LanguageManager.shared.localizedString(forKey:"Route Overview") }
+       
+       static var viewRoute: String { LanguageManager.shared.localizedString(forKey:"View Route") }
+       static var hideRoute: String { LanguageManager.shared.localizedString(forKey:"Hide Route") }
+       
+       static var trackingNotificationTitle: String { LanguageManager.shared.localizedString(forKey:"Amazon Location") }
 
-protocol ConstantsLoginInfoConfig {
-    static var mainTitle: String { get }
-    static var mainSubtitle: String { get }
-    static var subHeader: String { get }
-    static var firstNumber: String { get }
-    static var secondNumber: String { get }
-    static var thirdNumber: String { get }
-    static var firstItemTitle: String { get }
-    static var firstItemTitleClickablePart: String { get }
-    static var firstItemText: String { get }
-    static var secondItemTitle: String { get }
-    static var secondItemText: String { get }
-    static var learnMoreURL: String { get }
-    static var secondItemTextClickablePart: String { get }
-    static var thirdItemTitle: String { get }
-    static var thirdItemText: String { get }
-}
+       static var arrivalCardTitle: String { LanguageManager.shared.localizedString(forKey:"You've arrived!") }
+       static var poiCardSchedule: String { LanguageManager.shared.localizedString(forKey:"Schedule") }
+       static var language: String { LanguageManager.shared.localizedString(forKey:"Language") }
+       static var politicalView: String { LanguageManager.shared.localizedString(forKey:"Political view") }
+       static var mapRepresentation: String { LanguageManager.shared.localizedString(forKey:"Map representation for different countries") }
+       static var mapLanguage: String { LanguageManager.shared.localizedString(forKey:"Map language") }
+       static var selectLanguage: String { LanguageManager.shared.localizedString(forKey:"Select Language") }
+       static var leaveNow: String { LanguageManager.shared.localizedString(forKey:"Leave now") }
+       static var leaveAt: String { LanguageManager.shared.localizedString(forKey:"Leave at") }
+       static var arriveBy: String { LanguageManager.shared.localizedString(forKey:"Arrive by") }
+       static var routeOptions: String { LanguageManager.shared.localizedString(forKey:"Route Options") }
+       static var options: String { LanguageManager.shared.localizedString(forKey:"Options") }
+       static var selected: String { LanguageManager.shared.localizedString(forKey:"Selected") }
+       static var routesActive: String { LanguageManager.shared.localizedString(forKey:"routes active") }
+       static var politicalLight: String { LanguageManager.shared.localizedString(forKey:"Light") }
+       static var politicalDark: String { LanguageManager.shared.localizedString(forKey:"Dark") }
+       
+       static var automaticUnit: String { LanguageManager.shared.localizedString(forKey:"Automatic") }
+       static var imperialUnit: String { LanguageManager.shared.localizedString(forKey:"Imperial") }
+       static var metricUnit: String { LanguageManager.shared.localizedString(forKey:"Metric") }
+       static var imperialSubtitle: String { LanguageManager.shared.localizedString(forKey:"Miles, pounds") }
+       static var metricSubtitle: String { LanguageManager.shared.localizedString(forKey:"Kilometers, kilograms") }
+    
+    static var light: String { LanguageManager.shared.localizedString(forKey:"Light") }
+    static var dark: String { LanguageManager.shared.localizedString(forKey:"Dark") }
+    
+    static var noPoliticalView: String { LanguageManager.shared.localizedString(forKey:"No Political View") }
+    static var argentinaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"ArgentinaPoliticalView") }
+    static var cyprusPoliticalView: String { LanguageManager.shared.localizedString(forKey:"CyprusPoliticalView") }
+    static var egyptPoliticalView: String { LanguageManager.shared.localizedString(forKey:"EgyptPoliticalView") }
+    static var georgiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"GeorgiaPoliticalView") }
+    static var greecePoliticalView: String { LanguageManager.shared.localizedString(forKey:"GreecePoliticalView") }
+    static var indiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"IndiaPoliticalView") }
+    static var kenyaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"KenyaPoliticalView") }
+    static var moroccoPoliticalView: String { LanguageManager.shared.localizedString(forKey:"MoroccoPoliticalView") }
+    static var palestinePoliticalView: String { LanguageManager.shared.localizedString(forKey:"PalestinePoliticalView") }
+    static var russiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"RussiaPoliticalView") }
+    static var sudanPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SudanPoliticalView") }
+    static var serbiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SerbiaPoliticalView") }
+    static var surinamePoliticalView: String { LanguageManager.shared.localizedString(forKey:"SurinamePoliticalView") }
+    static var syriaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SyriaPoliticalView") }
+    static var turkeyPoliticalView: String { LanguageManager.shared.localizedString(forKey:"TurkeyPoliticalView") }
+    static var tanzaniaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"TanzaniaPoliticalView") }
+    static var uruguayPoliticalView: String { LanguageManager.shared.localizedString(forKey:"UruguayPoliticalView") }
+    static var m: String { LanguageManager.shared.localizedString(forKey:"m") }
+    static var km: String { LanguageManager.shared.localizedString(forKey:"km") }
+    static var mi: String { LanguageManager.shared.localizedString(forKey:"mi") }
+    static var min: String { LanguageManager.shared.localizedString(forKey:"min") }
+    static var hr: String { LanguageManager.shared.localizedString(forKey:"hr") }
+    static var sec: String { LanguageManager.shared.localizedString(forKey:"sec") }
+    
+    static var region: String { LanguageManager.shared.localizedString(forKey:"Region") }
+    static var euWest1: String = "eu-west-1"
+    static var usEast1: String = "us-east-1"
+    static var euWest1FullName: String = "Europe (Ireland) \(euWest1)"
+    static var usEast1FullName: String = "Us-East (N. Virginia) \(usEast1)"
+    static var euWest1ListTitle: String = "Europe"
+    static var usEast1ListTitle: String = "Us-East"
+    
+    // Languages
+    static let deutsch = "Deutsch"
+    static let spanish = "Español"
+    static let english = "English"
+    static let french = "Français"
+    static let italian = "Italiano"
+    static let protugeseBrasil = "Português Brasileiro"
+    static let simplifiedChinese = "简体中文"
+    static let traditionalChinese = "繁体中文"
+    static let japanese = "日本語"
+    static let korean = "한국어"
+    static let arabic = "العربية"
+    static let hebrew = "עברית"
+    static let hindi = "हिन्दी"
 
-extension ConstantsLoginInfoConfig {
-    static var mainSubtitle: String { "Connect your AWS account to enable Geofences and Trackers. This will ensure your tracking and geofencing data is only stored in your account. After you log in, all features of the Demo App will run using resources you deploy in your AWS account. Log out if you wish to continue running the Demo App using resources in AWS’s demo app account." }
-    static var firstNumber: String { "1" }
-    static var secondNumber: String { "2" }
-    static var thirdNumber: String { "3" }
-    static var learnMoreURL: String { StringConstant.helpURL }
-    static var secondItemTitle: String { "Connect the demo app with the recently created AWS resources by copying in input fields." }
-    static var secondItemText: String { "From your CloudFormation output section copy the corresponding named values as reflected in the right section form (IdentityPoolId etc.). Learn more" }
-    static var secondItemTextClickablePart: String { "Learn more" }
-    static var thirdItemTitle: String { "Login using the generated user credentials." }
-    static var thirdItemText: String { "Now you should be able to use the geofences and trackers features using data stored in your account." }
 }

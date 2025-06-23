@@ -60,7 +60,7 @@ final class MapUITests: LocationServicesUITests {
         exploreScreen = testMapStyle(screen: exploreScreen, style: .hybrid)
     }
     
-    func testMapStyle(screen: UITestExploreScreen, style: MapStyleImages) -> UITestExploreScreen {
+    func testMapStyle(screen: UITestExploreScreen, style: MapStyleTypes) -> UITestExploreScreen {
         let screenshotBefore = screen.takeMapScreenshot()
         
         var mapStyleScreen = screen

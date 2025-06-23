@@ -20,8 +20,8 @@ final class PoliticalView: UIButton {
         var label = UILabel()
         label.font = .amazonFont(type: .medium, size: 18)
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
-        label.text = "Political view"
+        label.applyLocaleDirection()
+        label.text = StringConstant.politicalView
         return label
     }()
     
@@ -29,7 +29,7 @@ final class PoliticalView: UIButton {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .gray
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.text = ""
         label.accessibilityIdentifier = ViewsIdentifiers.General.politicalViewSubtitle
         return label
@@ -100,11 +100,16 @@ final class PoliticalView: UIButton {
         self.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         self.addGestureRecognizer(tapGestureRecognizer)
-        
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(validatePoliticalView(_:)), name: Notification.validateMapColor, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
         
         setPoliticalView()
         validatePoliticalView()
+    }
+    
+    @objc func removeNotificationObservers(_ notification: Notification) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func validatePoliticalView(_ notification: Notification) {
@@ -126,7 +131,7 @@ final class PoliticalView: UIButton {
             itemSubtitle.textColor = .mapStyleTintColor
         }
         else {
-            itemSubtitle.text = "Map representation for different countries"
+            itemSubtitle.text = StringConstant.mapRepresentation
             itemSubtitle.textColor = .gray
         }
     }

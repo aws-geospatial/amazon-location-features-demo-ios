@@ -122,9 +122,8 @@ struct ViewsIdentifiers {
     }
     
     struct Settings {
-        static let routeOptionCell = StringConstant.defaultRouteOptions
-        static let dataProviderCell = StringConstant.dataProvider
-        static let mapStyleCell = StringConstant.mapStyle
+        static let routeOptionCell = "Default route options"
+        static let mapStyleCell = "Map style"
     }
     
     struct Geofence {

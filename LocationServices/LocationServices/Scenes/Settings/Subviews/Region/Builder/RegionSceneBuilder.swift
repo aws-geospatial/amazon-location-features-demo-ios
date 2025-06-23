@@ -1,5 +1,5 @@
 //
-//  ResetPasswordBuilder.swift
+//  RegionSceneBuilder.swift
 //  LocationServices
 //
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ResetPasswordBuilder {
-    static func create() -> ResetPasswordVC {
-        let controller = ResetPasswordVC()
-        let vm = ResetPasswordViewModel()
+final class RegionSceneBuilder {
+    static func create() -> RegionVC {
+        let controller = RegionVC()
+        let vm = RegionSceneViewModel()
         controller.viewModel = vm
         return controller
     }
