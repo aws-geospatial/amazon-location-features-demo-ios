@@ -12,7 +12,7 @@ extension String {
     static let errorCannotInitializeView = "Couldn't initialize view"
     static let errorUserDefaultsSave = "User Default save error:"
     static let errorUserDefaultsGet = "User Default get error:"
-    static let errorCellCannotBeInititalized = "Cell can't be initialized"
+    static let errorCellCannotBeInitialized = "Cell can't be initialized"
     static let errorJSONDecoder = "JSON Decoder Error"
     static let cellCanNotBeDequed = "Cell can't be dequed"
     
