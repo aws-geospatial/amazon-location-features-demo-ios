@@ -9,18 +9,13 @@ extension String {
     // errors:
     static let errorInitWithCoder = "init(coder:) has not been implemented"
     static let errorAnimatorNotSet = "Somehow the offset animator was not set"
-    static let errorCannotInitializeView = "Couldn't initiliza view"
-    
-    //static let errorDelegeGeofence = "Delete Geofence error:"
+    static let errorCannotInitializeView = "Couldn't initialize view"
     static let errorUserDefaultsSave = "User Default save error:"
     static let errorUserDefaultsGet = "User Default get error:"
-    //static let errorCannotReadDefaultConfiguration = "Can't read default configuration from awsconfiguration.json"
-    
-    static let errorCellCannotBeInititalized = "Cell can't be initilized"
+    static let errorCellCannotBeInititalized = "Cell can't be initialized"
     static let errorJSONDecoder = "JSON Decoder Error"
     static let cellCanNotBeDequed = "Cell can't be dequed"
     
-    //static let errorToBeImplemented = "to be implemented"
     // errors
     static let domainErrorLocalizedDescription = "The operation couldn’t be completed. (kCLErrorDomain error 0.)"
     static let testExpectationError = "expectation not matched after waiting"

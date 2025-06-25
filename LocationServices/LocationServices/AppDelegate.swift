@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         Reachability.shared.startMonitoring()
-        //LanguageManager.shared
         return true
     }
 
