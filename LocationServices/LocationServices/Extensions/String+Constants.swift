@@ -1,11 +1,11 @@
 //
-//  String+Constants.swift
+//  ErrorMessage.swift
 //  LocationServices
 //
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-extension String {
+enum ErrorMessage {
     // errors:
     static let errorInitWithCoder = "init(coder:) has not been implemented"
     static let errorAnimatorNotSet = "Somehow the offset animator was not set"
