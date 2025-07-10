@@ -96,12 +96,7 @@ enum StringConstant {
     // dispatch queue
     static var dispatchReachabilityLabel: String { LanguageManager.shared.localizedString(forKey:"Reachability") }
     
-    // coordinate label text
-    static var coordinateLabelText: String { LanguageManager.shared.localizedString(forKey:"50.54943, 30.21989") }
-    static var timeLabelText: String { LanguageManager.shared.localizedString(forKey:"11:22 pm") }
-    
     // Tracking Simulation
-    static var exitTracking: String { LanguageManager.shared.localizedString(forKey:"") }
     static var exitTrackingAlertMessage: String { LanguageManager.shared.localizedString(forKey:"Are you sure you want to exit simulation?") }
     
     enum AboutTab {
