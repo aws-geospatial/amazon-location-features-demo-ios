@@ -16,7 +16,4 @@ enum ErrorMessage {
     static let cellCanNotBeDequed = "Cell can't be dequed"
     static let domainErrorLocalizedDescription = "The operation couldn’t be completed. (kCLErrorDomain error 0.)"
     static let testExpectationError = "expectation not matched after waiting"
-//    static let sessionExpiredError = "Session is expired. Please sign out and sign in back to continue access all features. Otherwise you could face unexpected behaviour in the app"
-//    static let awsStackInvalidTitle = "Invalid AWS Stack"
-//    static let awsStackInvalidExplanation = "Stack is not invalid anymore or deleted, app will disconnect from AWS and restart"
 }

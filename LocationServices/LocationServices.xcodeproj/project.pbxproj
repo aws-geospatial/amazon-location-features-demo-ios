@@ -302,9 +302,9 @@
 		F11E046F2CE788EA003F1641 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E046E2CE788DA003F1641 /* LanguageView.swift */; };
 		F11E04712CE788FD003F1641 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E04702CE788F3003F1641 /* LanguageViewController.swift */; };
 		F11E04732CE791A3003F1641 /* LanguageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E04722CE791A1003F1641 /* LanguageViewCell.swift */; };
-		F12C1E322DF9CE930064F611 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* String+Constants.swift */; };
-		F12C1E332DF9CEC60064F611 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* String+Constants.swift */; };
-		F12C1E342DF9CEC60064F611 /* String+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* String+Constants.swift */; };
+		F12C1E322DF9CE930064F611 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* ErrorMessage.swift */; };
+		F12C1E332DF9CEC60064F611 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* ErrorMessage.swift */; };
+		F12C1E342DF9CEC60064F611 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E312DF9CE850064F611 /* ErrorMessage.swift */; };
 		F1343E9B2DD35CD1002A347F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1343E9A2DD35CD1002A347F /* Localizable.xcstrings */; };
 		F1343EAC2DD6585A002A347F /* LanguageSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1343EAB2DD65859002A347F /* LanguageSceneBuilder.swift */; };
 		F1343EAE2DD65999002A347F /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1343EAD2DD65991002A347F /* LanguageVC.swift */; };
@@ -720,7 +720,7 @@
 		F11E046E2CE788DA003F1641 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		F11E04702CE788F3003F1641 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		F11E04722CE791A1003F1641 /* LanguageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewCell.swift; sourceTree = "<group>"; };
-		F12C1E312DF9CE850064F611 /* String+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Constants.swift"; sourceTree = "<group>"; };
+		F12C1E312DF9CE850064F611 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		F1343E982DD35B86002A347F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F1343E9A2DD35CD1002A347F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F1343E9C2DD37EE3002A347F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -2356,7 +2356,7 @@
 		ADF26F5A292FEE52000147A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F12C1E312DF9CE850064F611 /* String+Constants.swift */,
+				F12C1E312DF9CE850064F611 /* ErrorMessage.swift */,
 				F11603C72DE09F7C00FD837D /* Label+Extension.swift */,
 				F146A56D2DDBAD3E00CD5D6B /* LanguageManager.swift */,
 				96E742A92967381800D5C0BC /* Sequence+Extension.swift */,
@@ -2922,7 +2922,7 @@
 				F10994F829D1AB2B001D3464 /* AWSConnectUITests.swift in Sources */,
 				8A47805729C9BDA900B098CA /* UITestExploreScreen.swift in Sources */,
 				8AB3F19329C8A1C3008FDF37 /* LocationServicesUITests.swift in Sources */,
-				F12C1E342DF9CEC60064F611 /* String+Constants.swift in Sources */,
+				F12C1E342DF9CEC60064F611 /* ErrorMessage.swift in Sources */,
 				8AB3F19C29C8ABF8008FDF37 /* MapUITests.swift in Sources */,
 				F10994F629D1A908001D3464 /* UITestAWSScreen.swift in Sources */,
 				8A4EE62E29D4B0EE00B699A9 /* NavigationUITests.swift in Sources */,
@@ -2973,7 +2973,7 @@
 				F1E5F8F029E986F300639EEC /* UserDefaultsHelperTests.swift in Sources */,
 				F1E5F8ED29E94EF000639EEC /* SettingsDefaultValueHelperTests.swift in Sources */,
 				F111DF0F29F0214B00D08641 /* MapStyleViewModelTests.swift in Sources */,
-				F12C1E332DF9CEC60064F611 /* String+Constants.swift in Sources */,
+				F12C1E332DF9CEC60064F611 /* ErrorMessage.swift in Sources */,
 				F139208829EE918E0042CBC9 /* AWSLocationTravelModeTests.swift in Sources */,
 				8AA33B1529F1604F00AEF483 /* PlaceholderAnimatorTests.swift in Sources */,
 				F1E5F8F629E988F900639EEC /* ReachabilityTests.swift in Sources */,
@@ -3083,7 +3083,7 @@
 				F116049C2DE5CF9300FD837D /* RegionVC+TableView.swift in Sources */,
 				F116049D2DE5CF9300FD837D /* RegionTypes.swift in Sources */,
 				F116049E2DE5CF9300FD837D /* RegionSceneContracts.swift in Sources */,
-				F12C1E322DF9CE930064F611 /* String+Constants.swift in Sources */,
+				F12C1E322DF9CE930064F611 /* ErrorMessage.swift in Sources */,
 				F18DEEFC2C7774B500335F3E /* MqttIoTContext.swift in Sources */,
 				AD38BA06294BE6A60087C2FC /* UITableView+Extension.swift in Sources */,
 				AD2AF0E3292EAC2300149904 /* WelcomeBottomView.swift in Sources */,
