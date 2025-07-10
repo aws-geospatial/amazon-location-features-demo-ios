@@ -379,7 +379,6 @@
 		F1E5F8FA29E98ABF00639EEC /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5F8F929E98ABF00639EEC /* IntExtensionTests.swift */; };
 		F1E5F8FC29E98AFB00639EEC /* DoubleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5F8FB29E98AFB00639EEC /* DoubleExtensionTests.swift */; };
 		F1E5F8FE29E9916800639EEC /* MLNCoordinateBoundsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5F8FD29E9916800639EEC /* MLNCoordinateBoundsExtensionTests.swift */; };
-		F1F0C5872A0E5401009C7151 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0C5862A0E5401009C7151 /* ErrorHandler.swift */; };
 		F1F0C5892A13C19E009C7151 /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0C5882A13C19E009C7151 /* GeneralHelper.swift */; };
 		F1F8061A29D5EDCB002BDF85 /* TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8061929D5EDCB002BDF85 /* TrackingUITests.swift */; };
 		F1F8108B2DDDEA79007E7E8C /* Localizations.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F8108A2DDDEA6A007E7E8C /* Localizations.json */; };
@@ -800,7 +799,6 @@
 		F1E5F8F929E98ABF00639EEC /* IntExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
 		F1E5F8FB29E98AFB00639EEC /* DoubleExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionTests.swift; sourceTree = "<group>"; };
 		F1E5F8FD29E9916800639EEC /* MLNCoordinateBoundsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNCoordinateBoundsExtensionTests.swift; sourceTree = "<group>"; };
-		F1F0C5862A0E5401009C7151 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F1F0C5882A13C19E009C7151 /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
 		F1F8061929D5EDCB002BDF85 /* TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingUITests.swift; sourceTree = "<group>"; };
 		F1F8063229D7683E002BDF85 /* TrackingSimulateLocation.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrackingSimulateLocation.xctestplan; sourceTree = "<group>"; };
@@ -1256,7 +1254,6 @@
 				8A3FD14B29A69CE000DFA6F6 /* PlaceholderAnimator.swift */,
 				8ACD71C92A091A8F00EC23F3 /* MapFloatingViewHandler.swift */,
 				8AD132742A267FCC00608FCD /* KeyboardObserver.swift */,
-				F1F0C5862A0E5401009C7151 /* ErrorHandler.swift */,
 				F1F0C5882A13C19E009C7151 /* GeneralHelper.swift */,
 				F18DEEE32C75942E00335F3E /* CognitoCredentials.swift */,
 				F18DEEE52C75947000335F3E /* Logger.swift */,
@@ -3117,7 +3114,6 @@
 				AD2AF0B0292EAA4100149904 /* TrackingVCBuilder.swift in Sources */,
 				F17CC38E2E097F690036E64F /* LanguageSwitcherData.swift in Sources */,
 				ADC124A22979EA5F00B08C20 /* GeofenceService.swift in Sources */,
-				F1F0C5872A0E5401009C7151 /* ErrorHandler.swift in Sources */,
 				8AFDA09629DDBC3800114BB7 /* VersionVCBuilder.swift in Sources */,
 				ADAF3653294A6A0700DC4774 /* POICardViewModel.swift in Sources */,
 				F18055E32D71EF1300045301 /* TrackingSimulationDashboardView.swift in Sources */,
