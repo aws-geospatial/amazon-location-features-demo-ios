@@ -512,7 +512,7 @@ extension ExploreVC: CLLocationManagerDelegate {
                 }
                 self.exploreView.drawCalculatedRouteWith(datas, departureLocation: departureLocation, destinationLocation: destinationLocation, isRecalculation: true, routeType: routeType, isPreview: isPreview)
             } catch {
-                print(String.errorJSONDecoder)
+                print(ErrorMessage.errorJSONDecoder)
             }
     }
     

@@ -31,7 +31,7 @@ class PoliticalViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(String.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupViews() {

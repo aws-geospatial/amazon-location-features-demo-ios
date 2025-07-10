@@ -102,7 +102,7 @@ final class SideBarCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

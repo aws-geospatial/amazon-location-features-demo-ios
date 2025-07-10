@@ -322,7 +322,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
                     }
                     return (jsonDatas, directionVM)
                 } catch {
-                    print(String.errorJSONDecoder)
+                    print(ErrorMessage.errorJSONDecoder)
                 }
             case .failure, .none:
                 print(StringConstant.failedToCalculateRoute)
