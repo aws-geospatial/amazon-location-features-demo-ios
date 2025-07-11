@@ -167,7 +167,7 @@
                 }
             }
         },
-        "Selected" : {
+        "selected" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -250,256 +250,90 @@
                 }
             }
         },
-        "© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved." : {
+        "copyright" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025، Amazon الويب خدمات، شركة أو لها الشركات التابعة. جميع حقوق محجوز."
+                        "value" : ", Amazon الويب خدمات، شركة أو لها الشركات التابعة. جميع حقوق محجوز."
                     }
                 },
                 "de" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Dienstleistungen, Inc. oder seine verbundene Unternehmen. Alles Rechte reserviert."
+                        "value" : ", Amazon Web Dienstleistungen, Inc. oder seine verbundene Unternehmen. Alles Rechte reserviert."
                     }
                 },
                 "en" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+                        "value" : ", Amazon Web Services, Inc. or its affiliates. All rights reserved."
                     }
                 },
                 "es" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Servicios, Cía. o sus afiliados. Todos derechos reservado."
+                        "value" : ", Amazon Web Servicios, Cía. o sus afiliados. Todos derechos reservado."
                     }
                 },
                 "fr" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Des services, Inc. ou ses affiliés. Tous droits réservé."
+                        "value" : ", Amazon Web Des services, Inc. ou ses affiliés. Tous droits réservé."
                     }
                 },
                 "he" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon אינטרנט שירותים, \"בע\"\"מ\" או שלו שותפים. כל זכויות שמורה."
+                        "value" : ", Amazon אינטרנט שירותים, \"בע\"\"מ\" או שלו שותפים. כל זכויות שמורה."
                     }
                 },
                 "hi" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon वेब सेवाएँ, निगमित या इसके सहयोगी कंपनियों। सभी अधिकार आरक्षित।"
+                        "value" : ", Amazon वेब सेवाएँ, निगमित या इसके सहयोगी कंपनियों। सभी अधिकार आरक्षित।"
                     }
                 },
                 "it" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Servizi, Inc. o la sua affiliati. Tutti diritti riservato."
+                        "value" : ", Amazon Web Servizi, Inc. o la sua affiliati. Tutti diritti riservato."
                     }
                 },
                 "ja" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon ウェブ サービス、 インコーポレイテッド または その アフィリエイト。 [すべて] 権利 予約済み。"
+                        "value" : ", Amazon ウェブ サービス、 インコーポレイテッド または その アフィリエイト。 [すべて] 権利 予約済み。"
                     }
                 },
                 "ko" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon 웹 서비스, 주식회사 또는 그것의 계열사. 모두 권한 예약되어 있습니다."
+                        "value" : ", Amazon 웹 서비스, 주식회사 또는 그것의 계열사. 모두 권한 예약되어 있습니다."
                     }
                 },
                 "pt-PT" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon Web Serviços, Inc. ou dela afiliados. Todos corretos reservado."
+                        "value" : ", Amazon Web Serviços, Inc. ou dela afiliados. Todos corretos reservado."
                     }
                 },
                 "zh-Hans" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025年， Amazon 网页 服务， 公司 要么 它的 附属公司。 全部 权利 保留的。"
+                        "value" : "年，Amazon 网页 服务， 公司 要么 它的 附属公司。 全部 权利 保留的。"
                     }
                 },
                 "zh-Hant" : {
                     "stringUnit" : {
                         "state" : "translated",
-                        "value" : "© 2025, Amazon 網頁 服務， 公司 或者 它的 附屬機構。 所有 權利 保留。"
+                        "value" : ", Amazon 網頁 服務， 公司 或者 它的 附屬機構。 所有 權利 保留。"
                     }
                 }
             }
         },
-        "<![CDATA[Explore the power of Trackers & Geofences]]>" : {
-            "extractionState" : "manual",
-            "localizations" : {
-                "ar" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "اكتشف ال قوة من أجهزة التتبع & الأسوار الجغرافية"
-                    }
-                },
-                "de" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Erkunden die Leistung von Tracker & Geofences"
-                    }
-                },
-                "en" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "<![CDATA[Explore the power of Trackers & Geofences]]>"
-                    }
-                },
-                "es" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Explora la poder de Rastreadores y Geofences"
-                    }
-                },
-                "fr" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Explorez le puissance de Traceurs et Géofences"
-                    }
-                },
-                "he" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "חקור ה עוצמה של עוקבים & גיאופנס"
-                    }
-                },
-                "hi" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "एक्सप्लोर यह ताकत का ट्रैकर्स & जियोफेंस"
-                    }
-                },
-                "it" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Esplora lo energia di Localizzatori & Geofence"
-                    }
-                },
-                "ja" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "探索 その パワー の トラッカー & ジオフェンス"
-                    }
-                },
-                "ko" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "둘러보기 그 힘 의 트래커 & 지오펜스"
-                    }
-                },
-                "pt-PT" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Explorar a poder do Rastreadores & Geofences"
-                    }
-                },
-                "zh-Hans" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "探索 这 权力 的 追踪器 & 地理围栏"
-                    }
-                },
-                "zh-Hant" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "探索 該 功率 的 追蹤器 & 地理圍欄"
-                    }
-                }
-            }
-        },
-        "<![CDATA[Trackers & Geofences simulation]]>" : {
-            "extractionState" : "manual",
-            "localizations" : {
-                "ar" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "أجهزة التتبع & الأسوار الجغرافية محاكاة"
-                    }
-                },
-                "de" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Tracker & Geofences Simulation"
-                    }
-                },
-                "en" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "<![CDATA[Trackers & Geofences simulation]]>"
-                    }
-                },
-                "es" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Rastreadores y Geofences simulación"
-                    }
-                },
-                "fr" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Traceurs et Géofences simulation"
-                    }
-                },
-                "he" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "עוקבים & גיאופנס הדמייה"
-                    }
-                },
-                "hi" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "ट्रैकर्स & जियोफेंस अनुकरण"
-                    }
-                },
-                "it" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Localizzatori & Geofence simulazione"
-                    }
-                },
-                "ja" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "トラッカー & ジオフェンス シミュレーション"
-                    }
-                },
-                "ko" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "트래커 & 지오펜스 시뮬레이션"
-                    }
-                },
-                "pt-PT" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "Rastreadores & Geofences simulação"
-                    }
-                },
-                "zh-Hans" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "追踪器 & 地理围栏 模拟"
-                    }
-                },
-                "zh-Hant" : {
-                    "stringUnit" : {
-                        "state" : "translated",
-                        "value" : "追蹤器 & 地理圍欄 模擬"
-                    }
-                }
-            }
-        },
-        "Try Trackers & Geofences simulation" : {
+        "startSimulation" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -1246,7 +1080,7 @@
                 }
             }
         },
-        "Amazon Location" : {
+        "amazonLocation" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -1329,7 +1163,7 @@
                 }
             }
         },
-        "Amazon Location can't reach the internet" : {
+        "amazonLocatinCannotReach" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -1578,7 +1412,7 @@
                 }
             }
         },
-        "App version:" : {
+        "appVersion" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -1910,7 +1744,7 @@
                 }
             }
         },
-        "Are you sure you want to exit simulation?" : {
+        "exitTrackingAlertMessage" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2159,7 +1993,7 @@
                 }
             }
         },
-        "Arrive by" : {
+        "arriveBy" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2242,7 +2076,7 @@
                 }
             }
         },
-        "Attribution" : {
+        "attribution" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2325,7 +2159,7 @@
                 }
             }
         },
-        "Automatic" : {
+        "automatic" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2408,7 +2242,7 @@
                 }
             }
         },
-        "Avoid dirt roads" : {
+        "avoidDirtRoads" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2491,7 +2325,7 @@
                 }
             }
         },
-        "Avoid ferries" : {
+        "avoidFerries" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2574,7 +2408,7 @@
                 }
             }
         },
-        "Avoid tolls" : {
+        "avoidTolls" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2657,7 +2491,7 @@
                 }
             }
         },
-        "Avoid tunnels" : {
+        "avoidTunnels" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -2740,7 +2574,7 @@
                 }
             }
         },
-        "Avoid U-turns" : {
+        "avoidUturns" : {
           "extractionState" : "manual",
           "localizations" : {
             "en" : {
@@ -3321,7 +3155,7 @@
                 }
             }
         },
-        "Cancel" : {
+        "cancel" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -3487,7 +3321,7 @@
                 }
             }
         },
-        "Change" : {
+        "change" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -3653,7 +3487,7 @@
                 }
             }
         },
-        "Check your internet connection and try again" : {
+        "checkYourConnection" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -3819,7 +3653,7 @@
                 }
             }
         },
-        "Click learn more for software attribution" : {
+        "softwareAttributionDescription" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -4815,7 +4649,7 @@
                 }
             }
         },
-        "Continue" : {
+        "continue" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5147,7 +4981,7 @@
                 }
             }
         },
-        "Dark" : {
+        "dark" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5313,7 +5147,7 @@
                 }
             }
         },
-        "Default route options" : {
+        "defaultRouteOptions" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5396,7 +5230,7 @@
                 }
             }
         },
-        "Define virtual boundaries around a specific area to detect entry and exit events" : {
+        "geofencesDetail" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5811,7 +5645,7 @@
                 }
             }
         },
-        "Device tracking inactive" : {
+        "noTracking" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5894,7 +5728,7 @@
                 }
             }
         },
-        "Device tracking is active" : {
+        "isTracking" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -5977,7 +5811,7 @@
                 }
             }
         },
-        "Directions" : {
+        "directions" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -6226,7 +6060,7 @@
                 }
             }
         },
-        "Distance can't be calculated if location permission is not granted. Please enable location permission for Amazon Location from Settings" : {
+        "locationPermissionDeniedDescription" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -6309,7 +6143,7 @@
                 }
             }
         },
-        "Done" : {
+        "done" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -6392,7 +6226,7 @@
                 }
             }
         },
-        "DownloadTermsConditions" : {
+        "downloadTermsTitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -6890,7 +6724,7 @@
                 }
             }
         },
-        "Enabling the feature will allow you to track your device and get notified when the device enters or exits any of your geofences." : {
+        "enableTrackingDescription" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -7139,7 +6973,7 @@
                 }
             }
         },
-        "Enter the Trackers simulation to view the path across Vancouver streets that crosses Geofences" : {
+        "trackersGeofencesDetail" : {
           "extractionState" : "manual",
           "localizations" : {
             "en" : {
@@ -7637,7 +7471,7 @@
                 }
             }
         },
-        "Entered" : {
+        "entered" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -8135,7 +7969,7 @@
                 }
             }
         },
-        "Exit" : {
+        "rxit" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -8218,7 +8052,7 @@
                 }
             }
         },
-        "Exited" : {
+        "exited" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -8799,7 +8633,7 @@
                 }
             }
         },
-        "Geofences" : {
+        "geofences" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -8965,7 +8799,7 @@
                 }
             }
         },
-        "Get geofence messages when you enter and leave locations" : {
+        "notificationsDetail" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -9048,7 +8882,7 @@
                 }
             }
         },
-        "Go" : {
+        "go" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -9214,7 +9048,7 @@
                 }
             }
         },
-        "Help" : {
+        "help" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -9629,7 +9463,7 @@
                 }
             }
         },
-        "Imperial" : {
+        "imperial" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -9961,7 +9795,7 @@
                 }
             }
         },
-        "Kilometers, kilograms" : {
+        "metricSubtitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10127,7 +9961,7 @@
                 }
             }
         },
-        "Language" : {
+        "language" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10210,7 +10044,7 @@
                 }
             }
         },
-        "Learn More" : {
+        "learnMore" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10293,7 +10127,7 @@
                 }
             }
         },
-        "Leave at" : {
+        "leaveAt" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10376,7 +10210,7 @@
                 }
             }
         },
-        "Leave now" : {
+        "leaveNow" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10459,7 +10293,7 @@
                 }
             }
         },
-        "Light" : {
+        "light" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -10625,7 +10459,7 @@
                 }
             }
         },
-        "Location permission denied" : {
+        "locationPermissionDenied" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11123,7 +10957,7 @@
                 }
             }
         },
-        "Make sure your search is spelled correctly. Try adding a city, postcode, or country." : {
+        "searchSpelledCorrectly" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11206,7 +11040,7 @@
                 }
             }
         },
-        "Map language" : {
+        "mapLanguage" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11289,7 +11123,7 @@
                 }
             }
         },
-        "Map representation for different countries" : {
+        "mapRepresentation" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11372,7 +11206,7 @@
                 }
             }
         },
-        "Map style" : {
+        "mapStyle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11538,7 +11372,7 @@
                 }
             }
         },
-        "Maybe later" : {
+        "maybeLater" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11621,7 +11455,7 @@
                 }
             }
         },
-        "Metric" : {
+        "metric" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11787,7 +11621,7 @@
                 }
             }
         },
-        "Miles, pounds" : {
+        "imperialSubtitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -11953,7 +11787,7 @@
                 }
             }
         },
-        "More" : {
+        "more" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -12119,7 +11953,7 @@
                 }
             }
         },
-        "My Location" : {
+        "myLocation" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -12368,7 +12202,7 @@
                 }
             }
         },
-        "No matching places found" : {
+        "noMatchingPlacesFound" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -12534,7 +12368,7 @@
                 }
             }
         },
-        "No political view" : {
+        "noPoliticalView" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -12866,7 +12700,7 @@
                 }
             }
         },
-        "Notifications" : {
+        "notifications" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -12949,7 +12783,7 @@
                 }
             }
         },
-        "OK" : {
+        "ok" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -13032,7 +12866,7 @@
                 }
             }
         },
-        "Options" : {
+        "options" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -13198,7 +13032,7 @@
                 }
             }
         },
-        "Partner Attribution" : {
+        "partnerAttributionTitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -13779,7 +13613,7 @@
                 }
             }
         },
-        "Political view" : {
+        "politicalView" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -13862,7 +13696,7 @@
                 }
             }
         },
-        "Preview" : {
+        "preview" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -14111,7 +13945,7 @@
                 }
             }
         },
-        "Region" : {
+        "region" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -14526,7 +14360,7 @@
                 }
             }
         },
-        "Route Options" : {
+        "routeOptions" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -14609,7 +14443,7 @@
                 }
             }
         },
-        "routes active" : {
+        "routesActive" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -14692,7 +14526,7 @@
                 }
             }
         },
-        "Routes notifications" : {
+        "routesNotifications" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -14941,7 +14775,7 @@
                 }
             }
         },
-        "Schedule" : {
+        "schedule" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -15107,7 +14941,7 @@
                 }
             }
         },
-        "Search" : {
+        "search" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -15190,7 +15024,7 @@
                 }
             }
         },
-        "Search Destination" : {
+        "searchDestination" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -15356,7 +15190,7 @@
                 }
             }
         },
-        "Search starting point" : {
+        "searchStartingPoint" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -15688,7 +15522,7 @@
                 }
             }
         },
-        "Settings" : {
+        "settings" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -16269,7 +16103,7 @@
                 }
             }
         },
-        "Simulation" : {
+        "simulation" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -16352,7 +16186,7 @@
                 }
             }
         },
-        "Software Attribution" : {
+        "softwareAttributionTitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -16850,7 +16684,7 @@
                 }
             }
         },
-        "Start Tracking" : {
+        "startTracking" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -16933,7 +16767,7 @@
                 }
             }
         },
-        "Stop Tracking" : {
+        "stopTracking" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -17348,7 +17182,7 @@
                 }
             }
         },
-        "Terms & Conditions" : {
+        "termsConditions" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -17846,7 +17680,7 @@
                 }
             }
         },
-        "Navigate" : {
+        "navigate" : {
             "extractionState" : "manual",
             "localizations" : {
                 "en" : {
@@ -17929,7 +17763,7 @@
                 }
             }
         },
-        "Trackers" : {
+        "trackers" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -18012,7 +17846,7 @@
                 }
             }
         },
-        "Trackers and Geofences" : {
+        "trackersGeofences" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -18095,7 +17929,7 @@
                 }
             }
         },
-        "Tracking and Geofence simulation" : {
+        "trackersGeofencesHeader" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -18759,7 +18593,7 @@
                 }
             }
         },
-        "Units" : {
+        "units" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -19174,7 +19008,7 @@
                 }
             }
         },
-        "Version" : {
+        "version" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -19257,7 +19091,7 @@
                 }
             }
         },
-        "Visualize your location history on the map" : {
+        "trackersDetail" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -19340,7 +19174,7 @@
                 }
             }
         },
-        "Warning" : {
+        "warning" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -19589,7 +19423,7 @@
                 }
             }
         },
-        "Welcome to Amazon Location Demo" : {
+        "welcomeTitle" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
@@ -19838,6 +19672,1334 @@
                 }
             }
         }
+    },
+    "enableLocation": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "تمكين الموقع"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Standort aktivieren"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Enable Location"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Habilitar ubicación"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Activer la localisation"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "הפעל מיקום"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "स्थान सक्षम करें"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Abilita posizione"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "位置情報を有効にする"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "위치 사용"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Ativar localização"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "启用位置"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "啟用位置"
+                }
+            }
+        }
+    },
+    "allowLocationServices": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "اسمح لـ \"LocationServices\" باستخدام موقعك"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Erlauben Sie \"LocationServices\", Ihren Standort zu verwenden"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Allow \"LocationServices\" to use your location"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Permitir que \"LocationServices\" use tu ubicación"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Autoriser \"LocationServices\" à utiliser votre position"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "אפשר ל-\"LocationServices\" להשתמש במיקומך"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "\"LocationServices\" को आपके स्थान का उपयोग करने की अनुमति दें"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Consenti a \"LocationServices\" di utilizzare la tua posizione"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "「LocationServices」に位置情報の使用を許可する"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "\"LocationServices\"가 내 위치를 사용하도록 허용"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Permitir que \"LocationServices\" utilize a sua localização"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "允许“LocationServices”使用您的位置"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "允許「LocationServices」使用您的位置"
+                }
+            }
+        }
+    },
+    "amazonLocationRoute": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "ستستخدم Amazon Location موقعك لإنشاء مسار إلى الموقع المحدد"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location verwendet Ihren Standort, um eine Route zum ausgewählten Ort zu erstellen"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location will use your location to create a route to the selected location"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location usará tu ubicación para crear una ruta al lugar seleccionado"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location utilisera votre position pour créer un itinéraire vers l’emplacement sélectionné"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location ישתמש במיקומך כדי ליצור מסלול אל המיקום שנבחר"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location चयनित स्थान तक मार्ग बनाने के लिए आपके स्थान का उपयोग करेगा"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location utilizzerà la tua posizione per creare un percorso verso la posizione selezionata"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Locationは選択した場所へのルートを作成するためにあなたの位置情報を使用します"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location이 선택한 위치로 가는 경로를 만들기 위해 내 위치를 사용합니다"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "O Amazon Location usará a sua localização para criar um percurso até ao local selecionado"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location将使用您的位置创建到所选位置的路线"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Amazon Location將使用您的位置建立到所選位置的路線"
+                }
+            }
+        }
+    },
+    "allowLocationServices": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "هل تسمح لتطبيق \"LocationServices\" باستخدام موقعك؟"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Möchten Sie \"LocationServices\" erlauben, Ihren Standort zu verwenden?"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Allow \"LocationServices\" to use your location?"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "¿Permitir que \"LocationServices\" use tu ubicación?"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Autoriser \"LocationServices\" à utiliser votre position ?"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "לאפשר ל-\"LocationServices\" להשתמש במיקום שלך?"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "\"LocationServices\" को आपके स्थान का उपयोग करने की अनुमति दें?"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Consentire a \"LocationServices\" di utilizzare la tua posizione?"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "「LocationServices」に位置情報の使用を許可しますか？"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "\"LocationServices\"가 내 위치를 사용하도록 허용하시겠습니까?"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Permitir que o \"LocationServices\" utilize a sua localização?"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "允许“LocationServices”使用您的位置？"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "允許「LocationServices」使用您的位置？"
+                }
+            }
+        }
+    },
+    "locationPermissionDenied": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "تم رفض إذن الموقع"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Standortberechtigung verweigert"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Location permission denied"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Permiso de ubicación denegado"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Autorisation de localisation refusée"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "ההרשאה למיקום נדחתה"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "स्थान की अनुमति अस्वीकृत"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Autorizzazione alla posizione negata"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "位置情報の許可が拒否されました"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "위치 권한이 거부되었습니다"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Permissão de localização negada"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "位置权限被拒绝"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "位置權限已被拒絕"
+                }
+            }
+        }
+    },
+    "locationDetectionExplanation": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "نحتاج إلى موقعك لاكتشاف موقعك على الخريطة"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Wir benötigen Ihren Standort, um Ihren Standort auf der Karte zu ermitteln"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "We need your location to detect your location in map"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Necesitamos tu ubicación para detectar tu ubicación en el mapa"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Nous avons besoin de votre position pour détecter votre emplacement sur la carte"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "אנו זקוקים למיקומך כדי לאתר את מיקומך במפה"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "मानचित्र में आपका स्थान पहचानने के लिए हमें आपके स्थान की आवश्यकता है"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Abbiamo bisogno della tua posizione per rilevarla sulla mappa"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "地図上であなたの位置を検出するために位置情報が必要です"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "지도에서 귀하의 위치를 감지하려면 귀하의 위치가 필요합니다"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Precisamos da sua localização para detetá-la no mapa"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "我们需要您的位置以在地图上检测您的位置"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "我們需要您的位置以在地圖上偵測您的位置"
+                }
+            }
+        }
+    },
+    "error": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "خطأ"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Fehler"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Error"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Error"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Erreur"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "שגיאה"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "त्रुटि"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Errore"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "エラー"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "오류"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Erro"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "错误"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "錯誤"
+                }
+            }
+        }
+    },
+    "reachability": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "إمكانية الوصول"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Erreichbarkeit"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Reachability"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Accesibilidad"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Accessibilité"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "נגישות"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "पहुँच"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Raggiungibilità"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "到達可能性"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "도달 가능성"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Acessibilidade"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "可达性"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "可達性"
+                }
+            }
+        }
+    },
+    "failedToCalculateRoute": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "فشل في حساب المسار"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Route konnte nicht berechnet werden"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Failed to calculate route"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Error al calcular la ruta"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Échec du calcul de l'itinéraire"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "נכשל חישוב המסלול"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "मार्ग की गणना विफल रही"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Calcolo del percorso non riuscito"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "ルートの計算に失敗しました"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "경로 계산 실패"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Falha ao calcular rota"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "路线计算失败"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "路線計算失敗"
+                }
+            }
+        }
+    },
+    "noInternetConnection": {
+        "extractionState": "manual",
+        "localizations": {
+            "ar": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "لا يوجد اتصال بالإنترنت"
+                }
+            },
+            "de": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Keine Internetverbindung"
+                }
+            },
+            "en": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "No internet connection"
+                }
+            },
+            "es": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Sin conexión a internet"
+                }
+            },
+            "fr": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Pas de connexion Internet"
+                }
+            },
+            "he": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "אין חיבור לאינטרנט"
+                }
+            },
+            "hi": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "इंटरनेट कनेक्शन नहीं है"
+                }
+            },
+            "it": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Nessuna connessione Internet"
+                }
+            },
+            "ja": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "インターネット接続がありません"
+                }
+            },
+            "ko": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "인터넷 연결 없음"
+                }
+            },
+            "pt-PT": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "Sem ligação à internet"
+                }
+            },
+            "zh-Hans": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "无网络连接"
+                }
+            },
+            "zh-Hant": {
+                "stringUnit": {
+                    "state": "translated",
+                    "value": "沒有網路連線"
+                }
+            }
+        }
+    },
+    "distance_greater_than_400_km": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المسافة أكبر من 400 كيلومتر"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Entfernung beträgt mehr als 400 km"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distance is greater than 400 km"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La distancia es mayor de 400 km"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La distance est supérieure à 400 km"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המרחק גדול מ-400 ק\"מ"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दूरी 400 किमी से अधिक है"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La distanza è superiore a 400 km"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距離が400 kmを超えています"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "거리가 400km를 초과합니다"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A distância é superior a 400 km"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距离大于400公里"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "距離大於400公里"
+          }
+        }
+      }
+    },
+    "greatDistanceErrorMessage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتعذر الحساب عبر Esri، يرجى التبديل إلى موفر HERE"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es kann nicht über Esri berechnet werden. Bitte wechseln Sie zum HERE-Anbieter"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't calculate via Esri, kindly switch to HERE provider"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se puede calcular a través de Esri, cambie al proveedor HERE"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de calculer via Esri, veuillez passer au fournisseur HERE"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן לחשב באמצעות Esri, נא לעבור לספק HERE"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esri के माध्यम से गणना नहीं कर सकते, कृपया HERE प्रदाता पर स्विच करें"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile calcolare tramite Esri, si prega di passare al provider HERE"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esriでは計算できません。HEREプロバイダーに切り替えてください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esri로 계산할 수 없습니다. HERE 공급자로 전환해 주세요"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não é possível calcular via Esri, mude para o fornecedor HERE"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法通过Esri计算，请切换到HERE提供商"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法通過Esri計算，請切換至HERE供應商"
+          }
+        }
+      }
+    },
+    "invalidUrlError": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عنوان URL غير صالح. لا يمكن فتحه"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL ist ungültig. Kann nicht geöffnet werden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL is invalid. Can't open it"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La URL no es válida. No se puede abrir"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'URL est invalide. Impossible de l'ouvrir"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "כתובת ה-URL לא חוקית. לא ניתן לפתוח אותה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL अमान्य है। इसे खोल नहीं सकते"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'URL non è valido. Impossibile aprirlo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URLが無効です。開けません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL이 잘못되었습니다. 열 수 없습니다"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O URL é inválido. Não é possível abri-lo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL无效。无法打开"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL無效。無法打開"
+          }
+        }
+      }
+    },
+    "routeOverview": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نظرة عامة على المسار"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Routenübersicht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Route Overview"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumen de la ruta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperçu de l'itinéraire"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סקירת מסלול"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मार्ग अवलोकन"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panoramica del percorso"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルート概要"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "경로 개요"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visão geral da rota"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "路线概述"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "路線概述"
+          }
+        }
+      }
+    },
+    "viewRoute": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض المسار"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Route anzeigen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View Route"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver ruta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher l'itinéraire"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הצג מסלול"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मार्ग देखें"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visualizza percorso"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ルートを表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "경로 보기"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver rota"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看路线"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看路線"
+          }
+        }
+      }
+    },
+    "arrivalCardTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لقد وصلت!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sie sind angekommen!"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've arrived!"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Has llegado!"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous êtes arrivé !"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "!הגעת"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आप पहुँच गए हैं!"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sei arrivato!"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "到着しました！"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "도착했습니다!"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chegou!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "您已到达！"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "您已到達！"
+          }
+        }
+      }
     },
     "version" : "1.0"
 }

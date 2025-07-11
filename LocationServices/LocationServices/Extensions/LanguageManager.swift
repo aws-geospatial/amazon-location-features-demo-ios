@@ -13,12 +13,12 @@ class LanguageManager {
         }
         set {
             UserDefaultsHelper.save(value: [newValue], key: .AppleLanguages)
-            loadTranslations(currentLanguage: newValue )
+            loadStrings(currentLanguage: newValue )
             GeneralHelper.reloadUI()
         }
     }
     
-    func loadTranslations(currentLanguage: String) {
+    func loadStrings(currentLanguage: String) {
         do {
             if let url = Bundle.main.url(forResource: "Localizations", withExtension: "json") {
                 let data = try Data(contentsOf: url)
@@ -31,6 +31,7 @@ class LanguageManager {
                             localizedVariants[lang] = unit.stringUnit.value
                         }
                     }
+                    print("language key: \(key)")
                     translations[key] = localizedVariants
                 }
             }
@@ -42,7 +43,10 @@ class LanguageManager {
     }
 
     func localizedString(forKey key: String) -> String {
-        let translation = translations[key]?[currentLanguage] ?? key
+        guard let translation = translations[key]?[currentLanguage] else {
+            print("translation for \(key) not found")
+            return key
+        }
         return translation
     }
 }

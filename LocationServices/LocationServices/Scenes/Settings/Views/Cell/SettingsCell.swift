@@ -9,14 +9,12 @@ import UIKit
 import SnapKit
 
 enum SettingsCellType {
-    case units, dataProvider, mapStyle, routeOption, language, region
+    case units, mapStyle, routeOption, language, region
     
     var title: String {
         switch self {
         case .units:
             return StringConstant.units
-        case .dataProvider:
-            return StringConstant.dataProvider
         case .mapStyle:
             return StringConstant.mapStyle
         case .routeOption:
@@ -32,8 +30,6 @@ enum SettingsCellType {
         switch self {
         case .units:
             return .unitIcon
-        case .dataProvider:
-            return .dataProviderIcon
         case .mapStyle:
             return .mapStyleIcon
         case .routeOption:

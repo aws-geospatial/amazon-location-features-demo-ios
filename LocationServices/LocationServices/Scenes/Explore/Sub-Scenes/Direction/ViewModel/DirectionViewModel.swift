@@ -127,8 +127,8 @@ final class DirectionViewModel: DirectionViewModelProtocol {
                     let model = results.map(MapModel.init)
                     self.delegate?.searchResult(mapModel: model)
                 case .failure(let error):
-                    let model = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)
                     DispatchQueue.main.async {
+                        let model = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)
                         self.delegate?.showAlert(model)
                     }
                 }
