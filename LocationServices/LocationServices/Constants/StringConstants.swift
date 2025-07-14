@@ -10,6 +10,10 @@ import Foundation
 // Strings
 enum StringConstant {
     
+    static func getLocalizedString(_ key: String) -> String {
+        return LanguageManager.shared.localizedString(forKey: key)
+    }
+    
     //urls
     static let baseDomain: String = "https://location.aws.com"
     static var termsAndConditionsURL: String { baseDomain + "/demo/terms/" }
@@ -27,30 +31,30 @@ enum StringConstant {
     static let developmentSchema = "https"
     
     enum AboutTab {
-        static var title: String { LanguageManager.shared.localizedString(forKey:"more") }
-        static var cellAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"attribution") }
-        static var cellLegalTitle: String { LanguageManager.shared.localizedString(forKey:"termsConditions") }
-        static var cellVersionTitle: String { LanguageManager.shared.localizedString(forKey:"version") }
-        static var cellHelpTitle: String { LanguageManager.shared.localizedString(forKey:"help") }
+        static var title: String { getLocalizedString("more") }
+        static var cellAttributionTitle: String { getLocalizedString("attribution") }
+        static var cellLegalTitle: String { getLocalizedString("termsConditions") }
+        static var cellVersionTitle: String { getLocalizedString("version") }
+        static var cellHelpTitle: String { getLocalizedString("help") }
     }
     
     enum About {
-        static var downloadTermsTitle: String { LanguageManager.shared.localizedString(forKey:"downloadTermsTitle") }
-        static var appTermsOfUse: String { LanguageManager.shared.localizedString(forKey:"termsConditions") }
+        static var downloadTermsTitle: String { getLocalizedString("downloadTermsTitle") }
+        static var appTermsOfUse: String { getLocalizedString("termsConditions") }
         static var appTermsOfUseURL = termsAndConditionsURL
-        static var copyright: String { return "© \(Calendar.current.component(.year, from: Date())) \(LanguageManager.shared.localizedString(forKey:"copyright"))" }
+        static var copyright: String { return "© \(Calendar.current.component(.year, from: Date())) \(getLocalizedString("copyright"))" }
     }
     
     enum Tracking {
-        static var noTracking: String { LanguageManager.shared.localizedString(forKey:"noTracking") }
-        static var isTracking: String { LanguageManager.shared.localizedString(forKey:"isTracking") }
+        static var noTracking: String { getLocalizedString("noTracking") }
+        static var isTracking: String { getLocalizedString("isTracking") }
     }
     
     enum TabBar {
-        static var navigate: String { LanguageManager.shared.localizedString(forKey:"navigate") }
-        static var tracking: String { LanguageManager.shared.localizedString(forKey:"trackers") }
-        static var settings: String { LanguageManager.shared.localizedString(forKey:"settings") }
-        static var more: String { LanguageManager.shared.localizedString(forKey:"more") }
+        static var navigate: String { getLocalizedString("navigate") }
+        static var tracking: String { getLocalizedString("trackers") }
+        static var settings: String { getLocalizedString("settings") }
+        static var more: String { getLocalizedString("more") }
     }
     
     enum NotificationsInfoField {
@@ -59,137 +63,137 @@ enum StringConstant {
         static var directionIsHidden: String { "directionIsHidden" }
     }
     
-    static var greatDistanceErrorTitle: String { LanguageManager.shared.localizedString(forKey:"greatDistanceErrorTitle") }
-    static var greatDistanceErrorMessage: String { LanguageManager.shared.localizedString(forKey:"greatDistanceErrorMessage") }
-    static var invalidUrlError: String { LanguageManager.shared.localizedString(forKey:"invalidUrlError") }
-    static var directions: String { LanguageManager.shared.localizedString(forKey:"directions") }
-    static var maybeLater: String { LanguageManager.shared.localizedString(forKey:"maybeLater") }
-    static var checkYourConnection: String { LanguageManager.shared.localizedString(forKey:"checkYourConnection") }
-    static var amazonLocatinCannotReach: String { LanguageManager.shared.localizedString(forKey:"amazonLocatinCannotReach") }
-    static var terminate: String { LanguageManager.shared.localizedString(forKey:"ok") }
-    static var failedToCalculateRoute: String { LanguageManager.shared.localizedString(forKey:"failedToCalculateRoute") }
-    static var noInternetConnection: String { LanguageManager.shared.localizedString(forKey:"noInternetConnection") }
-    static var trackers: String { LanguageManager.shared.localizedString(forKey:"trackers") }
-    static var enableTrackingDescription: String { LanguageManager.shared.localizedString(forKey:"enableTrackingDescription") }
-    static var startTracking: String { LanguageManager.shared.localizedString(forKey:"startTracking") }
-    static var stopTracking: String { LanguageManager.shared.localizedString(forKey:"stopTracking") }
-    static var startSimulation: String { LanguageManager.shared.localizedString(forKey:"startSimulation") }
-    static var simulation: String { LanguageManager.shared.localizedString(forKey:"simulation") }
-    static var trackersGeofences: String { LanguageManager.shared.localizedString(forKey:"trackersGeofences") }
-    static var trackersGeofencesHeader: String { LanguageManager.shared.localizedString(forKey:"trackersGeofencesHeader") }
-    static var trackersGeofencesDetail: String { LanguageManager.shared.localizedString(forKey:"trackersGeofencesDetail") }
-    static var startTrackingSimulation: String { LanguageManager.shared.localizedString(forKey:"startSimulation") }
-    static var trackersDetail: String { LanguageManager.shared.localizedString(forKey:"trackersDetail") }
-    static var geofences: String { LanguageManager.shared.localizedString(forKey:"geofences") }
-    static var geofencesDetail: String { LanguageManager.shared.localizedString(forKey:"geofencesDetail") }
-    static var notifications: String { LanguageManager.shared.localizedString(forKey:"notifications") }
-    static var notificationsDetail: String { LanguageManager.shared.localizedString(forKey:"notificationsDetail") }
-    static var routesNotifications: String { LanguageManager.shared.localizedString(forKey:"routesNotifications") }
-    static var tracker: String { LanguageManager.shared.localizedString(forKey:"trackers") }
-    static var entered: String { LanguageManager.shared.localizedString(forKey:"entered") }
-    static var exited: String { LanguageManager.shared.localizedString(forKey:"exited") }
-    static var exit: String { LanguageManager.shared.localizedString(forKey:"exit") }
-    static var change: String { LanguageManager.shared.localizedString(forKey:"change") }
-    static var go: String { LanguageManager.shared.localizedString(forKey:"go") }
-    static var preview: String { LanguageManager.shared.localizedString(forKey:"preview") }
-    static var done: String { LanguageManager.shared.localizedString(forKey:"done") }
-    static var search: String { LanguageManager.shared.localizedString(forKey:"search") }
-    static var searchDestination: String { LanguageManager.shared.localizedString(forKey:"searchDestination") }
-    static var searchStartingPoint: String { LanguageManager.shared.localizedString(forKey:"searchStartingPoint") }
-    static var noMatchingPlacesFound: String { LanguageManager.shared.localizedString(forKey: "noMatchingPlacesFound") }
-    static var searchSpelledCorrectly: String { LanguageManager.shared.localizedString(forKey: "searchSpelledCorrectly") }
-    static var locationPermissionDenied: String { LanguageManager.shared.localizedString(forKey:"locationPermissionDenied") }
-    static var locationPermissionDeniedDescription: String { LanguageManager.shared.localizedString(forKey:"locationPermissionDeniedDescription") }
-    static var locationPermissionEnableLocationAction: String { LanguageManager.shared.localizedString(forKey:"enableLocation") }
-    static var locationPermissionAlertTitle: String { LanguageManager.shared.localizedString(forKey:"allowLocationServices") }
-    static var locationPermissionAlertText: String { LanguageManager.shared.localizedString(forKey:"amazonLocationRoute") }
-    static var locationManagerAlertTitle: String { LanguageManager.shared.localizedString(forKey:"allowLocationServices") }
-    static var locationManagerAlertText: String { LanguageManager.shared.localizedString(forKey:"locationDetectionExplanation") }
-    static var cancel: String { LanguageManager.shared.localizedString(forKey:"cancel") }
-    static var settigns: String { LanguageManager.shared.localizedString(forKey:"settings") }
-    static var error: String { LanguageManager.shared.localizedString(forKey:"error") }
-    static var warning: String { LanguageManager.shared.localizedString(forKey:"warning") }
-    static var ok: String { LanguageManager.shared.localizedString(forKey:"ok") }
+    static var greatDistanceErrorTitle: String { getLocalizedString("greatDistanceErrorTitle") }
+    static var greatDistanceErrorMessage: String { getLocalizedString("greatDistanceErrorMessage") }
+    static var invalidUrlError: String { getLocalizedString("invalidUrlError") }
+    static var directions: String { getLocalizedString("directions") }
+    static var maybeLater: String { getLocalizedString("maybeLater") }
+    static var checkYourConnection: String { getLocalizedString("checkYourConnection") }
+    static var amazonLocatinCannotReach: String { getLocalizedString("amazonLocatinCannotReach") }
+    static var terminate: String { getLocalizedString("ok") }
+    static var failedToCalculateRoute: String { getLocalizedString("failedToCalculateRoute") }
+    static var noInternetConnection: String { getLocalizedString("noInternetConnection") }
+    static var trackers: String { getLocalizedString("trackers") }
+    static var enableTrackingDescription: String { getLocalizedString("enableTrackingDescription") }
+    static var startTracking: String { getLocalizedString("startTracking") }
+    static var stopTracking: String { getLocalizedString("stopTracking") }
+    static var startSimulation: String { getLocalizedString("startSimulation") }
+    static var simulation: String { getLocalizedString("simulation") }
+    static var trackersGeofences: String { getLocalizedString("trackersGeofences") }
+    static var trackersGeofencesHeader: String { getLocalizedString("trackersGeofencesHeader") }
+    static var trackersGeofencesDetail: String { getLocalizedString("trackersGeofencesDetail") }
+    static var startTrackingSimulation: String { getLocalizedString("startSimulation") }
+    static var trackersDetail: String { getLocalizedString("trackersDetail") }
+    static var geofences: String { getLocalizedString("geofences") }
+    static var geofencesDetail: String { getLocalizedString("geofencesDetail") }
+    static var notifications: String { getLocalizedString("notifications") }
+    static var notificationsDetail: String { getLocalizedString("notificationsDetail") }
+    static var routesNotifications: String { getLocalizedString("routesNotifications") }
+    static var tracker: String { getLocalizedString("trackers") }
+    static var entered: String { getLocalizedString("entered") }
+    static var exited: String { getLocalizedString("exited") }
+    static var exit: String { getLocalizedString("exit") }
+    static var change: String { getLocalizedString("change") }
+    static var go: String { getLocalizedString("go") }
+    static var preview: String { getLocalizedString("preview") }
+    static var done: String { getLocalizedString("done") }
+    static var search: String { getLocalizedString("search") }
+    static var searchDestination: String { getLocalizedString("searchDestination") }
+    static var searchStartingPoint: String { getLocalizedString("searchStartingPoint") }
+    static var noMatchingPlacesFound: String { getLocalizedString( "noMatchingPlacesFound") }
+    static var searchSpelledCorrectly: String { getLocalizedString( "searchSpelledCorrectly") }
+    static var locationPermissionDenied: String { getLocalizedString("locationPermissionDenied") }
+    static var locationPermissionDeniedDescription: String { getLocalizedString("locationPermissionDeniedDescription") }
+    static var locationPermissionEnableLocationAction: String { getLocalizedString("enableLocation") }
+    static var locationPermissionAlertTitle: String { getLocalizedString("allowLocationServices") }
+    static var locationPermissionAlertText: String { getLocalizedString("amazonLocationRoute") }
+    static var locationManagerAlertTitle: String { getLocalizedString("allowLocationServices") }
+    static var locationManagerAlertText: String { getLocalizedString("locationDetectionExplanation") }
+    static var cancel: String { getLocalizedString("cancel") }
+    static var settigns: String { getLocalizedString("settings") }
+    static var error: String { getLocalizedString("error") }
+    static var warning: String { getLocalizedString("warning") }
+    static var ok: String { getLocalizedString("ok") }
     static var dispatchReachabilityLabel: String { "Reachability" }
-    static var exitTrackingAlertMessage: String { LanguageManager.shared.localizedString(forKey:"exitTrackingAlertMessage") }
-    static var units: String { LanguageManager.shared.localizedString(forKey:"units") }
-    static var mapStyle: String { LanguageManager.shared.localizedString(forKey:"mapStyle") }
-    static var defaultRouteOptions: String { LanguageManager.shared.localizedString(forKey:"defaultRouteOptions") }
-    static var partnerAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"partnerAttributionTitle") }
+    static var exitTrackingAlertMessage: String { getLocalizedString("exitTrackingAlertMessage") }
+    static var units: String { getLocalizedString("units") }
+    static var mapStyle: String { getLocalizedString("mapStyle") }
+    static var defaultRouteOptions: String { getLocalizedString("defaultRouteOptions") }
+    static var partnerAttributionTitle: String { getLocalizedString("partnerAttributionTitle") }
     static var partnerAttributionHEREDescription: String { return "© AWS, HERE" }
-    static var softwareAttributionTitle: String { LanguageManager.shared.localizedString(forKey:"softwareAttributionTitle") }
-    static var softwareAttributionDescription: String { LanguageManager.shared.localizedString(forKey:"softwareAttributionDescription") }
-    static var learnMore: String { LanguageManager.shared.localizedString(forKey:"learnMore") }
-    static var attribution: String { LanguageManager.shared.localizedString(forKey:"attribution") }
-    static var more: String { LanguageManager.shared.localizedString(forKey:"more") }
-    static var version: String { LanguageManager.shared.localizedString(forKey:"version") }
-    static var welcomeTitle: String { LanguageManager.shared.localizedString(forKey:"welcomeTitle") }
-    static var continueString: String { LanguageManager.shared.localizedString(forKey:"continue") }
-    static var avoidTolls: String { LanguageManager.shared.localizedString(forKey:"avoidTolls") }
-    static var avoidFerries: String { LanguageManager.shared.localizedString(forKey:"avoidFerries") }
-    static var avoidUturns: String { LanguageManager.shared.localizedString(forKey:"avoidUturns") }
-    static var avoidTunnels: String { LanguageManager.shared.localizedString(forKey:"avoidTunnels") }
-    static var avoidDirtRoads: String { LanguageManager.shared.localizedString(forKey:"avoidDirtRoads") }
-    static var myLocation: String { LanguageManager.shared.localizedString(forKey:"myLocation") }
-    static var appVersion: String { LanguageManager.shared.localizedString(forKey:"appVersion") }
-    static var termsAndConditions: String { LanguageManager.shared.localizedString(forKey:"termsConditions") }
-    static var demo: String { LanguageManager.shared.localizedString(forKey:"demo") }
-    static var routeOverview: String { LanguageManager.shared.localizedString(forKey:"routeOverview") }
-    static var viewRoute: String { LanguageManager.shared.localizedString(forKey:"viewRoute") }
-    static var hideRoute: String { LanguageManager.shared.localizedString(forKey:"hideRoute") }
-    static var trackingNotificationTitle: String { LanguageManager.shared.localizedString(forKey:"amazonLocation") }
-    static var arrivalCardTitle: String { LanguageManager.shared.localizedString(forKey:"arrivalCardTitle") }
-    static var poiCardSchedule: String { LanguageManager.shared.localizedString(forKey:"schedule") }
-    static var language: String { LanguageManager.shared.localizedString(forKey:"language") }
-    static var politicalView: String { LanguageManager.shared.localizedString(forKey:"politicalView") }
-    static var mapRepresentation: String { LanguageManager.shared.localizedString(forKey:"mapRepresentation") }
-    static var mapLanguage: String { LanguageManager.shared.localizedString(forKey:"mapLanguage") }
-    static var selectLanguage: String { LanguageManager.shared.localizedString(forKey:"Select Language") }
-    static var leaveNow: String { LanguageManager.shared.localizedString(forKey:"leaveNow") }
-    static var leaveAt: String { LanguageManager.shared.localizedString(forKey:"leaveAt") }
-    static var arriveBy: String { LanguageManager.shared.localizedString(forKey:"arriveBy") }
-    static var routeOptions: String { LanguageManager.shared.localizedString(forKey:"routeOptions") }
-    static var options: String { LanguageManager.shared.localizedString(forKey:"options") }
-    static var selected: String { LanguageManager.shared.localizedString(forKey:"selected") }
-    static var routesActive: String { LanguageManager.shared.localizedString(forKey:"routesActive") }
-    static var politicalLight: String { LanguageManager.shared.localizedString(forKey:"light") }
-    static var politicalDark: String { LanguageManager.shared.localizedString(forKey:"dark") }
-    static var automaticUnit: String { LanguageManager.shared.localizedString(forKey:"automatic") }
-    static var imperialUnit: String { LanguageManager.shared.localizedString(forKey:"imperial") }
-    static var metricUnit: String { LanguageManager.shared.localizedString(forKey:"metric") }
-    static var imperialSubtitle: String { LanguageManager.shared.localizedString(forKey:"imperialSubtitle") }
-    static var metricSubtitle: String { LanguageManager.shared.localizedString(forKey:"metricSubtitle") }
-    static var light: String { LanguageManager.shared.localizedString(forKey:"light") }
-    static var dark: String { LanguageManager.shared.localizedString(forKey:"dark") }
-    static var noPoliticalView: String { LanguageManager.shared.localizedString(forKey:"noPoliticalView") }
-    static var argentinaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"argentinaPoliticalView") }
-    static var cyprusPoliticalView: String { LanguageManager.shared.localizedString(forKey:"cyprusPoliticalView") }
-    static var egyptPoliticalView: String { LanguageManager.shared.localizedString(forKey:"egyptPoliticalView") }
-    static var georgiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"georgiaPoliticalView") }
-    static var greecePoliticalView: String { LanguageManager.shared.localizedString(forKey:"greecePoliticalView") }
-    static var indiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"indiaPoliticalView") }
-    static var kenyaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"kenyaPoliticalView") }
-    static var moroccoPoliticalView: String { LanguageManager.shared.localizedString(forKey:"moroccoPoliticalView") }
-    static var palestinePoliticalView: String { LanguageManager.shared.localizedString(forKey:"palestinePoliticalView") }
-    static var russiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"russiaPoliticalView") }
-    static var sudanPoliticalView: String { LanguageManager.shared.localizedString(forKey:"sudanPoliticalView") }
-    static var serbiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"serbiaPoliticalView") }
-    static var surinamePoliticalView: String { LanguageManager.shared.localizedString(forKey:"surinamePoliticalView") }
-    static var syriaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"syriaPoliticalView") }
-    static var turkeyPoliticalView: String { LanguageManager.shared.localizedString(forKey:"turkeyPoliticalView") }
-    static var tanzaniaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"tanzaniaPoliticalView") }
-    static var uruguayPoliticalView: String { LanguageManager.shared.localizedString(forKey:"uruguayPoliticalView") }
-    static var m: String { LanguageManager.shared.localizedString(forKey:"m") }
-    static var km: String { LanguageManager.shared.localizedString(forKey:"km") }
-    static var mi: String { LanguageManager.shared.localizedString(forKey:"mi") }
-    static var min: String { LanguageManager.shared.localizedString(forKey:"min") }
-    static var hr: String { LanguageManager.shared.localizedString(forKey:"hr") }
-    static var sec: String { LanguageManager.shared.localizedString(forKey:"sec") }
-    static var car: String { LanguageManager.shared.localizedString(forKey:"car") }
-    static var pedestrian: String { LanguageManager.shared.localizedString(forKey:"pedestrian") }
-    static var scooter: String { LanguageManager.shared.localizedString(forKey:"scooter") }
-    static var truck: String { LanguageManager.shared.localizedString(forKey:"truck") }
-    static var region: String { LanguageManager.shared.localizedString(forKey:"region") }
+    static var softwareAttributionTitle: String { getLocalizedString("softwareAttributionTitle") }
+    static var softwareAttributionDescription: String { getLocalizedString("softwareAttributionDescription") }
+    static var learnMore: String { getLocalizedString("learnMore") }
+    static var attribution: String { getLocalizedString("attribution") }
+    static var more: String { getLocalizedString("more") }
+    static var version: String { getLocalizedString("version") }
+    static var welcomeTitle: String { getLocalizedString("welcomeTitle") }
+    static var continueString: String { getLocalizedString("continue") }
+    static var avoidTolls: String { getLocalizedString("avoidTolls") }
+    static var avoidFerries: String { getLocalizedString("avoidFerries") }
+    static var avoidUturns: String { getLocalizedString("avoidUturns") }
+    static var avoidTunnels: String { getLocalizedString("avoidTunnels") }
+    static var avoidDirtRoads: String { getLocalizedString("avoidDirtRoads") }
+    static var myLocation: String { getLocalizedString("myLocation") }
+    static var appVersion: String { getLocalizedString("appVersion") }
+    static var termsAndConditions: String { getLocalizedString("termsConditions") }
+    static var demo: String { getLocalizedString("demo") }
+    static var routeOverview: String { getLocalizedString("routeOverview") }
+    static var viewRoute: String { getLocalizedString("viewRoute") }
+    static var hideRoute: String { getLocalizedString("hideRoute") }
+    static var trackingNotificationTitle: String { getLocalizedString("amazonLocation") }
+    static var arrivalCardTitle: String { getLocalizedString("arrivalCardTitle") }
+    static var poiCardSchedule: String { getLocalizedString("schedule") }
+    static var language: String { getLocalizedString("language") }
+    static var politicalView: String { getLocalizedString("politicalView") }
+    static var mapRepresentation: String { getLocalizedString("mapRepresentation") }
+    static var mapLanguage: String { getLocalizedString("mapLanguage") }
+    static var selectLanguage: String { getLocalizedString("Select Language") }
+    static var leaveNow: String { getLocalizedString("leaveNow") }
+    static var leaveAt: String { getLocalizedString("leaveAt") }
+    static var arriveBy: String { getLocalizedString("arriveBy") }
+    static var routeOptions: String { getLocalizedString("routeOptions") }
+    static var options: String { getLocalizedString("options") }
+    static var selected: String { getLocalizedString("selected") }
+    static var routesActive: String { getLocalizedString("routesActive") }
+    static var politicalLight: String { getLocalizedString("light") }
+    static var politicalDark: String { getLocalizedString("dark") }
+    static var automaticUnit: String { getLocalizedString("automatic") }
+    static var imperialUnit: String { getLocalizedString("imperial") }
+    static var metricUnit: String { getLocalizedString("metric") }
+    static var imperialSubtitle: String { getLocalizedString("imperialSubtitle") }
+    static var metricSubtitle: String { getLocalizedString("metricSubtitle") }
+    static var light: String { getLocalizedString("light") }
+    static var dark: String { getLocalizedString("dark") }
+    static var noPoliticalView: String { getLocalizedString("noPoliticalView") }
+    static var argentinaPoliticalView: String { getLocalizedString("argentinaPoliticalView") }
+    static var cyprusPoliticalView: String { getLocalizedString("cyprusPoliticalView") }
+    static var egyptPoliticalView: String { getLocalizedString("egyptPoliticalView") }
+    static var georgiaPoliticalView: String { getLocalizedString("georgiaPoliticalView") }
+    static var greecePoliticalView: String { getLocalizedString("greecePoliticalView") }
+    static var indiaPoliticalView: String { getLocalizedString("indiaPoliticalView") }
+    static var kenyaPoliticalView: String { getLocalizedString("kenyaPoliticalView") }
+    static var moroccoPoliticalView: String { getLocalizedString("moroccoPoliticalView") }
+    static var palestinePoliticalView: String { getLocalizedString("palestinePoliticalView") }
+    static var russiaPoliticalView: String { getLocalizedString("russiaPoliticalView") }
+    static var sudanPoliticalView: String { getLocalizedString("sudanPoliticalView") }
+    static var serbiaPoliticalView: String { getLocalizedString("serbiaPoliticalView") }
+    static var surinamePoliticalView: String { getLocalizedString("surinamePoliticalView") }
+    static var syriaPoliticalView: String { getLocalizedString("syriaPoliticalView") }
+    static var turkeyPoliticalView: String { getLocalizedString("turkeyPoliticalView") }
+    static var tanzaniaPoliticalView: String { getLocalizedString("tanzaniaPoliticalView") }
+    static var uruguayPoliticalView: String { getLocalizedString("uruguayPoliticalView") }
+    static var m: String { getLocalizedString("m") }
+    static var km: String { getLocalizedString("km") }
+    static var mi: String { getLocalizedString("mi") }
+    static var min: String { getLocalizedString("min") }
+    static var hr: String { getLocalizedString("hr") }
+    static var sec: String { getLocalizedString("sec") }
+    static var car: String { getLocalizedString("car") }
+    static var pedestrian: String { getLocalizedString("pedestrian") }
+    static var scooter: String { getLocalizedString("scooter") }
+    static var truck: String { getLocalizedString("truck") }
+    static var region: String { getLocalizedString("region") }
     static var euWest1: String = "eu-west-1"
     static var usEast1: String = "us-east-1"
     static var euWest1FullName: String = "Europe (Ireland) \(euWest1)"
