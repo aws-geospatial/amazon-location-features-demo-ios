@@ -14,13 +14,13 @@ enum RouteTypes: Codable {
     var title: String {
         switch self {
         case .pedestrian:
-            return "Pedestrian"
+            return StringConstant.pedestrian
         case .scooter:
-            return "Scooter"
+            return StringConstant.scooter
         case .car:
-            return "Car"
+            return StringConstant.car
         case .truck:
-            return "Truck"
+            return StringConstant.truck
         }
     }
     

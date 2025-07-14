@@ -48,15 +48,15 @@ enum StringConstant {
     
     enum TabBar {
         static var navigate: String { LanguageManager.shared.localizedString(forKey:"navigate") }
-        static var tracking: String { LanguageManager.shared.localizedString(forKey: "trackers") }
+        static var tracking: String { LanguageManager.shared.localizedString(forKey:"trackers") }
         static var settings: String { LanguageManager.shared.localizedString(forKey:"settings") }
         static var more: String { LanguageManager.shared.localizedString(forKey:"more") }
     }
     
     enum NotificationsInfoField {
-        static var geofenceIsHidden: String { LanguageManager.shared.localizedString(forKey:"geofenceIsHidden") }
-        static var mapStyleIsHidden: String { LanguageManager.shared.localizedString(forKey:"mapStyleIsHidden") }
-        static var directionIsHidden: String { LanguageManager.shared.localizedString(forKey:"directionIsHidden") }
+        static var geofenceIsHidden: String { "geofenceIsHidden" }
+        static var mapStyleIsHidden: String { "mapStyleIsHidden" }
+        static var directionIsHidden: String { "directionIsHidden" }
     }
     
     static var greatDistanceErrorTitle: String { LanguageManager.shared.localizedString(forKey:"greatDistanceErrorTitle") }
@@ -110,7 +110,7 @@ enum StringConstant {
     static var error: String { LanguageManager.shared.localizedString(forKey:"error") }
     static var warning: String { LanguageManager.shared.localizedString(forKey:"warning") }
     static var ok: String { LanguageManager.shared.localizedString(forKey:"ok") }
-    static var dispatchReachabilityLabel: String { LanguageManager.shared.localizedString(forKey:"reachability") }
+    static var dispatchReachabilityLabel: String { "Reachability" }
     static var exitTrackingAlertMessage: String { LanguageManager.shared.localizedString(forKey:"exitTrackingAlertMessage") }
     static var units: String { LanguageManager.shared.localizedString(forKey:"units") }
     static var mapStyle: String { LanguageManager.shared.localizedString(forKey:"mapStyle") }
@@ -133,7 +133,7 @@ enum StringConstant {
     static var myLocation: String { LanguageManager.shared.localizedString(forKey:"myLocation") }
     static var appVersion: String { LanguageManager.shared.localizedString(forKey:"appVersion") }
     static var termsAndConditions: String { LanguageManager.shared.localizedString(forKey:"termsConditions") }
-    static var demo: String { LanguageManager.shared.localizedString(forKey:"Demo") }
+    static var demo: String { LanguageManager.shared.localizedString(forKey:"demo") }
     static var routeOverview: String { LanguageManager.shared.localizedString(forKey:"routeOverview") }
     static var viewRoute: String { LanguageManager.shared.localizedString(forKey:"viewRoute") }
     static var hideRoute: String { LanguageManager.shared.localizedString(forKey:"hideRoute") }
@@ -162,29 +162,33 @@ enum StringConstant {
     static var light: String { LanguageManager.shared.localizedString(forKey:"light") }
     static var dark: String { LanguageManager.shared.localizedString(forKey:"dark") }
     static var noPoliticalView: String { LanguageManager.shared.localizedString(forKey:"noPoliticalView") }
-    static var argentinaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"ArgentinaPoliticalView") }
-    static var cyprusPoliticalView: String { LanguageManager.shared.localizedString(forKey:"CyprusPoliticalView") }
-    static var egyptPoliticalView: String { LanguageManager.shared.localizedString(forKey:"EgyptPoliticalView") }
-    static var georgiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"GeorgiaPoliticalView") }
-    static var greecePoliticalView: String { LanguageManager.shared.localizedString(forKey:"GreecePoliticalView") }
-    static var indiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"IndiaPoliticalView") }
-    static var kenyaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"KenyaPoliticalView") }
-    static var moroccoPoliticalView: String { LanguageManager.shared.localizedString(forKey:"MoroccoPoliticalView") }
-    static var palestinePoliticalView: String { LanguageManager.shared.localizedString(forKey:"PalestinePoliticalView") }
-    static var russiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"RussiaPoliticalView") }
-    static var sudanPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SudanPoliticalView") }
-    static var serbiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SerbiaPoliticalView") }
-    static var surinamePoliticalView: String { LanguageManager.shared.localizedString(forKey:"SurinamePoliticalView") }
-    static var syriaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"SyriaPoliticalView") }
-    static var turkeyPoliticalView: String { LanguageManager.shared.localizedString(forKey:"TurkeyPoliticalView") }
-    static var tanzaniaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"TanzaniaPoliticalView") }
-    static var uruguayPoliticalView: String { LanguageManager.shared.localizedString(forKey:"UruguayPoliticalView") }
+    static var argentinaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"argentinaPoliticalView") }
+    static var cyprusPoliticalView: String { LanguageManager.shared.localizedString(forKey:"cyprusPoliticalView") }
+    static var egyptPoliticalView: String { LanguageManager.shared.localizedString(forKey:"egyptPoliticalView") }
+    static var georgiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"georgiaPoliticalView") }
+    static var greecePoliticalView: String { LanguageManager.shared.localizedString(forKey:"greecePoliticalView") }
+    static var indiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"indiaPoliticalView") }
+    static var kenyaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"kenyaPoliticalView") }
+    static var moroccoPoliticalView: String { LanguageManager.shared.localizedString(forKey:"moroccoPoliticalView") }
+    static var palestinePoliticalView: String { LanguageManager.shared.localizedString(forKey:"palestinePoliticalView") }
+    static var russiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"russiaPoliticalView") }
+    static var sudanPoliticalView: String { LanguageManager.shared.localizedString(forKey:"sudanPoliticalView") }
+    static var serbiaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"serbiaPoliticalView") }
+    static var surinamePoliticalView: String { LanguageManager.shared.localizedString(forKey:"surinamePoliticalView") }
+    static var syriaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"syriaPoliticalView") }
+    static var turkeyPoliticalView: String { LanguageManager.shared.localizedString(forKey:"turkeyPoliticalView") }
+    static var tanzaniaPoliticalView: String { LanguageManager.shared.localizedString(forKey:"tanzaniaPoliticalView") }
+    static var uruguayPoliticalView: String { LanguageManager.shared.localizedString(forKey:"uruguayPoliticalView") }
     static var m: String { LanguageManager.shared.localizedString(forKey:"m") }
     static var km: String { LanguageManager.shared.localizedString(forKey:"km") }
     static var mi: String { LanguageManager.shared.localizedString(forKey:"mi") }
     static var min: String { LanguageManager.shared.localizedString(forKey:"min") }
     static var hr: String { LanguageManager.shared.localizedString(forKey:"hr") }
     static var sec: String { LanguageManager.shared.localizedString(forKey:"sec") }
+    static var car: String { LanguageManager.shared.localizedString(forKey:"car") }
+    static var pedestrian: String { LanguageManager.shared.localizedString(forKey:"pedestrian") }
+    static var scooter: String { LanguageManager.shared.localizedString(forKey:"scooter") }
+    static var truck: String { LanguageManager.shared.localizedString(forKey:"truck") }
     static var region: String { LanguageManager.shared.localizedString(forKey:"region") }
     static var euWest1: String = "eu-west-1"
     static var usEast1: String = "us-east-1"
