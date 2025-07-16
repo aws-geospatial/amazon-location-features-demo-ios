@@ -31,20 +31,19 @@ class LanguageManager {
                             localizedVariants[lang] = unit.stringUnit.value
                         }
                     }
-                    print("language key: \(key)")
                     translations[key] = localizedVariants
                 }
             }
         }
         catch {
-            print("⚠️ Failed to load .json: \(error)")
+            print("Warning: Failed to load .json: \(error)")
             return
         }
     }
 
     func localizedString(forKey key: String) -> String {
         guard let translation = translations[key]?[currentLanguage] else {
-            print("translation for \(key) not found")
+            print("Warning: translations for \(key) not found")
             return key
         }
         return translation
