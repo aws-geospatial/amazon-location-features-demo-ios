@@ -21,8 +21,8 @@ enum RegionType: String, Codable, CaseIterable {
         switch self {
         case .automatic:
             return Info(
-                fullName: "Automatic",
-                listTitle: "Automatic"
+                fullName: StringConstant.automaticUnit.capitalized,
+                listTitle: StringConstant.automaticUnit.capitalized
             )
         case .euWest1:
             return Info(
