@@ -17,7 +17,7 @@ final class SettingsVC: UIViewController {
     var delegate: SettingsNavigationDelegate?
     
     private var headerTitle: LargeTitleLabel = {
-        let label = LargeTitleLabel(labelText: StringConstant.settigns)
+        let label = LargeTitleLabel(labelText: StringConstant.settings)
         return label
     }()
     

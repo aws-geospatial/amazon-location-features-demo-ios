@@ -31,11 +31,11 @@ final class SettingsViewModel: SettingsViewModelProtocol {
         
         let region = AWSRegionSelector.shared.getCachedRegion()
         var regionTitle = ""
-        if region == RegionTypes.euWest1.title {
-            regionTitle = RegionTypes.euWest1.listTitle
+        if region == RegionType.euWest1.title {
+            regionTitle = RegionType.euWest1.listTitle
         }
-        else if region == RegionTypes.usEast1.title {
-            regionTitle = RegionTypes.usEast1.listTitle
+        else if region == RegionType.usEast1.title {
+            regionTitle = RegionType.usEast1.listTitle
         }
         let isAutoRegion = AWSRegionSelector.shared.isAutoRegion()
         

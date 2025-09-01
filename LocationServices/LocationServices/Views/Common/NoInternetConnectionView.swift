@@ -23,7 +23,7 @@ final class NoInternetConnectionView: UIView {
         label.textColor = .black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = StringConstant.amazonLocatinCannotReach
+        label.text = StringConstant.amazonLocationCannotReach
         return label
     }()
     

@@ -208,32 +208,22 @@ extension ExploreVC {
 
     func setupNotifications() {
         NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self, name: Notification.navigationSteps, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateLocation(_:)), name: Notification.userLocation, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(selectPlace(_:)), name: Notification.selectedPlace, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonConstraits(_:)), name: Notification.updateMapViewButtons, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(drawDirectionRoute(_:)), name: Notification.directionLineString, object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.navigationSteps, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showNavigationScene(_:)), name: Notification.navigationSteps, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(dismissNavigationScene(_:)), name: Notification.navigationViewDismissed, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateMapViewValue(_:)), name: Notification.updateMapViewValues, object: nil)
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(dismissDirectionScene(_:)), name: Notification.directionViewDismissed, object: nil)
-        
-    
         NotificationCenter.default.addObserver(self, selector: #selector(shownSearchResults(_:)), name: Notification.shownSearchResults, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshMapView(_:)), name: Notification.refreshMapView, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(searchAppearanceChanged(_:)), name: Notification.searchAppearanceChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(exploreActionButtonsVisibilityChanged(_:)), name: Notification.exploreActionButtonsVisibilityChanged, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateMapLayerItems(_:)), name: Notification.updateMapLayerItems, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(focusOnLocation(_:)), name: Notification.focusOnLocation, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
     }
     
@@ -263,7 +253,6 @@ extension ExploreVC {
     func setupView() {
         mapNavigationView.isHidden = true
         mapNavigationActionsView.isHidden = true
-        //updateAmazonLogoPositioning(isBottomNavigationShown: false)
         mapNavigationActionsView.update(style: .navigationActions)
         changeSeachBarVisibility(isHidden: false)
         if !isInSplitViewController {
@@ -303,19 +292,15 @@ extension ExploreVC {
     }
     
     private func updateAmazonLogoPositioning(isBottomNavigationShown: Bool) {
-        let leadingOffset: CGFloat?
         let bottomOffset: CGFloat?
         
         if isBottomNavigationShown {
             if isNavigationViewLeftAlignment {
-                leadingOffset = Constants.navigationViewOptimalWidth + Constants.defaultSpacing * 2
                 bottomOffset = nil
             } else {
-                leadingOffset = nil
                 bottomOffset = Constants.navigationViewHeight + Constants.defaultSpacing * 2
             }
         } else {
-            leadingOffset = nil
             bottomOffset = nil
         }
         
@@ -415,7 +400,6 @@ extension ExploreVC {
         viewModel.deactivateRoute()
         mapNavigationView.isHidden = true
         mapNavigationActionsView.isHidden = true
-        //updateAmazonLogoPositioning(isBottomNavigationShown: false)
         exploreView.hideGeoFence(state: false)
         exploreView.deleteDrawing()
     }

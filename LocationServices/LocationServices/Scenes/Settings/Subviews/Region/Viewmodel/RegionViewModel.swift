@@ -19,11 +19,11 @@ final class RegionSceneViewModel: RegionSceneViewModelProcotol {
                                                       identifier: StringConstant.automaticUnit))
         AWSRegionSelector.shared.getBundleRegions()?.forEach {
             var title = ""
-            if $0 == RegionTypes.euWest1.title {
-                title = RegionTypes.euWest1.displayTitle
+            if $0 == RegionType.euWest1.title {
+                title = RegionType.euWest1.displayTitle
             }
-            else if $0 == RegionTypes.usEast1.title {
-                title = RegionTypes.usEast1.displayTitle
+            else if $0 == RegionType.usEast1.title {
+                title = RegionType.usEast1.displayTitle
             }
             initialDatas.append(CommonSelectableCellModel(title: title,
                                                           subTitle: "",
