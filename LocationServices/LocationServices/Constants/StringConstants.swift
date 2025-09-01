@@ -69,7 +69,7 @@ enum StringConstant {
     static var directions: String { getLocalizedString("directions") }
     static var maybeLater: String { getLocalizedString("maybeLater") }
     static var checkYourConnection: String { getLocalizedString("checkYourConnection") }
-    static var amazonLocatinCannotReach: String { getLocalizedString("amazonLocatinCannotReach") }
+    static var amazonLocationCannotReach: String { getLocalizedString("amazonLocationCannotReach") }
     static var terminate: String { getLocalizedString("ok") }
     static var failedToCalculateRoute: String { getLocalizedString("failedToCalculateRoute") }
     static var noInternetConnection: String { getLocalizedString("noInternetConnection") }
@@ -110,7 +110,7 @@ enum StringConstant {
     static var locationManagerAlertTitle: String { getLocalizedString("allowLocationServices") }
     static var locationManagerAlertText: String { getLocalizedString("locationDetectionExplanation") }
     static var cancel: String { getLocalizedString("cancel") }
-    static var settigns: String { getLocalizedString("settings") }
+    static var settings: String { getLocalizedString("settings") }
     static var error: String { getLocalizedString("error") }
     static var warning: String { getLocalizedString("warning") }
     static var ok: String { getLocalizedString("ok") }
@@ -194,10 +194,4 @@ enum StringConstant {
     static var scooter: String { getLocalizedString("scooter") }
     static var truck: String { getLocalizedString("truck") }
     static var region: String { getLocalizedString("region") }
-    static var euWest1: String = "eu-west-1"
-    static var usEast1: String = "us-east-1"
-    static var euWest1FullName: String = "Europe (Ireland) \(euWest1)"
-    static var usEast1FullName: String = "Us-East (N. Virginia) \(usEast1)"
-    static var euWest1ListTitle: String = "Europe"
-    static var usEast1ListTitle: String = "Us-East"
 }

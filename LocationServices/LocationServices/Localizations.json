@@ -499,7 +499,7 @@
                 }
             }
         },
-        "amazonLocatinCannotReach" : {
+        "amazonLocationCannotReach" : {
             "extractionState" : "manual",
             "localizations" : {
                 "ar" : {
