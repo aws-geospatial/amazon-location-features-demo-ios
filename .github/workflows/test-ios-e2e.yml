@@ -5,6 +5,9 @@ on:
     branches: [main]
 jobs:
   test-iOS:
+    permissions:
+      contents: read
+      actions: write # for upload artifact
     name: Test iOS App
     runs-on: macos-15
     steps:

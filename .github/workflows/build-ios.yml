@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 jobs:
   startSlackNotification:
+    permissions:
+      contents: read
     name: Slack Starting Notification
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +31,9 @@ jobs:
           SLACK_USERNAME: CI/CD Bot
           MSG_MINIMAL: true
   build-iOS:
+    permissions:
+      contents: read
+      actions: write # for upload artifact
     name: Build iOS
     env:
       MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -75,6 +80,8 @@ jobs:
       - run: cat /Users/runner/Library/Logs/gym/LocationServices-LocationServices.log
         if: always()
   slackNotification:
+    permissions:
+      contents: read
     name: Slack Final Notification
     needs: [
       build-iOS

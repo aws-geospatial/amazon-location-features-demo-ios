@@ -5,6 +5,8 @@ on:
 #    branches: [ develop, main ]
 jobs:
   test-iOS:
+    permissions:
+      contents: read
     name: Lint iOS Code
     runs-on: ubuntu-latest
     steps:
