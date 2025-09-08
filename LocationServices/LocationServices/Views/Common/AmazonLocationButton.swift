@@ -12,7 +12,7 @@ final class AmazonLocationButton: UIButton {
         super.init(frame: frame)
     }
 
-    convenience init(title: String) {
+    convenience init(title: String = "") {
         self.init(type: .system)
         setupPropertiesWith(title: title)
     }
