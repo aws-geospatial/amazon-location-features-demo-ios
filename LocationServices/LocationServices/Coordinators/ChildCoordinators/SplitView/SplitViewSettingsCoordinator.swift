@@ -73,7 +73,7 @@ extension SplitViewSettingsCoordinator: SettingsNavigationDelegate {
     }
     
     private func showRegionScene() {
-        let controller = LanguageSceneBuilder.create()
+        let controller = RegionSceneBuilder.create()
         changeSecondaryVC(to: controller)
     }
     
