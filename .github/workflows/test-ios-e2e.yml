@@ -32,5 +32,5 @@ jobs:
         if: always()
         with:
           name: test-results-iphone
-          path: ${{ env.xcresult_path }}
+          path: ./LocationServices/fastlane/test_output
           retention-days: 1
