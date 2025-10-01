@@ -39,6 +39,7 @@ jobs:
       # Use the bundler cache to speed-up build times
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: "3.3.9"
           bundler-cache: true
           working-directory: ./LocationServices
 
