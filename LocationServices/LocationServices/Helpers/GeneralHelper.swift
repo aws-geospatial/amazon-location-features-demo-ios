@@ -58,7 +58,7 @@ class GeneralHelper {
     }
     
     static func setMapLanguage(mapView: MLNMapView, style: MLNStyle) {
-        let language = Locale.currentLanguageIdentifier()
+        let language = Locale.currentMapLanguageIdentifier()
         
         style.localizeLabels(into: Locale(identifier: language))
         
@@ -112,6 +112,14 @@ class GeneralHelper {
         return exp
     }
     
+    static func setupValidAWSConfiguration() async throws {
+        guard let configurationModel = GeneralHelper.getAWSConfigurationModel() else {
+            print("Can't read default configuration from awsconfiguration.json")
+            return
+        }
+        try await GeneralHelper.initializeMobileClient(configurationModel: configurationModel)
+    }
+    
     static func getAWSConfigurationModel() -> CustomConnectionModel? {
         var defaultConfiguration: CustomConnectionModel? = nil
         // default configuration
@@ -132,6 +140,11 @@ class GeneralHelper {
         return defaultConfiguration
     }
     
+    private static func initializeMobileClient(configurationModel: CustomConnectionModel) async throws {
+        try await CognitoAuthHelper.initialise(identityPoolId: configurationModel.identityPoolId)
+        try await ApiAuthHelper.initialise(apiKey: configurationModel.apiKey, region: configurationModel.region)
+    }
+    
     static func getAppIcon() -> UIImage? {
         if let iconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
            let primaryIcons = iconsDictionary["CFBundlePrimaryIcon"] as? [String: Any],
@@ -142,6 +155,36 @@ class GeneralHelper {
         return nil
     }
     
+    static func reloadUI() {
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first,
+              let window = windowScene.windows.first else {
+            return
+        }
+
+        // Determine language direction (RTL or LTR)
+        let currentLanguage = LanguageManager.shared.currentLanguage
+        let isRTL = Locale.Language(identifier:currentLanguage).characterDirection == .rightToLeft
+        let semantic: UISemanticContentAttribute = isRTL ? .forceRightToLeft : .forceLeftToRight
+
+        // Apply semantic direction globally
+        UIView.appearance().semanticContentAttribute = semantic
+        UILabel.appearance().semanticContentAttribute = semantic
+        UITextField.appearance().semanticContentAttribute = semantic
+        UITextView.appearance().semanticContentAttribute = semantic
+        window.semanticContentAttribute = semantic
+        NotificationCenter.default.post(name: Notification.removeNotificationObservers, object: nil)
+        // Rebuild rootViewController
+        let nav = UINavigationController()
+        let sceneDelegate = windowScene.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.coordinator = AppCoordinator(navigationController: nav, window: sceneDelegate?.window)
+        sceneDelegate?.coordinator?.start()
+
+        // Animate the transition
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil)
+    }
 }
 
 

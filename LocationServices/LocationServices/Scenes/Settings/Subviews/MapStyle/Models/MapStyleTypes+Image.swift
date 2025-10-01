@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension MapStyleImages {
+extension MapStyleTypes {
     var image: UIImage {
         switch self {
         case .standard:

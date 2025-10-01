@@ -9,6 +9,6 @@ import UIKit
 
 struct MapStyleModel: Codable {
     var title: String
-    var imageType: MapStyleImages
+    var imageType: MapStyleTypes
     var isSelected: Bool
 }

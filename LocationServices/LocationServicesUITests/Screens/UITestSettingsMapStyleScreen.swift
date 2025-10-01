@@ -13,7 +13,7 @@ struct UITestSettingsMapStyleScreen: UITestScreen {
     private enum Identifiers {
     }
     
-    func select(style: MapStyleImages) -> Self {
+    func select(style: MapStyleTypes) -> Self {
         let cell = getStyleCell(for: style)
         cell.tap()
         
@@ -30,13 +30,13 @@ struct UITestSettingsMapStyleScreen: UITestScreen {
         return UITestSettingsScreen(app: app)
     }
     
-    func isCellSelected(for style: MapStyleImages) -> Bool {
+    func isCellSelected(for style: MapStyleTypes) -> Bool {
         let cell = getStyleCell(for: style)
         return cell.isSelected
     }
     
     // MARK: - Private
-    private func getStyleCell(for style: MapStyleImages) -> XCUIElement {
+    private func getStyleCell(for style: MapStyleTypes) -> XCUIElement {
         let cell = app.cells[style.mapName].firstMatch
         XCTAssertTrue(cell.waitForExistence(timeout: UITestWaitTime.regular.time))
         return cell

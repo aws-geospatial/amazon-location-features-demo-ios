@@ -18,18 +18,18 @@ final class NoInternetConnectionView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .bold, size: 16)
         label.textColor = .black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = StringConstant.amazonLocatinCannotReach
+        label.text = StringConstant.amazonLocationCannotReach
         return label
     }()
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .tertiaryLabel
         label.numberOfLines = 0
@@ -49,7 +49,7 @@ final class NoInternetConnectionView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorCannotInitializeView)
+        fatalError(ErrorMessage.errorCannotInitializeView)
     }
     
     private func setupViews() {

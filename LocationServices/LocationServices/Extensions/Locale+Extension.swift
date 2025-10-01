@@ -8,11 +8,16 @@
 import Foundation
 
 extension Locale {
-    static func currentLanguageIdentifier() -> String {
-        return (UserDefaultsHelper.getObject(value: LanguageSwitcherData.self, key: .language)?.value) ?? String(( Locale.preferredLanguages.first ?? Locale.current.identifier).prefix(2))
+    static func currentMapLanguageIdentifier() -> String {
+        return UserDefaultsHelper.get(for: String.self, key: .mapLanguage) ?? "en"
     }
-    
-    static func currentLanguageLabel() -> String {
-        return (UserDefaultsHelper.getObject(value: LanguageSwitcherData.self, key: .language)?.label) ?? String(( Locale.preferredLanguages.first ?? Locale.current.identifier))
+
+    static func currentAppLanguageIdentifier() -> String {
+        var appLanguage =  String((UserDefaultsHelper.get(for: [String].self, key: .AppleLanguages)?.first) ??
+                                  (Locale.preferredLanguages.first ?? Locale.current.identifier))
+        if !(appLanguage.contains("pt-") || appLanguage.contains("zh-") || appLanguage.contains("zh-")) {
+            appLanguage = appLanguage.prefix(2).lowercased()
+        }
+        return appLanguage
     }
 }

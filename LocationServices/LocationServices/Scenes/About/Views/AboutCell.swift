@@ -59,7 +59,7 @@ final class AboutCell: UITableViewCell {
         var label = UILabel()
         label.font = Constants.itemTitleFont
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
     
@@ -93,7 +93,7 @@ final class AboutCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

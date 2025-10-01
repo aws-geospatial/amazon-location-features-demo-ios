@@ -9,31 +9,35 @@ import UIKit
 import SnapKit
 
 enum SettingsCellType {
-    case units, dataProvider, mapStyle, routeOption
+    case units, mapStyle, routeOption, language, region
     
     var title: String {
         switch self {
         case .units:
             return StringConstant.units
-        case .dataProvider:
-            return StringConstant.dataProvider
         case .mapStyle:
             return StringConstant.mapStyle
         case .routeOption:
             return StringConstant.defaultRouteOptions
+        case .language:
+            return StringConstant.language
+        case .region:
+            return StringConstant.region
         }
     }
     
     var itemIcon: UIImage {
         switch self {
         case .units:
-            return .unitIcons
-        case .dataProvider:
-            return .dataProviderIcon
+            return .unitIcon
         case .mapStyle:
             return .mapStyleIcon
         case .routeOption:
             return .routeOption
+        case .language:
+            return .languageIcon
+        case .region:
+            return .regionIcon
         }
     }
     
@@ -85,7 +89,7 @@ final class SettingsCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 16)
         label.textColor = .mapDarkBlackColor
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
     
@@ -94,7 +98,7 @@ final class SettingsCell: UITableViewCell {
         var label = UILabel()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .searchBarTintColor
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
 
@@ -122,7 +126,7 @@ final class SettingsCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

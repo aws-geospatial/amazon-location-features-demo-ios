@@ -22,7 +22,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
     
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Political View"
+        label.text = StringConstant.politicalView
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
     
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = StringConstant.search
         searchBar.image(for: .search, state: .normal)
         searchBar.backgroundColor = .clear
         searchBar.searchTextField.backgroundColor = .white
@@ -201,7 +201,7 @@ class PoliticalViewController: UIViewController, UISearchBarDelegate, UITableVie
             filteredPoliticalViews = PoliticalViewTypes.filter {
                 $0.countryCode.lowercased().contains(query.lowercased()) ||
                 $0.fullName.lowercased().contains(query.lowercased()) ||
-                $0.politicalDescription.lowercased().contains(query.lowercased())
+                $0.description.lowercased().contains(query.lowercased())
             }
         }
         tableView.reloadData()

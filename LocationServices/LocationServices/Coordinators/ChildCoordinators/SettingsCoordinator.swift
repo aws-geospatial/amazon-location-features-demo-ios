@@ -36,22 +36,19 @@ extension SettingsCoordinator: SettingsNavigationDelegate {
         switch type {
         case .units:
             showUnitScene()
-        case .dataProvider:
-            showDataProviderScene()
         case .mapStyle:
             showMapStyleScene()
         case .routeOption:
             showRouteOptionScene()
+        case .language:
+            showLanguageScene()
+        case .region:
+            showRegionScene()
         }
     }
     
     private func showUnitScene() {
         let controller = UnitSceneBuilder.create()
-        navigationController.pushViewController(controller, animated: true)
-    }
-    
-    private func showDataProviderScene() {
-        let controller = DataProviderBuilder.create()
         navigationController.pushViewController(controller, animated: true)
     }
     
@@ -65,8 +62,13 @@ extension SettingsCoordinator: SettingsNavigationDelegate {
         navigationController.pushViewController(controller, animated: true)
     }
     
-    private func showResetPasswordScene() {
-        let controller = ResetPasswordBuilder.create()
+    private func showLanguageScene() {
+        let controller = LanguageSceneBuilder.create()
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    private func showRegionScene() {
+        let controller = RegionSceneBuilder.create()
         navigationController.pushViewController(controller, animated: true)
     }
 }
