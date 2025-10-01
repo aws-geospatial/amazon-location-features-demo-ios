@@ -7,7 +7,6 @@ jobs:
   test-iOS:
     permissions:
       contents: read
-      pull-requests: write
     name: Lint iOS Code
     runs-on: ubuntu-latest
     steps:
