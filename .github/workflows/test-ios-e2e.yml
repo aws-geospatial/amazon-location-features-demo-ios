@@ -12,12 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Bundler
-        working-directory: ./LocationServices
-        run: |
-          bundle config --local path ./vendor/bundle
-          bundle config --local deployment true
-          bundle install
+      # Use the bundler cache to speed-up build times
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: ./LocationServices
 
       - name: Setup Config
         working-directory: ./LocationServices

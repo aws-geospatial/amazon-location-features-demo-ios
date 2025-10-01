@@ -2,7 +2,7 @@ name: Run Unit Tests for iOS
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ develop, main ]
+    branches: [develop, main]
 jobs:
   test-iOS:
     name: Run Unit Tests for iOS
@@ -10,12 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Bundler
-        working-directory: ./LocationServices
-        run: |
-          bundle config --local path ./vendor/bundle
-          bundle config --local deployment true
-          bundle install
+      # Use the bundler cache to speed-up build times
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: ./LocationServices
 
       - name: Setup Config
         env:
