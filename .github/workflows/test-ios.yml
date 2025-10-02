@@ -17,6 +17,17 @@ jobs:
           bundler-cache: true
           working-directory: ./LocationServices
 
+      # Cache our XCode project dependencies
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/Developer/Xcode/DerivedData
+            LocationServices/LocationServices.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved', '**/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
       - name: Setup Config
         env:
           config: ${{ secrets.CONFIG }}
