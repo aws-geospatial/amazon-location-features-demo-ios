@@ -19,8 +19,8 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_CHANNEL: amazon-location-services-builds
-          SLACK_COLOR: '#FFFF00'
-          SLACK_ICON_EMOJI: ':hammer:'
+          SLACK_COLOR: "#FFFF00"
+          SLACK_ICON_EMOJI: ":hammer:"
           SLACK_LINK_NAMES: true
           SLACK_TITLE: ${{ format('iOS Build №{0} started...', env.BUILD_NUM) }}
           SLACK_MESSAGE: |
@@ -36,19 +36,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Use the bundler cache to speed-up build times
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.9"
+          bundler-cache: true
+          working-directory: ./LocationServices
+
       - name: Install SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: Setup Bundler
-        working-directory: ./LocationServices
-        run: |
-          bundle config --local path ./vendor/bundle
-          bundle config --local deployment true
-          rbenv install -s 3.3.5
-          rbenv local 3.3.5
-          bundle install
+      # Cache our XCode project dependencies
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/Developer/Xcode/DerivedData
+            LocationServices/LocationServices.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved', '**/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
 
       - name: Setup Config Files
         working-directory: ./LocationServices
@@ -76,9 +85,7 @@ jobs:
         if: always()
   slackNotification:
     name: Slack Final Notification
-    needs: [
-      build-iOS
-    ]
+    needs: [build-iOS]
     if: always()
     runs-on: ubuntu-latest
     env:
@@ -95,7 +102,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_CHANNEL: amazon-location-services-builds
           SLACK_COLOR: ${{ env.SUCCESS == 'true' && 'success' || 'failure' }}
-          SLACK_ICON_EMOJI: ':tophat:'
+          SLACK_ICON_EMOJI: ":tophat:"
           SLACK_LINK_NAMES: true
           SLACK_TITLE: ${{ format('iOS build №{0} {1}', env.BUILD_NUM, env.SUCCESS == 'true' && 'finished successfully :tada:' || 'failed!') }}
           SLACK_MESSAGE: |
