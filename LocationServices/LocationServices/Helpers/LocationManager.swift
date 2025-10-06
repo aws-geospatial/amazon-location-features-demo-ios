@@ -35,7 +35,7 @@ class LocationManager {
         case .authorizedAlways, .authorizedWhenInUse:
             break
         case .denied:
-            let alertModel = AlertModel(title: StringConstant.locationManagerAlertTitle, message: StringConstant.locationManagerAlertText, cancelButton: StringConstant.cancel, okButton: StringConstant.settigns) {
+            let alertModel = AlertModel(title: StringConstant.locationManagerAlertTitle, message: StringConstant.locationManagerAlertText, cancelButton: StringConstant.cancel, okButton: StringConstant.settings) {
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                     return
                 }

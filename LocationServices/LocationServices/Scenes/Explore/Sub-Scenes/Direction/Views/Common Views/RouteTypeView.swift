@@ -14,13 +14,13 @@ enum RouteTypes: Codable {
     var title: String {
         switch self {
         case .pedestrian:
-            return "Pedestrian"
+            return StringConstant.pedestrian
         case .scooter:
-            return "Scooter"
+            return StringConstant.scooter
         case .car:
-            return "Car"
+            return StringConstant.car
         case .truck:
-            return "Truck"
+            return StringConstant.truck
         }
     }
     
@@ -99,7 +99,7 @@ final class RouteTypeView: UIView {
         label.font = .amazonFont(type: .regular, size: 14)
         label.textColor = .lsGrey
         label.text = ""
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
     
@@ -108,7 +108,7 @@ final class RouteTypeView: UIView {
         label.font = .amazonFont(type: .regular, size: 14)
         label.textColor = .lsGrey
         label.text = ""
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         return label
     }()
     
@@ -121,7 +121,7 @@ final class RouteTypeView: UIView {
     
     private var selectedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selected"
+        label.text = StringConstant.selected
         label.font = .amazonFont(type: .bold, size: 14)
         label.textColor = .lsPrimary
         label.lineBreakMode = .byTruncatingTail
@@ -213,11 +213,11 @@ final class RouteTypeView: UIView {
     }
     
     func updateSelectedLabel(state: Bool) {
-        self.selectedLabel.text = state ? "Selected" : ""
+        self.selectedLabel.text = state ? StringConstant.selected : ""
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupViews() {

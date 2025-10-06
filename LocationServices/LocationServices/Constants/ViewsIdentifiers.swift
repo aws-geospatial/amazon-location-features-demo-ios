@@ -16,10 +16,10 @@ struct ViewsIdentifiers {
         static let welcomeContinueButton = "WelcomeContinueButton"
         static let userLocationAnnotation = "UserLocationAnnotation"
         static let locateMeButton = "LocateMeButton"
-        static let exploreTabBarButton = "Navigate"
+        static let navigateTabBarButton = "Navigate"
         static let settingsTabBarButton = "Settings"
         static let trackingTabBarButton = "Tracking"
-        static let aboutTabBarButton = "More"
+        static let moreTabBarButton = "More"
         static let sideBarButton = "SideBarButton"
         static let fullScreenButton = "FullScreenButton"
         static let mapStyles = "MapStyles"
@@ -122,9 +122,8 @@ struct ViewsIdentifiers {
     }
     
     struct Settings {
-        static let routeOptionCell = StringConstant.defaultRouteOptions
-        static let dataProviderCell = StringConstant.dataProvider
-        static let mapStyleCell = StringConstant.mapStyle
+        static let routeOptionCell = "Default route options"
+        static let mapStyleCell = "Map style"
     }
     
     struct Geofence {

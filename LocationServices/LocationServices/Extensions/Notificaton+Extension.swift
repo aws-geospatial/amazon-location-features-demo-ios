@@ -28,7 +28,6 @@ extension Notification {
     static let trackingEvent = Notification.Name("TrackingEvent")
     static let userLocation = Notification.Name("UserLocation")
     static let selectedPlace = Notification.Name("SelectedPlace")
-    static let wasResetToDefaultConfig = Notification.Name("WasResetToDefaultConfig")
     static let tabSelected = Notification.Name("TabSelected")
     static let grantedLocationPermissions = Notification.Name("GrantedLocationPermissions")
     static let validateMapColor = Notification.Name("ValidateMapColor")
@@ -58,4 +57,5 @@ extension Notification {
     static let navigationSteps = Notification.Name("NavigationSteps")
     static let directionLineString = Notification.Name("DirectionLineString")
     
+    static let removeNotificationObservers = Notification.Name("RemoveNotificationObservers")
 }

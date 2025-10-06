@@ -12,13 +12,13 @@ final class AmazonLocationButton: UIButton {
         super.init(frame: frame)
     }
 
-    convenience init(title: String) {
+    convenience init(title: String = "") {
         self.init(type: .system)
         setupPropertiesWith(title: title)
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupPropertiesWith(title: String) {

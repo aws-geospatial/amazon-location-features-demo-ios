@@ -60,7 +60,6 @@ final class TrackingVC: UIViewController {
         super.viewDidAppear(animated)
         trackingMapView.reloadMap()
         tabBarController?.tabBar.isHidden = false
-        NotificationCenter.default.addObserver(self, selector: #selector(tabSelected(_:)), name: Notification.tabSelected, object: nil)
     }
     
     override func viewDidLoad() {
@@ -91,7 +90,7 @@ final class TrackingVC: UIViewController {
     
     private func setupHandlers() {
         trackingHeaderView.exitButtonHandler =  { [weak self] in
-            let alertModel = AlertModel(title: StringConstant.exitTracking, message: StringConstant.exitTrackingAlertMessage, cancelButton: StringConstant.cancel, okButton: StringConstant.exit) {
+            let alertModel = AlertModel(title: "", message: StringConstant.exitTrackingAlertMessage, cancelButton: StringConstant.cancel, okButton: StringConstant.exit) {
                 self?.trackingHeaderView.isHidden = true
                 //show explore view
                 NotificationCenter.default.post(name: Notification.dismissTrackingSimulation, object: self, userInfo: nil)
@@ -117,6 +116,7 @@ final class TrackingVC: UIViewController {
     }
     
     func setupNotifications() {
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMapLayerItems(_:)), name: Notification.updateMapLayerItems, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetMapLayerItems(_:)), name: Notification.resetMapLayerItems, object: nil)
@@ -127,8 +127,10 @@ final class TrackingVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(trackingAppearanceChanged(_:)), name: Notification.trackingAppearanceChanged, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showTrackingNotification(_:)), name: Notification.showTrackingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tabSelected(_:)), name: Notification.tabSelected, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
     }
-    
+
     private func setupKeyboardNotifications() {
         guard isInSplitViewController else { return }
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

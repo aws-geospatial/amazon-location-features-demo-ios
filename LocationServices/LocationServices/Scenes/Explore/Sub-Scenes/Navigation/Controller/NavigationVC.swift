@@ -81,7 +81,7 @@ final class NavigationVC: UIViewController {
     
     private let departAddress: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .searchBarTintColor
         label.numberOfLines = 3
@@ -108,7 +108,7 @@ final class NavigationVC: UIViewController {
     
     private let destinationAddress: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .searchBarTintColor
         label.numberOfLines = 3
@@ -168,9 +168,9 @@ final class NavigationVC: UIViewController {
             lat = viewModel.secondDestination?.placeLat
             long = viewModel.secondDestination?.placeLong
         }
-        
-        delegate?.showDirections(isRouteOptionEnabled: true, firstDestination: viewModel.firstDestination, secondDestination: viewModel.secondDestination, lat: lat, long: long)
         delegate?.closeNavigationScene()
+        delegate?.showDirections(isRouteOptionEnabled: true, firstDestination: viewModel.firstDestination, secondDestination: viewModel.secondDestination, lat: lat, long: long)
+        
     }
     
     @objc private func hideScreen() {
@@ -299,7 +299,9 @@ private extension NavigationVC {
     }
     
     func setupNotifications() {
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationSteps(_:)), name: Notification.navigationStepsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
     }
     
     @objc private func updateNavigationSteps(_ notification: Notification) {
