@@ -89,7 +89,7 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
         let label = UILabel()
         label.font = UIFont.amazonFont(type: .regular, size: 13)
         label.textColor = .black
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.numberOfLines = 0
         label.text = StringConstant.routesNotifications
         return label
@@ -99,7 +99,7 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
         let label = UILabel()
         label.font = UIFont.amazonFont(type: .regular, size: 13)
         label.textColor = .lsGrey
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.numberOfLines = 0
         return label
     }()
@@ -142,7 +142,7 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
         let label = UILabel()
         label.font = UIFont.amazonFont(type: .regular, size: 13)
         label.textColor = .black
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.numberOfLines = 0
         label.text = StringConstant.routesNotifications
         return label
@@ -152,7 +152,7 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
         let label = UILabel()
         label.font = UIFont.amazonFont(type: .regular, size: 13)
         label.textColor = .lsGrey
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.numberOfLines = 0
         return label
     }()
@@ -341,9 +341,11 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
     }
     
     private func setupNotifications() {
+        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTrackingSimulation), name: Notification.trackingMapStyleDimissed, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dismissTrackingSimulation), name: Notification.dismissTrackingSimulation, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(trackingMapStyleAppearing), name: Notification.trackingMapStyleAppearing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
     }
     
     private func removeNotifications() {
@@ -683,7 +685,7 @@ final class TrackingSimulationController: UIViewController, UIScrollViewDelegate
     
     func evaluateSelectedRoutes() {
         let count = routeToggles.count(where: { $0.getState()})
-        routesDetailLabel.text = "\(count) routes active"
+        routesDetailLabel.text = "\(count) \(StringConstant.routesActive)"
     }
     
     func getActiveRouteCoordinates() -> [RouteCoordinate] {

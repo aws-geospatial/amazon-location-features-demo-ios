@@ -41,22 +41,19 @@ extension SplitViewSettingsCoordinator: SettingsNavigationDelegate {
         switch type {
         case .units:
             showUnitScene()
-        case .dataProvider:
-            showDataProviderScene()
         case .mapStyle:
             showMapStyleScene()
         case .routeOption:
             showRouteOptionScene()
+        case .language:
+            showLanguageScene()
+        case .region:
+            showRegionScene()
         }
     }
     
     private func showUnitScene() {
         let controller = UnitSceneBuilder.create()
-        changeSecondaryVC(to: controller)
-    }
-    
-    private func showDataProviderScene() {
-        let controller = DataProviderBuilder.create()
         changeSecondaryVC(to: controller)
     }
     
@@ -67,6 +64,16 @@ extension SplitViewSettingsCoordinator: SettingsNavigationDelegate {
     
     private func showRouteOptionScene() {
         let controller = RouteOptionBuilder.create()
+        changeSecondaryVC(to: controller)
+    }
+    
+    private func showLanguageScene() {
+        let controller = LanguageSceneBuilder.create()
+        changeSecondaryVC(to: controller)
+    }
+    
+    private func showRegionScene() {
+        let controller = RegionSceneBuilder.create()
         changeSecondaryVC(to: controller)
     }
     

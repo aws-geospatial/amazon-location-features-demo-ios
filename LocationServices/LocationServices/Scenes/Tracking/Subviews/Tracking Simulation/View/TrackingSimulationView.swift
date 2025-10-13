@@ -26,19 +26,19 @@ final class TrackingSimulationView: UIView {
         return iv
     }()
     
-    private let titleLabel = AmazonLocationLabel(labelText: StringConstant.geofence,
+    private let titleLabel = AmazonLocationLabel(labelText: "",
                                                  font: TrackingDashoardConstant.titleFont,
                                                  fontColor: .black,
                                                  textAlignment: .center)
     
-    private let detailLabel = AmazonLocationLabel(labelText: StringConstant.amazonLocationDetail,
+    private let detailLabel = AmazonLocationLabel(labelText: "",
                                                   font: TrackingDashoardConstant.detailLabelFont,
                                                   isMultiline: true,
                                                   fontColor: .lsGrey,
                                                   textAlignment: .center)
     
-    private lazy var comonButton: AmazonLocationButton =  {
-        let button = AmazonLocationButton(title: StringConstant.addGeofence)
+    private lazy var commonButton: AmazonLocationButton =  {
+        let button = AmazonLocationButton()
         button.accessibilityIdentifier = ViewsIdentifiers.Tracking.enableTrackingButton
         button.addTarget(self, action: #selector(commonButtonAction), for: .touchUpInside)
         return button
@@ -68,7 +68,7 @@ final class TrackingSimulationView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorCannotInitializeView)
+        fatalError(ErrorMessage.errorCannotInitializeView)
     }
     
     override func layoutSubviews() {
@@ -91,7 +91,7 @@ final class TrackingSimulationView: UIView {
         self.iconView.image = image
         self.iconView.backgroundColor = iconBackgroundColor
         self.iconView.tintColor = .black
-        self.comonButton.setTitle(buttonTitle, for: .normal)
+        self.commonButton.setTitle(buttonTitle, for: .normal)
     }
     
     private func setupViews() {
@@ -99,7 +99,7 @@ final class TrackingSimulationView: UIView {
         iconContainerView.addSubview(iconView)
         self.addSubview(titleLabel)
         self.addSubview(detailLabel)
-        self.addSubview(comonButton)
+        self.addSubview(commonButton)
         
         iconContainerView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(30)
@@ -123,7 +123,7 @@ final class TrackingSimulationView: UIView {
             $0.width.lessThanOrEqualTo(340)
         }
         
-        comonButton.snp.makeConstraints {
+        commonButton.snp.makeConstraints {
             $0.top.greaterThanOrEqualTo(detailLabel.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(48)

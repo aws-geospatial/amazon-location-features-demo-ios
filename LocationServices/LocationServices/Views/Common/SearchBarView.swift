@@ -121,7 +121,7 @@ final class SearchBarView: UIView {
                 
         SearchBarCache.shared.addObserver(self,
                                           forKeyPath: Constant.keyPathActiveSearchText,
-                                          options: [.new],                                context: nil)
+                                          options: [.new], context: nil)
         
         if SearchBarCache.shared.activeSearchText.isEmpty == false {
             searchView.setCurrentText(text: SearchBarCache.shared.activeSearchText)
@@ -164,7 +164,7 @@ final class SearchBarView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
         
     func setupTextWith(text: String) {

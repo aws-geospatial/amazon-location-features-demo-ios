@@ -13,11 +13,11 @@ extension UIImage {
     static let amazonLogo = UIImage(named: "amazon_logo")!
     static let appLogo = UIImage(named: "app-logo")!
     /// TabBar Icons
-    static let exploreIcon = UIImage(named: "icon-compass")!
+    static let navigateIcon = UIImage(named: "icon-compass")!
     static let trackingIcon = UIImage(named: "icon-radar-solid")!
     static let geofenceIcon = UIImage(named: "icon-geofence")!
     static let settingsIcon = UIImage(named: "icon-gear")!
-    static let about = UIImage(named: "icon-info")!
+    static let moreIcon = UIImage(named: "icon-info")!
     
     /// Search Bar Icons
     static let searchIcon = UIImage(systemName: "magnifyingglass")!
@@ -54,9 +54,9 @@ extension UIImage {
     static let dataProviderIcon = UIImage(named: "icon-map")!
     static let mapStyleIcon = UIImage(named: "icon-paintroller")!
     static let routeOption = UIImage(named: "icon-shuffle")!
-    static let unitIcons = UIImage(named: "icon-people-arrows")!
-    static let logoutIcon = UIImage(named: "icon-logout")!
-    static let disconnectIcon = UIImage(named: "icon-disconnect")!
+    static let unitIcon = UIImage(named: "icon-people-arrows")!
+    static let languageIcon = UIImage(systemName: "translate")!
+    static let regionIcon = UIImage(systemName: "globe")!
     
     /// Map Layer
     static let standardMapLayer = UIImage(named: "standard_map_layer")!

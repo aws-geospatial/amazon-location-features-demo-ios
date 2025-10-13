@@ -17,7 +17,7 @@ final class WelcomeBottomView: UIView {
     private var desctiptionTextView: UITextView = {
         let tw = UITextView()
         
-        let text = StringConstant.About.descriptionTitle
+        let text = StringConstant.About.downloadTermsTitle
         let attributedString = NSMutableAttributedString(string: text)
         let clickableSets = [
             (StringConstant.About.appTermsOfUse, StringConstant.About.appTermsOfUseURL)
@@ -37,7 +37,7 @@ final class WelcomeBottomView: UIView {
         tw.attributedText = attributedString
         tw.font = .amazonFont(type: .regular, size: 10)
         tw.textColor = .lsGrey
-        tw.textAlignment = .left
+        tw.applyLocaleDirection()
         tw.isScrollEnabled = false
         tw.contentInset = UIEdgeInsets(top: -10, left: -5, bottom: 0, right: 0)
         tw.isUserInteractionEnabled = true
@@ -61,7 +61,7 @@ final class WelcomeBottomView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupViews() {

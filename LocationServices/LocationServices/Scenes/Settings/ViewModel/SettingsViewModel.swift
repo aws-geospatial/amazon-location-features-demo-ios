@@ -27,11 +27,19 @@ final class SettingsViewModel: SettingsViewModelProtocol {
     private func populateConfiguredData() {
         let mapStyle = UserDefaultsHelper.getObject(value: MapStyleModel.self, key: .mapStyle)
         let unitType = UserDefaultsHelper.getObject(value: UnitTypes.self, key: .unitType)
-
-        datas = [
-            SettingsCellModel(type: .units, subTitle: unitType?.title ?? ""),
-            SettingsCellModel(type: .mapStyle, subTitle: mapStyle?.title ?? ""),
-            SettingsCellModel(type: .routeOption)
-        ]
+        let languageTitle = appLanguageSwitcherData.first(where: { $0.value == Locale.currentAppLanguageIdentifier()})?.label
+        
+        if let region = AWSRegionSelector.shared.getCachedRegion() {
+            let regionTitle = RegionType(rawValue: region)?.listTitle ?? ""
+            let isAutoRegion = AWSRegionSelector.shared.isAutoRegion()
+            
+            datas = [
+                SettingsCellModel(type: .units, subTitle: unitType?.title ?? ""),
+                SettingsCellModel(type: .mapStyle, subTitle: mapStyle?.title ?? ""),
+                SettingsCellModel(type: .language, subTitle: languageTitle),
+                SettingsCellModel(type: .routeOption),
+                SettingsCellModel(type: .region, subTitle: isAutoRegion == true ? StringConstant.automaticUnit : regionTitle)
+            ]
+        }
     }
 }

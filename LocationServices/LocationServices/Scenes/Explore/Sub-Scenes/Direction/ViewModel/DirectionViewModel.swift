@@ -64,10 +64,10 @@ final class DirectionViewModel: DirectionViewModelProtocol {
     
     func searchWithSuggestion(text: String, userLat: Double?, userLong: Double?) async {
         
-        guard !text.isEmpty && text != "My Location" else {
+        guard !text.isEmpty && text != StringConstant.myLocation else {
             presentation = []
             
-            if text != "My Location" {
+            if text != StringConstant.myLocation {
                 addMyLocationItem()
             }
             
@@ -109,9 +109,9 @@ final class DirectionViewModel: DirectionViewModelProtocol {
     }
     
     func searchWith(text: String, userLat: Double?, userLong: Double?) async throws {
-        guard !text.isEmpty && text != "My Location" else {
+        guard !text.isEmpty && text != StringConstant.myLocation else {
             presentation = []
-            if text != "My Location" {
+            if text != StringConstant.myLocation {
                 addMyLocationItem()
             }
             delegate?.searchResult(mapModel: [])
@@ -127,8 +127,8 @@ final class DirectionViewModel: DirectionViewModelProtocol {
                     let model = results.map(MapModel.init)
                     self.delegate?.searchResult(mapModel: model)
                 case .failure(let error):
-                    let model = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)
                     DispatchQueue.main.async {
+                        let model = AlertModel(title: StringConstant.error, message: error.localizedDescription, cancelButton: nil)
                         self.delegate?.showAlert(model)
                     }
                 }
@@ -148,13 +148,13 @@ final class DirectionViewModel: DirectionViewModelProtocol {
     
     func getMyLocationItem() -> SearchPresentation {
         let model = SearchPresentation(placeId: "myLocation",
-                                       fullLocationAddress: "My Location",
+                                       fullLocationAddress: StringConstant.myLocation,
                                        distance: nil,
                                        countryName: nil,
                                        cityName: nil,
                                        placeLat: userLocation?.lat,
                                        placeLong: userLocation?.long,
-                                       name: "My Location")
+                                       name: StringConstant.myLocation)
         return model
     }
     
@@ -322,7 +322,7 @@ final class DirectionViewModel: DirectionViewModelProtocol {
                     }
                     return (jsonDatas, directionVM)
                 } catch {
-                    print(String.errorJSONDecoder)
+                    print(ErrorMessage.errorJSONDecoder)
                 }
             case .failure, .none:
                 print(StringConstant.failedToCalculateRoute)

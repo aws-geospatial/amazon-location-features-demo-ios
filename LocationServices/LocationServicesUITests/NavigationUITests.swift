@@ -25,6 +25,8 @@ final class NavigationUITests: LocationServicesUITests {
         static let pedestrianDepartureAddress = "cloverdale perth"
         static let pedestrianDestinationAddress = "Kewdale Perth"
         
+        static let myLocation = "My Location"
+        
         static let navigationStartLocation = CLLocation(latitude: 40.728489, longitude: -74.007167)
         static let navigationMoveLocation = CLLocation(latitude: 40.741940, longitude: -73.974948)
         static let navigationEndLocation = CLLocation(latitude: 40.743785, longitude: -73.973602)
@@ -32,6 +34,7 @@ final class NavigationUITests: LocationServicesUITests {
         static var navigationEndCoordinateSearchString: String {
             return "\(navigationEndLocation.coordinate.latitude), \(navigationEndLocation.coordinate.longitude)"
         }
+        static let countryCode = "ARG"
     }
     
     override func setUp() {
@@ -50,9 +53,9 @@ final class NavigationUITests: LocationServicesUITests {
             .select(style: .standard)
             .select(style: .monochrome)
             .tapPoliticalViewButton()
-            .select(politicalView: PoliticalViewTypes.first)
+            .select()
             .tapCloseButton()
-            .checkPoliticalViewButtonSubtitle(type: PoliticalViewTypes.first)
+            .checkPoliticalViewButtonSubtitle()
             .tapCloseButton()
             .tapRouting()
             .selectDepartureTextField()
@@ -219,7 +222,7 @@ final class NavigationUITests: LocationServicesUITests {
             .selectSearchResult(index: 0)
         
         let textField = screen.getDeparturePlace()
-        XCTAssertEqual(textField, StringConstant.myLocation)
+        XCTAssertEqual(textField, Constants.myLocation)
         
         screen = screen
             .selectDestinationTextField()

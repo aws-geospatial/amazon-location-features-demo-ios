@@ -46,6 +46,10 @@ final class ExploreVC: UIViewController {
         return countOfNavigationViewsInParentView > 1.5
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHandlers()
@@ -198,41 +202,29 @@ extension ExploreVC: ExploreViewOutputDelegate {
 }
 
 extension ExploreVC: ExploreViewModelOutputDelegate {
-    func loginCompleted(_ presentation: ExplorePresentation) {
-    }
-    
-    func logoutCompleted() {
-    }
 }
 
 extension ExploreVC {
+
     func setupNotifications() {
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self, name: Notification.navigationSteps, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateLocation(_:)), name: Notification.userLocation, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(selectPlace(_:)), name: Notification.selectedPlace, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonConstraits(_:)), name: Notification.updateMapViewButtons, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(drawDirectionRoute(_:)), name: Notification.directionLineString, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showNavigationScene(_:)), name: Notification.navigationSteps, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(dismissNavigationScene(_:)), name: Notification.navigationViewDismissed, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateMapViewValue(_:)), name: Notification.updateMapViewValues, object: nil)
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(dismissDirectionScene(_:)), name: Notification.directionViewDismissed, object: nil)
-        
-    
         NotificationCenter.default.addObserver(self, selector: #selector(shownSearchResults(_:)), name: Notification.shownSearchResults, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshMapView(_:)), name: Notification.refreshMapView, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showWasResetToDefaultConfigAlert(_:)), name: Notification.wasResetToDefaultConfig, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(searchAppearanceChanged(_:)), name: Notification.searchAppearanceChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(exploreActionButtonsVisibilityChanged(_:)), name: Notification.exploreActionButtonsVisibilityChanged, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateMapLayerItems(_:)), name: Notification.updateMapLayerItems, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(focusOnLocation(_:)), name: Notification.focusOnLocation, object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(removeNotificationObservers(_:)), name: Notification.removeNotificationObservers, object: nil)
     }
     
     private func setupKeyboardNotifications() {
@@ -261,7 +253,6 @@ extension ExploreVC {
     func setupView() {
         mapNavigationView.isHidden = true
         mapNavigationActionsView.isHidden = true
-        //updateAmazonLogoPositioning(isBottomNavigationShown: false)
         mapNavigationActionsView.update(style: .navigationActions)
         changeSeachBarVisibility(isHidden: false)
         if !isInSplitViewController {
@@ -301,19 +292,15 @@ extension ExploreVC {
     }
     
     private func updateAmazonLogoPositioning(isBottomNavigationShown: Bool) {
-        let leadingOffset: CGFloat?
         let bottomOffset: CGFloat?
         
         if isBottomNavigationShown {
             if isNavigationViewLeftAlignment {
-                leadingOffset = Constants.navigationViewOptimalWidth + Constants.defaultSpacing * 2
                 bottomOffset = nil
             } else {
-                leadingOffset = nil
                 bottomOffset = Constants.navigationViewHeight + Constants.defaultSpacing * 2
             }
         } else {
-            leadingOffset = nil
             bottomOffset = nil
         }
         
@@ -351,21 +338,17 @@ extension ExploreVC {
             self.exploreView.updateBottomViewsSpacings(additionalBottomOffset: offset)
         }
     }
-        
-    @objc private func showWasResetToDefaultConfigAlert(_ notification: Notification) {
-        let model = AlertModel(title: StringConstant.resetToDefaultConfigTitle, message: StringConstant.resetToDefaultConfigExplanation, cancelButton: nil)
-        showAlert(model)
-    }
 
     @objc private func drawDirectionRoute(_ notification: Notification) {
         guard let data = notification.userInfo?["LineString"] as? [Data],
               let departureLocation = notification.userInfo?["DepartureLocation"] as? CLLocationCoordinate2D,
               let destinationLocation = notification.userInfo?["DestinationLocation"] as? CLLocationCoordinate2D,
-              let routeType = notification.userInfo?["routeType"] as? RouteTypes else {
+              let routeType = notification.userInfo?["routeType"] as? RouteTypes,
+              let isPreview = notification.userInfo?["isPreview"] as? Bool else {
             return
         }
         
-        exploreView.drawCalculatedRouteWith(data, departureLocation: departureLocation, destinationLocation: destinationLocation, isRecalculation: false, routeType: routeType)
+        exploreView.drawCalculatedRouteWith(data, departureLocation: departureLocation, destinationLocation: destinationLocation, isRecalculation: false, routeType: routeType, isPreview: isPreview)
     }
     
     @objc private func updateButtonConstraits(_ notification: Notification) {
@@ -417,7 +400,6 @@ extension ExploreVC {
         viewModel.deactivateRoute()
         mapNavigationView.isHidden = true
         mapNavigationActionsView.isHidden = true
-        //updateAmazonLogoPositioning(isBottomNavigationShown: false)
         exploreView.hideGeoFence(state: false)
         exploreView.deleteDrawing()
     }
@@ -500,7 +482,7 @@ extension ExploreVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
     
-    func routeReCalculated(direction: DirectionPresentation, departureLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D, routeType: RouteTypes) {
+    func routeReCalculated(direction: DirectionPresentation, departureLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D, routeType: RouteTypes, isPreview: Bool) {
             let userInfo = ["route": direction.route]
         NotificationCenter.default.post(name: Notification.navigationStepsUpdated, object: nil, userInfo: userInfo)
             let encoder = JSONEncoder()
@@ -512,9 +494,9 @@ extension ExploreVC: CLLocationManagerDelegate {
                         datas.append(data)
                     }
                 }
-                self.exploreView.drawCalculatedRouteWith(datas, departureLocation: departureLocation, destinationLocation: destinationLocation, isRecalculation: true, routeType: routeType)
+                self.exploreView.drawCalculatedRouteWith(datas, departureLocation: departureLocation, destinationLocation: destinationLocation, isRecalculation: true, routeType: routeType, isPreview: isPreview)
             } catch {
-                print(String.errorJSONDecoder)
+                print(ErrorMessage.errorJSONDecoder)
             }
     }
     

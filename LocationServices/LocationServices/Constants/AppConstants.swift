@@ -8,7 +8,7 @@
 import Foundation
 
 final class DefaultUserSettings {
-    static let mapStyle = MapStyleModel(title: "Standard" ,
+    static let mapStyle = MapStyleModel(title: MapStyleTypes.standard.mapName,
                                         imageType: .standard,
                                         isSelected: true)
     static let mapStyleColorType = MapStyleColorType.light
@@ -36,17 +36,17 @@ final class DefaultMapStyles {
     }
     
    static let mapStyles: [MapStyleModel] =  [
-        MapStyleModel(title: "Standard" ,
-                      imageType: .standard ,
+    MapStyleModel(title: MapStyleTypes.standard.mapName,
+                      imageType: .standard,
                       isSelected: true),
-        MapStyleModel(title: "Monochrome" ,
-                      imageType: .monochrome ,
+    MapStyleModel(title: MapStyleTypes.monochrome.mapName,
+                      imageType: .monochrome,
                       isSelected: false),
-        MapStyleModel(title: "Hybrid" ,
-                      imageType: .hybrid ,
+        MapStyleModel(title: MapStyleTypes.hybrid.mapName,
+                      imageType: .hybrid,
                       isSelected: false),
-        MapStyleModel(title: "Satellite" ,
-                      imageType: .satellite ,
+        MapStyleModel(title: MapStyleTypes.satellite.mapName,
+                      imageType: .satellite,
                       isSelected: false),
     ]
 }

@@ -14,7 +14,7 @@ final class AmazonLocationLabel: UILabel {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     convenience init( labelText: String,
@@ -39,7 +39,7 @@ final class AmazonLocationLabel: UILabel {
     ) {
         self.text = labelText
         self.font = font
-        self.textAlignment = textAlignment
+        self.applyLocaleDirection()
         if isMultiline {
             self.numberOfLines = 0
         }

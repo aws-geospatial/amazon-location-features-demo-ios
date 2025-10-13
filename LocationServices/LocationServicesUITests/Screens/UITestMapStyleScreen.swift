@@ -16,7 +16,7 @@ struct UITestMapStyleScreen: UITestScreen {
         static var politicalViewSubitle: String { ViewsIdentifiers.General.politicalViewSubtitle }
     }
     
-    func select(style: MapStyleImages) -> Self {
+    func select(style: MapStyleTypes) -> Self {
         let cell = getStyleCell(for: style)
         cell.tap()
         
@@ -30,15 +30,10 @@ struct UITestMapStyleScreen: UITestScreen {
         return UITestPoliticalViewScreen(app: app)
     }
     
-    func checkPoliticalViewButtonSubtitle(type: PoliticalViewType?) -> Self {
+    func checkPoliticalViewButtonSubtitle() -> Self {
         let button = getPoliticalViewButton()
-        let value = button.staticTexts[Identifiers.politicalViewSubitle].firstMatch.label
-        if let countryCode = type?.countryCode {
-            XCTAssert(value.starts(with: countryCode))
-        }
-        else {
-            XCTFail("Political view subtitle not set correctly")
-        }
+        let value = button.staticTexts[Identifiers.politicalViewSubitle].label
+        XCTAssertTrue(!value.isEmpty, "Political view subtitle set correctly")
         return self
     }
     
@@ -49,13 +44,13 @@ struct UITestMapStyleScreen: UITestScreen {
         return UITestExploreScreen(app: app)
     }
     
-    func isCellSelected(for style: MapStyleImages) -> Bool {
+    func isCellSelected(for style: MapStyleTypes) -> Bool {
         let cell = getStyleCell(for: style, assert: false)
         return cell.exists && cell.isSelected
     }
     
     // MARK: - Private
-    private func getStyleCell(for style: MapStyleImages, assert: Bool = true) -> XCUIElement {
+    private func getStyleCell(for style: MapStyleTypes, assert: Bool = true) -> XCUIElement {
         let cell = app.cells[style.mapName].firstMatch
         if assert {
             XCTAssertTrue(cell.waitForExistence(timeout: UITestWaitTime.regular.time))

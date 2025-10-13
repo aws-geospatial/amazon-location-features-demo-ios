@@ -12,12 +12,11 @@ struct UITestPoliticalViewScreen: UITestScreen {
     
     private enum Identifiers {
         static var closeButton: String { ViewsIdentifiers.General.politicalViewCloseButton }
-        static var politicalViewCell: String { ViewsIdentifiers.General.politicalViewCell }
         static var politicalViewTable: String { ViewsIdentifiers.General.politicalViewTable }
     }
     
-    func select(politicalView: PoliticalViewType?) -> Self {
-        let cell = getPoliticalViewCell(for: politicalView)
+    func select() -> Self {
+        let cell = getPoliticalViewCell()
         cell.tap()
         
         return self
@@ -31,7 +30,7 @@ struct UITestPoliticalViewScreen: UITestScreen {
     }
     
     // MARK: - Private
-    private func getPoliticalViewCell(for type: PoliticalViewType?, assert: Bool = true) -> XCUIElement {
+    private func getPoliticalViewCell(assert: Bool = true) -> XCUIElement {
         let cell = app.tables[Identifiers.politicalViewTable].cells.firstMatch
         if assert {
             XCTAssertTrue(cell.waitForExistence(timeout: UITestWaitTime.regular.time))

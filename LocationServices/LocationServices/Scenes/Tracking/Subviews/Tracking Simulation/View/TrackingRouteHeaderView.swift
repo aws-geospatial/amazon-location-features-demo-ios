@@ -27,7 +27,7 @@ final class TrackingRouteHeaderView: UIView {
         let label = UILabel()
         label.accessibilityIdentifier = ViewsIdentifiers.Tracking.trackingStoppedLabel
         label.font = .amazonFont(type: .regular, size: 13)
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.textColor = .searchBarTintColor
         label.text = StringConstant.Tracking.noTracking
         label.minimumScaleFactor = 0.5
@@ -87,7 +87,7 @@ final class TrackingRouteHeaderView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupViews() {
@@ -108,12 +108,11 @@ final class TrackingRouteHeaderView: UIView {
             $0.height.equalTo(18)
             $0.bottom.equalToSuperview()
         }
-        
+        trackingActionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         trackingActionButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(titleTopOffset)
             $0.trailing.equalToSuperview().offset(-16)
             $0.height.equalTo(40)
-            $0.width.equalTo(132)
         }
     }
 }

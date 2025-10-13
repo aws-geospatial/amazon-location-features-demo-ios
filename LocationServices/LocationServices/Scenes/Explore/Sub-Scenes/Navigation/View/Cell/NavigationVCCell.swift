@@ -27,6 +27,10 @@ struct NavigationCellModel {
         self.ferryStep = model.ferryStep
         self.distance = ""
         self.instruction = ""
+        if let step = model.ferryStep {
+            self.distance =  String(step.distance.formatDistance(decimalPoints: 2))
+            self.instruction = step.instruction!
+        }
         if let step = model.pedestrianStep {
             self.distance =  String(step.distance.formatDistance(decimalPoints: 2))
             self.instruction = step.instruction!
@@ -79,8 +83,7 @@ final class NavigationVCCell: UITableViewCell {
     
     private var streetLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 min"
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .bold, size: 13)
         label.textColor = .lsTetriary
         label.numberOfLines = 2
@@ -90,8 +93,7 @@ final class NavigationVCCell: UITableViewCell {
     
     private var distanceLabel = {
         let label = UILabel()
-        label.text = "300 m"
-        label.textAlignment = .left
+        label.applyLocaleDirection()
         label.font = .amazonFont(type: .regular, size: 13)
         label.textColor = .lsGrey
         label.numberOfLines = 2
@@ -120,7 +122,7 @@ final class NavigationVCCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(.errorInitWithCoder)
+        fatalError(ErrorMessage.errorInitWithCoder)
     }
     
     private func setupView() {
