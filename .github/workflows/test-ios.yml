@@ -48,4 +48,6 @@ jobs:
 
       - name: Run tests
         working-directory: ./LocationServices
+        env:
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 120
         run: bundle exec fastlane run_unit_tests device:"iPhone 14"
