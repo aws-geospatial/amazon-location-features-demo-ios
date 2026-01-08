@@ -38,11 +38,13 @@ jobs:
 
       - name: Run tests on iPhone
         working-directory: ./LocationServices
+        env:
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 120
         run: bundle exec fastlane run_e2e_tests device:"iPhone 16 Pro Max (18.0)"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && env.xcresult_path != ''
         with:
           name: test-results-iphone
           path: ${{ env.xcresult_path }}
