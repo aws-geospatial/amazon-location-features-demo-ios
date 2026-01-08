@@ -50,7 +50,7 @@ platform :ios do
       )
     ensure
       xcresult_path = Actions.lane_context[SharedValues::SCAN_GENERATED_XCRESULT_PATH]
-      sh("echo xcresult_path=" + xcresult_path + " >> $GITHUB_ENV")
+      sh("echo xcresult_path=#{xcresult_path || ''} >> $GITHUB_ENV") if ENV['GITHUB_ENV']
     end
   end
 

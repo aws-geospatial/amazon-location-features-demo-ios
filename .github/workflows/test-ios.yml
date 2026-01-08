@@ -43,8 +43,8 @@ jobs:
       - name: Ensure config files exist
         working-directory: ./LocationServices
         run: |
-          touch Config.xcconfig
-          touch ConfigTest.xcconfig
+          [ -f Config.xcconfig ] || touch Config.xcconfig
+          [ -f ConfigTest.xcconfig ] || touch ConfigTest.xcconfig
 
       - name: Run tests
         working-directory: ./LocationServices
