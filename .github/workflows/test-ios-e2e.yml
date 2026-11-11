@@ -40,7 +40,7 @@ jobs:
         working-directory: ./LocationServices
         env:
           FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 120
-        run: bundle exec fastlane run_e2e_tests device:"iPhone 16 Pro Max (18.0)"
+        run: bundle exec fastlane run_e2e_tests device:"iPhone 16 Pro Max"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
